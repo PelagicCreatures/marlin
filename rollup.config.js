@@ -5,14 +5,14 @@ import json from '@rollup/plugin-json'
 import {
 	terser
 }
-from 'rollup-plugin-terser'
+	from 'rollup-plugin-terser'
 
 export default {
 	input: './assets/app.js',
 
 	output: {
 		format: 'iife',
-		file: 'dist/js/userapp.iife.js',
+		file: 'dist/js/marlin.iife.js',
 		sourcemap: true,
 		name: 'App',
 		compact: true

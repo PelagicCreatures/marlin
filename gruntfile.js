@@ -18,37 +18,37 @@ module.exports = function (grunt) {
 		expand: true,
 		cwd: 'node_modules/workbox-sw/build/',
 		src: ['workbox-sw.js', 'workbox-sw.js.map'],
-		dest: 'public/dist/js/',
+		dest: 'dist/js/',
 		filter: 'isFile'
 	}, {
 		expand: true,
 		cwd: 'node_modules/workbox-strategies/build/',
 		src: ['workbox-strategies.prod.js', 'workbox-strategies.prod.js.map'],
-		dest: 'public/dist/js/',
+		dest: 'dist/js/',
 		filter: 'isFile'
 	}, {
 		expand: true,
 		cwd: 'node_modules/workbox-cacheable-response/build/',
 		src: ['workbox-cacheable-response.prod.js', 'workbox-cacheable-response.prod.js.map'],
-		dest: 'public/dist/js/',
+		dest: 'dist/js/',
 		filter: 'isFile'
 	}, {
 		expand: true,
 		cwd: 'node_modules/workbox-routing/build/',
 		src: ['workbox-routing.prod.js', 'workbox-routing.prod.js.map'],
-		dest: 'public/dist/js/',
+		dest: 'dist/js/',
 		filter: 'isFile'
 	}, {
 		expand: true,
 		cwd: 'node_modules/workbox-core/build/',
 		src: ['workbox-core.prod.js', 'workbox-core.prod.js.map'],
-		dest: 'public/dist/js/',
+		dest: 'dist/js/',
 		filter: 'isFile'
 	}, {
 		expand: true,
 		cwd: 'node_modules/workbox-expiration/build/',
 		src: ['workbox-expiration.prod.js', 'workbox-expiration.prod.js.map'],
-		dest: 'public/dist/js/',
+		dest: 'dist/js/',
 		filter: 'isFile'
 	}, {
 		expand: true,
@@ -60,13 +60,13 @@ module.exports = function (grunt) {
 		expand: true,
 		cwd: 'working/assets/fonts/',
 		src: ['*.*'],
-		dest: 'public/dist/css/fonts',
+		dest: 'dist/css/fonts',
 		filter: 'isFile'
 	}]
 
 	grunt.initConfig({
-		jsDistDir: 'public/dist/js/',
-		cssDistDir: 'public/dist/css/',
+		jsDistDir: 'dist/js/',
+		cssDistDir: 'dist/css/',
 		pkg: grunt.file.readJSON('package.json'),
 		exec: {
 			confirmDialogTemplate: 'npx pug --client --no-debug --pretty --out working/templates --name confirmDialogTemplate views/shared/confirm-dialog.pug'
@@ -82,14 +82,14 @@ module.exports = function (grunt) {
 			},
 			compile: {
 				files: {
-					'working/assets/<%= pkg.name %>-stylus.css': stylusFiles
+					'working/assets/marlin-stylus.css': stylusFiles
 				}
 			}
 		},
 		concat: {
 			css: {
 				src: cssFiles,
-				dest: '<%=cssDistDir%><%= pkg.name %>.css',
+				dest: '<%=cssDistDir%>marlin.css',
 				nonull: true
 			}
 		},
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
 					rebase: false
 				},
 				files: {
-					'<%=cssDistDir%><%= pkg.name %>.min.css': ['<%=cssDistDir%><%= pkg.name %>.css']
+					'<%=cssDistDir%>marlin.min.css': ['<%=cssDistDir%>marlin.css']
 				}
 			}
 		},
