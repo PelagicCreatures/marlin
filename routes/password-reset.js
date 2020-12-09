@@ -18,14 +18,14 @@ const csrfProtection = csrf({
 	ignoreMethods: process.env.TESTING ? ['GET', 'HEAD', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE'] : []
 })
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 	debug('mounting users API /password-reset')
 
-	const db = usersApp.db
+	const db = marlin.db
 
-	const createToken = require('../lib/create-token.js')(usersApp)
+	const createToken = require('../lib/create-token.js')(marlin)
 
-	usersApp.router.patch('/password-reset', express.json(), csrfProtection, function (req, res) {
+	marlin.router.patch('/password-reset', express.json(), csrfProtection, function (req, res) {
 		debug('/password-reset')
 
 		const validators = getAdmin('User').getValidations()
@@ -109,7 +109,7 @@ module.exports = (usersApp) => {
 			},
 			function (user, cb) {
 				createToken(user, {
-					ttl: usersApp.options.PASSWORD_RESET_TTL,
+					ttl: marlin.options.PASSWORD_RESET_TTL,
 					type: 'reset'
 				}, function (err, token) {
 					if (err) {
@@ -126,7 +126,7 @@ module.exports = (usersApp) => {
 				})
 			}
 
-			usersApp.emit('sendPasswordReset', user, token)
+			marlin.emit('sendPasswordReset', user, token)
 
 			res.send({
 				status: 'ok',

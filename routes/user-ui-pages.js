@@ -149,7 +149,7 @@ module.exports = function mount(app) {
 
 		async.series([
 			function findToken(cb) {
-				app.db.getInstances('Token', {
+				app.marlin.db.getInstances('Token', {
 					where: {
 						'token': req.query.token
 					}
@@ -161,7 +161,7 @@ module.exports = function mount(app) {
 						return cb(new VError('Reset token was not found.'));
 					}
 
-					validateToken(app.db, tokenInstances[0], function (err) {
+					validateToken(app.marlin.db, tokenInstances[0], function (err) {
 						if (err) {
 							return cb(err);
 						}

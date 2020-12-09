@@ -1,3 +1,5 @@
+// this is used as a test harness only
+
 const createError = require('http-errors')
 const express = require('express')
 const fs = require('fs')
@@ -17,21 +19,19 @@ if (process.env.ENVFILE) {
 const app = express()
 
 // setup configuration from config file for environment
-const config = require('./config/' + app.get('env'))(app)
-
-app.config = config
+app.config = require('./config/' + app.get('env'))(app)
 
 // app.locals properties are exposed to pug templates
-app.locals.sitename = config.siteName
-app.locals.publicOptions = config.publicOptions
+app.locals.sitename = app.config.siteName
+app.locals.publicOptions = app.config.publicOptions
 app.locals.nonce = uuid.v4()
 app.locals.moment = require('moment')
 
 // Content Security Profile for browser
-if (config.cspOptions && config.cspOptions.directives) {
+if (app.config.cspOptions && app.config.cspOptions.directives) {
 	const csp = require('helmet-csp')
 	app.use(helmet())
-	app.use(csp(config.cspOptions))
+	app.use(csp(app.config.cspOptions))
 }
 
 // view engine setup
@@ -42,37 +42,25 @@ if (app.get('env') !== 'production') {
 }
 
 // http logs
-if (config.LOGGER_LEVEL) {
+if (app.config.LOGGER_LEVEL) {
 	const logger = require('morgan')
-	app.use(logger(config.LOGGER_LEVEL))
+	app.use(logger(app.config.LOGGER_LEVEL))
 }
 
 // use basic-auth for development environment
-if (config.BASIC_AUTH && !process.env.TESTING) {
-	var basicAuth = require('./lib/basicAuth')(config.BASIC_AUTH)
+if (app.config.BASIC_AUTH && !process.env.TESTING) {
+	const basicAuth = require('./lib/basicAuth')(app.config.BASIC_AUTH)
 	app.use(basicAuth)
 }
 
 // parse cookies in all routes
-app.use(cookieParser(config.COOKIE_KEY))
+app.use(cookieParser(app.config.COOKIE_KEY))
 
 // set up and mount the user API
-app.userAPI = require('./index')(app, config)
-
-const bootDir = path.join(__dirname, 'boot')
-fs
-	.readdirSync(bootDir)
-	.filter(file => {
-		return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js')
-	})
-	.forEach(file => {
-		debug('boot/' + file)
-		require(path.join(bootDir, file))(app)
-	})
+require('./index')(app, app.config)
 
 // deliver static files from public directory
 app.use(express.static(path.join(__dirname, 'public')))
-
 
 // Call asynchronous things that need to be stable
 // before we can handle requests
@@ -80,7 +68,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // handlers need to be defined after this call
 app.start = function (done) {
 	debug('starting app')
-	app.db.sync(() => {
+	app.marlin.db.sync(() => {
 		debug('db sync done')
 
 		// catch 404 and forward to error handler
@@ -111,7 +99,7 @@ app.start = function (done) {
 			// set locals, only providing error details in development
 			res.locals.error = err
 			res.locals.verbose = req.app.get('env') === 'local' || req.app.get('env') === 'development'
-				// render the error page
+			// render the error page
 			res.status(err.status || 500)
 			res.render('error')
 		})

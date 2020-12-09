@@ -19,16 +19,16 @@ const {
 	getUserForRequestMiddleware
 } = require('../lib/get-user-for-request-middleware');
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /password-change');
 
-	let db = usersApp.db;
+	let db = marlin.db;
 
-	const saltAndHash = require('../lib/salt-and-hash')(usersApp);
+	const saltAndHash = require('../lib/salt-and-hash')(marlin);
 	const passwordMatch = require('../lib/password-match.js');
 
-	usersApp.router.patch('/password-change', express.json(), getUserForRequestMiddleware(usersApp), csrfProtection, function (req, res) {
+	marlin.router.patch('/password-change', express.json(), getUserForRequestMiddleware(marlin), csrfProtection, function (req, res) {
 
 		debug('/password-change');
 

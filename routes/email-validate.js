@@ -21,13 +21,13 @@ const {
 	validatePayload
 } = require('../lib/validator-extensions');
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /email-validate');
 
-	let db = usersApp.db;
+	let db = marlin.db;
 
-	usersApp.router.patch('/email-validate', express.json(), getUserForRequestMiddleware(usersApp), csrfProtection, function (req, res) {
+	marlin.router.patch('/email-validate', express.json(), getUserForRequestMiddleware(marlin), csrfProtection, function (req, res) {
 
 		debug('/email-validate', req.body);
 

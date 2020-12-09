@@ -7,11 +7,11 @@ const {
 	getUserForRequestMiddleware
 } = require('../lib/get-user-for-request-middleware');
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /is-unique');
 
-	let db = usersApp.db;
+	let db = marlin.db;
 
 	function check(f, v, req, res) {
 
@@ -50,7 +50,7 @@ module.exports = (usersApp) => {
 		});
 	}
 
-	usersApp.router.post('/is-unique-email', express.json(), getUserForRequestMiddleware(usersApp), function (req, res) {
+	marlin.router.post('/is-unique-email', express.json(), getUserForRequestMiddleware(marlin), function (req, res) {
 
 		debug('/is-unique-email', req.body);
 
@@ -61,7 +61,7 @@ module.exports = (usersApp) => {
 		check('email', req.body.value, req, res);
 	});
 
-	usersApp.router.post('/is-unique-username', express.json(), getUserForRequestMiddleware(usersApp), function (req, res) {
+	marlin.router.post('/is-unique-username', express.json(), getUserForRequestMiddleware(marlin), function (req, res) {
 
 		debug('/is-unique-email', req.body);
 

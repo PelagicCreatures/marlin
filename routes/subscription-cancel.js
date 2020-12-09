@@ -4,13 +4,13 @@ const {
 	getUserForRequestMiddleware
 } = require('../lib/get-user-for-request-middleware');
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /subscription-cancel');
 
 	var stripe = require('stripe')(process.env.STRIPE_SECRET);
 
-	usersApp.router.delete('/subscription-cancel', getUserForRequestMiddleware(usersApp), function (req, res) {
+	marlin.router.delete('/subscription-cancel', getUserForRequestMiddleware(marlin), function (req, res) {
 
 		console.log('/subscription-cancel');
 

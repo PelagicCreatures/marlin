@@ -6,13 +6,13 @@ const {
 	getUserForRequestMiddleware
 } = require('../lib/get-user-for-request-middleware');
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /token-delete');
 
-	usersApp.router.delete('/token-delete', express.urlencoded({
+	marlin.router.delete('/token-delete', express.urlencoded({
 		extended: false
-	}), getUserForRequestMiddleware(usersApp), function (req, res) {
+	}), getUserForRequestMiddleware(marlin), function (req, res) {
 		var currentUser = req.antisocialUser;
 		if (!currentUser) {
 			return res.status(401).json({
@@ -23,7 +23,7 @@ module.exports = (usersApp) => {
 			});
 		}
 
-		usersApp.db.getInstances('Token', {
+		marlin.db.getInstances('Token', {
 			where: {
 				userId: req.antisocialUser.id,
 				type: 'access',
@@ -51,7 +51,7 @@ module.exports = (usersApp) => {
 				});
 			}
 
-			usersApp.db.deleteInstance('Token', tokenInstances[0].id, function (err) {
+			marlin.db.deleteInstance('Token', tokenInstances[0].id, function (err) {
 				if (err) {
 					return res.status(500).send({
 						'status': 'error',

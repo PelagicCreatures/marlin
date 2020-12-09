@@ -18,14 +18,14 @@ const csrfProtection = csrf({
 	ignoreMethods: process.env.TESTING ? ['GET', 'HEAD', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE'] : []
 })
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 	debug('mounting users API /register')
 
-	const createUser = require('../lib/create-user.js')(usersApp)
-	const createToken = require('../lib/create-token.js')(usersApp)
+	const createUser = require('../lib/create-user.js')(marlin)
+	const createToken = require('../lib/create-token.js')(marlin)
 
 	// create a new user
-	usersApp.router.put('/register', express.json(), csrfProtection, function (req, res) {
+	marlin.router.put('/register', express.json(), csrfProtection, function (req, res) {
 		debug('/register', req.body)
 
 		const validators = getAdmin('User').getValidations()
@@ -100,7 +100,7 @@ module.exports = (usersApp) => {
 				})
 			},
 			function (user, cb) {
-				usersApp.db.getInstances('User', {}, (err, users, count) => {
+				marlin.db.getInstances('User', {}, (err, users, count) => {
 					if (err) {
 						cb(new VError(err, 'checking if first user'))
 					}
@@ -108,7 +108,7 @@ module.exports = (usersApp) => {
 						return cb(null, user)
 					}
 					// make the first user the superuser
-					usersApp.db.getInstances('Role', {
+					marlin.db.getInstances('Role', {
 						where: {
 							description: 'superuser'
 						}
@@ -117,7 +117,7 @@ module.exports = (usersApp) => {
 							cb(new VError(err, 'first user finding superuser role'))
 						}
 
-						usersApp.db.newInstance('UserRole', {
+						marlin.db.newInstance('UserRole', {
 							userId: user.id,
 							roleId: roles[0].id
 						}, (err) => {
@@ -138,10 +138,10 @@ module.exports = (usersApp) => {
 			},
 			function (user, loginToken, cb) {
 				createToken(user, {
-					ttl: usersApp.options.EMAIL_CONFIRM_TTL,
+					ttl: marlin.options.EMAIL_CONFIRM_TTL,
 					type: 'validate'
 				}, function (err, token) {
-					usersApp.emit('sendEmailConfirmation', user, token)
+					marlin.emit('sendEmailConfirmation', user, token)
 					cb(err, user, loginToken)
 				})
 			}
@@ -155,7 +155,7 @@ module.exports = (usersApp) => {
 				})
 			}
 
-			usersApp.emit('didRegister', user, req.body, function (err) {
+			marlin.emit('didRegister', user, req.body, function (err) {
 				res.cookie('access-token', token.token, {
 					path: '/',
 					maxAge: token.ttl * 1000,

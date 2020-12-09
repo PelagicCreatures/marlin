@@ -56,7 +56,7 @@ module.exports = function (app) {
 	}
 
 	const config = {
-		siteName: 'Boilerplate User Web App',
+		siteName: 'Boilerplate PelagicCreatures/Marlin Web App',
 
 		COOKIE_KEY: 'SeCretDecdrrnG',
 

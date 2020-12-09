@@ -4,12 +4,12 @@ const {
   getUserForRequestMiddleware
 } = require('../lib/get-user-for-request-middleware')
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
   debug('mounting users API /logout')
 
-  const db = usersApp.db
+  const db = marlin.db
 
-  usersApp.router.delete('/logout', getUserForRequestMiddleware(usersApp), function (req, res) {
+  marlin.router.delete('/logout', getUserForRequestMiddleware(marlin), function (req, res) {
     debug('/logout')
 
     var currentUser = req.antisocialUser

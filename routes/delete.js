@@ -8,13 +8,13 @@ const {
 
 let viewsPath = path.join(__dirname, '../', 'views');
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /delete');
 
-	let db = usersApp.db;
+	let db = marlin.db;
 
-	usersApp.router.delete('/delete', getUserForRequestMiddleware(usersApp), function (req, res) {
+	marlin.router.delete('/delete', getUserForRequestMiddleware(marlin), function (req, res) {
 
 		debug('/delete');
 

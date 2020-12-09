@@ -1,37 +1,33 @@
 const debug = require('debug')('antisocial-db')
 
 module.exports = function (app) {
-  debug('env: testing')
+	debug('env: testing')
 
-  let dbOptions = {}
+	const config = {
 
-  dbOptions = {
-    dialect: 'sqlite',
-    storage: null,
-    define: {
-      charset: 'utf8',
-      freezeTableName: true
-    },
-    logging: false
-  }
+		siteName: '',
 
-  const config = {
+		COOKIE_KEY: 'SeCretDecdrrnG',
 
-    siteName: 'Boilerplate User Web App',
+		publicOptions: {},
 
-    COOKIE_KEY: 'SeCretDecdrrnG',
+		userOptions: {},
 
-    publicOptions: {},
+		dbOptions: {
+			dialect: 'sqlite',
+			storage: null,
+			define: {
+				charset: 'utf8',
+				freezeTableName: true
+			},
+			logging: false
+		},
 
-    userOptions: {},
+		adminOptions: {
+			MOUNTPOINT: '/admin',
+			UPLOAD_PATH: '/uploads/'
+		}
+	}
 
-    dbOptions: dbOptions,
-
-    adminOptions: {
-      MOUNTPOINT: '/admin',
-      UPLOAD_PATH: '/uploads/'
-    }
-  }
-
-  return config
+	return config
 }

@@ -21,15 +21,15 @@ const {
 	validatePayload
 } = require('../lib/validator-extensions');
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /email-change');
 
-	let db = usersApp.db;
+	let db = marlin.db;
 
-	let createToken = require('../lib/create-token.js')(usersApp);
+	let createToken = require('../lib/create-token.js')(marlin);
 
-	usersApp.router.patch('/email-change', express.json(), getUserForRequestMiddleware(usersApp), csrfProtection, function (req, res) {
+	marlin.router.patch('/email-change', express.json(), getUserForRequestMiddleware(marlin), csrfProtection, function (req, res) {
 
 		debug('/email-change', req.body);
 
@@ -74,10 +74,10 @@ module.exports = (usersApp) => {
 			},
 			function (user, doneToken) {
 				createToken(user, {
-					ttl: usersApp.options.EMAIL_CONFIRM_TTL,
+					ttl: marlin.options.EMAIL_CONFIRM_TTL,
 					type: 'validate'
 				}, function (err, token) {
-					usersApp.emit('sendEmailConfirmation', user, token);
+					marlin.emit('sendEmailConfirmation', user, token);
 					doneToken(err);
 				});
 			}

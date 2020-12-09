@@ -17,14 +17,14 @@ const csrfProtection = csrf({
   ignoreMethods: process.env.TESTING ? ['GET', 'HEAD', 'OPTIONS', 'POST', 'PUT', 'PATCH', 'DELETE'] : []
 })
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
   debug('mounting users API /login')
 
-  const db = usersApp.db
-  const createToken = require('../lib/create-token.js')(usersApp)
+  const db = marlin.db
+  const createToken = require('../lib/create-token.js')(marlin)
   const passwordMatch = require('../lib/password-match.js')
 
-  usersApp.router.put('/login', express.json(), csrfProtection, function (req, res) {
+  marlin.router.put('/login', express.json(), csrfProtection, function (req, res) {
     debug('/login')
 
     const validators = getAdmin('User').getValidations()

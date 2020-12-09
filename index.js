@@ -1,9 +1,10 @@
-const debug = require('debug')('antisocial-user');
+const debug = require('debug')('antisocial-user')
+const fs = require('fs')
+const path = require('path')
 
 const {
 	expireTokens
-} = require('./lib/get-user-for-request-middleware');
-
+} = require('./lib/get-user-for-request-middleware')
 
 const defaults = {
 	DEFAULT_TTL: 3600 * 24 * 14, // 2 weeks in seconds
@@ -12,60 +13,63 @@ const defaults = {
 	PASSWORD_RESET_TTL: 3600 * 24 * 1, // 1 day
 	EMAIL_CONFIRM_TTL: 3600 * 24 * 2, // 2 days
 	MOUNTPOINT: '/api/users'
-};
+}
 
-var express = require('express');
-var events = require('events');
+const express = require('express')
+const events = require('events')
 
 module.exports = (app, options) => {
-
 	// setup DB (sequelize) & load models
-	var dbHandler = require('./lib/db-sequelize');
-	app.db = new dbHandler(app, options);
+	const dbHandler = require('./lib/db-sequelize')
 
-	var router = express.Router();
+	app.marlin = new events.EventEmitter()
+	app.marlin.db = new dbHandler(app, options)
+	app.marlin.options = options.userOptions
+	app.marlin.router = express.Router()
 
-	var usersApp = new events.EventEmitter();
-
-	usersApp.options = options.userOptions;
-	usersApp.app = app;
-	usersApp.db = app.db;
-	usersApp.router = router;
-
-	for (let prop in defaults) {
-		if (!usersApp.options[prop]) {
-			usersApp.options[prop] = defaults[prop];
+	for (const prop in defaults) {
+		if (!app.marlin.options[prop]) {
+			app.marlin.options[prop] = defaults[prop]
 		}
 	}
 
-	require('./routes/is-unique.js')(usersApp);
-	require('./routes/register.js')(usersApp);
-	require('./routes/login.js')(usersApp);
-	require('./routes/logout.js')(usersApp);
-	require('./routes/email-change.js')(usersApp);
-	require('./routes/email-validate.js')(usersApp);
-	require('./routes/password-change.js')(usersApp);
-	require('./routes/password-reset.js')(usersApp);
-	require('./routes/password-set.js')(usersApp);
-	require('./routes/token-delete.js')(usersApp);
-	require('./routes/delete.js')(usersApp);
+	require('./routes/is-unique.js')(app.marlin)
+	require('./routes/register.js')(app.marlin)
+	require('./routes/login.js')(app.marlin)
+	require('./routes/logout.js')(app.marlin)
+	require('./routes/email-change.js')(app.marlin)
+	require('./routes/email-validate.js')(app.marlin)
+	require('./routes/password-change.js')(app.marlin)
+	require('./routes/password-reset.js')(app.marlin)
+	require('./routes/password-set.js')(app.marlin)
+	require('./routes/token-delete.js')(app.marlin)
+	require('./routes/delete.js')(app.marlin)
 	if (process.env.STRIPE_SECRET) {
-		require('./routes/subscription-cancel.js')(usersApp);
-		require('./routes/stripe-webhook.js')(usersApp);
+		require('./routes/subscription-cancel.js')(app.marlin)
+		require('./routes/stripe-webhook.js')(app.marlin)
 	}
 
-	app.use('/', require('./routes/user-ui-pages')(app));
+	app.use('/', require('./routes/user-ui-pages')(app))
 
-	expireTokens(usersApp);
+	expireTokens(app.marlin)
 
-	debug('mounting users API on ' + usersApp.options.MOUNTPOINT);
+	const bootDir = path.join(__dirname, 'boot')
+	fs
+		.readdirSync(bootDir)
+		.filter(file => {
+			return (file.indexOf('.') !== 0) && (file.slice(-3) === '.js')
+		})
+		.forEach(file => {
+			debug('boot/' + file)
+			require(path.join(bootDir, file))(app)
+		})
 
-	app.use(usersApp.options.MOUNTPOINT, router);
+	debug('mounting users API on ' + app.marlin.options.MOUNTPOINT)
+
+	app.use(app.marlin.options.MOUNTPOINT, app.marlin.router)
 
 	if (options.analyticsOptions) {
-		const analyics = require("./lib/analytics");
-		analyics.mount(app, options.analyticsOptions);
+		const analyics = require('./lib/analytics')
+		analyics.mount(app, options.analyticsOptions)
 	}
-
-	return usersApp;
-};
+}

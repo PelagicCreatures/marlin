@@ -22,15 +22,15 @@ const {
 } = require('../lib/get-user-for-request-middleware');
 
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /password-set');
 
-	let db = usersApp.db;
+	let db = marlin.db;
 
-	const saltAndHash = require('../lib/salt-and-hash')(usersApp);
+	const saltAndHash = require('../lib/salt-and-hash')(marlin);
 
-	usersApp.router.patch('/password-set', express.json(), csrfProtection, function (req, res) {
+	marlin.router.patch('/password-set', express.json(), csrfProtection, function (req, res) {
 
 		debug('/passord-set', req.body);
 

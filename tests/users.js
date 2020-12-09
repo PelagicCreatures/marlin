@@ -96,7 +96,7 @@ describe('users', function () {
 	})
 
 	it('should be able to validate account 1', function (done) {
-		app.db.getInstances('Token', {
+		app.marlin.db.getInstances('Token', {
 			where: {
 				userId: id1,
 				type: 'validate'
@@ -157,7 +157,7 @@ describe('users', function () {
 	})
 
 	it('should be able to validate account 2', function (done) {
-		app.db.getInstances('Token', {
+		app.marlin.db.getInstances('Token', {
 			where: {
 				userId: id2,
 				type: 'validate'
@@ -265,7 +265,7 @@ describe('users', function () {
 	})
 
 	it('should be able to set new password with token account 1', function (done) {
-		app.db.getInstances('Token', {
+		app.marlin.db.getInstances('Token', {
 			where: {
 				userId: id1,
 				type: 'reset'
@@ -349,7 +349,7 @@ describe('users', function () {
 	})
 
 	it('should be able to validate account 1 after email change', function (done) {
-		app.db.getInstances('Token', {
+		app.marlin.db.getInstances('Token', {
 			where: {
 				userId: id1,
 				type: 'validate'
@@ -376,7 +376,7 @@ describe('users', function () {
 
 	it('should be able to create a token that expires in 1 seconds', function (done) {
 		const ttl = 1
-		app.db.newInstance('Token', {
+		app.marlin.db.newInstance('Token', {
 			token: uuid.v4(),
 			lastaccess: new Date(),
 			ttl: ttl,
@@ -386,12 +386,12 @@ describe('users', function () {
 			if (err) {
 				return done(new Error('error creating token'))
 			}
-			validateToken(app.db, token, function (err) {
+			validateToken(app.marlin.db, token, function (err) {
 				if (err) {
 					return done('error validating token', err)
 				}
 				setTimeout(() => {
-					validateToken(app.db, token, function (err) {
+					validateToken(app.marlin.db, token, function (err) {
 						if (!err) {
 							return done(new Error('token ttl timeout validation failed'))
 						}

@@ -6,11 +6,11 @@ const express = require('express');
 
 var stripe = require('stripe')(process.env.STRIPE_SECRET);
 
-module.exports = (usersApp) => {
+module.exports = (marlin) => {
 
 	debug('mounting users API /stripe-webhook');
 
-	usersApp.router.post('/stripe-webhook', express.json(), function (req, res) {
+	marlin.router.post('/stripe-webhook', express.json(), function (req, res) {
 		var hook;
 		try {
 			hook = req.body.event ? JSON.parse(req.body.event) : req.body;
@@ -112,7 +112,7 @@ module.exports = (usersApp) => {
 						};
 					}
 
-					usersApp.db.getInstances('User', {
+					marlin.db.getInstances('User', {
 						where: query
 					}, function (err, userInstances) {
 						if (err) {
@@ -139,7 +139,7 @@ module.exports = (usersApp) => {
 					}
 				},
 				function patchUser(user, cb) {
-					usersApp.db.updateInstance('User', user.id, patch, function (err) {
+					marlin.db.updateInstance('User', user.id, patch, function (err) {
 						if (err) {
 							cb(new VError(err, 'webhook patchUser failed'));
 						}
