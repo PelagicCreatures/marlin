@@ -24,7 +24,7 @@ module.exports = function mount(app) {
 
 	let viewsPath = path.join(__dirname, '../', 'views');
 
-	router.get('/users/home', getUserForRequestMiddleware(app), function (req, res, next) {
+	router.get('/users/home', getUserForRequestMiddleware(app.marlin), function (req, res, next) {
 		if (!req.antisocialUser) {
 			return res.sendStatus(401);
 		}
@@ -34,7 +34,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/photo', getUserForRequestMiddleware(app), function (req, res, next) {
+	router.get('/users/photo', getUserForRequestMiddleware(app.marlin), function (req, res, next) {
 		if (!req.antisocialUser) {
 			return res.sendStatus(401);
 		}
@@ -47,7 +47,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.patch('/users/profile-photo', getUserForRequestMiddleware(app), express.json({
+	router.patch('/users/profile-photo', getUserForRequestMiddleware(app.marlin), express.json({
 		limit: '20mb'
 	}), function (req, res, next) {
 		if (!req.antisocialUser) {
@@ -56,7 +56,7 @@ module.exports = function mount(app) {
 		handlePut(app, 'User', req.antisocialUser.id, req.body['User'], ['profilePhoto'], req, res, next);
 	})
 
-	router.get('/users/settings', getUserForRequestMiddleware(app), function (req, res, next) {
+	router.get('/users/settings', getUserForRequestMiddleware(app.marlin), function (req, res, next) {
 		if (!req.antisocialUser) {
 			return res.sendStatus(401);
 		}
@@ -65,7 +65,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/register', getUserForRequestMiddleware(app), csrfProtection, function (req, res) {
+	router.get('/users/register', getUserForRequestMiddleware(app.marlin), csrfProtection, function (req, res) {
 		if (req.antisocialUser) {
 			if (req.headers['x-digitopia-hijax']) {
 				return res.set('Sargasso-Location', '/users/home').send('redirect to ' + '/users/home');
@@ -78,7 +78,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/validate', getUserForRequestMiddleware(app), csrfProtection, function (req, res) {
+	router.get('/users/validate', getUserForRequestMiddleware(app.marlin), csrfProtection, function (req, res) {
 		if (req.antisocialUser && req.antisocialUser.validated) {
 			if (req.headers['x-digitopia-hijax']) {
 				return res.set('Sargasso-Location', '/users/home').send('redirect to ' + '/users/home');
@@ -94,7 +94,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/login', getUserForRequestMiddleware(app), csrfProtection, function (req, res) {
+	router.get('/users/login', getUserForRequestMiddleware(app.marlin), csrfProtection, function (req, res) {
 		if (req.antisocialUser) {
 			if (req.headers['x-digitopia-hijax']) {
 				return res.set('Sargasso-Location', '/users/home').send('redirect to ' + '/users/home');
@@ -107,7 +107,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/email-change', getUserForRequestMiddleware(app), csrfProtection, function (req, res) {
+	router.get('/users/email-change', getUserForRequestMiddleware(app.marlin), csrfProtection, function (req, res) {
 		if (!req.antisocialUser) {
 			return res.sendStatus(401);
 		}
@@ -118,7 +118,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/password-change', getUserForRequestMiddleware(app), csrfProtection, function (req, res) {
+	router.get('/users/password-change', getUserForRequestMiddleware(app.marlin), csrfProtection, function (req, res) {
 		if (!req.antisocialUser) {
 			return res.sendStatus(401);
 		}
@@ -129,7 +129,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/password-reset', getUserForRequestMiddleware(app), csrfProtection, function (req, res) {
+	router.get('/users/password-reset', getUserForRequestMiddleware(app.marlin), csrfProtection, function (req, res) {
 		if (req.antisocialUser) {
 			return res.sendStatus(401).send('Already logged in.');
 		}
@@ -139,7 +139,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/password-set', getUserForRequestMiddleware(app), csrfProtection, function (req, res) {
+	router.get('/users/password-set', getUserForRequestMiddleware(app.marlin), csrfProtection, function (req, res) {
 		if (req.antisocialUser) {
 			return res.sendStatus(401).send('Already logged in.');
 		}
@@ -183,7 +183,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/tokens', getUserForRequestMiddleware(app), function (req, res) {
+	router.get('/users/tokens', getUserForRequestMiddleware(app.marlin), function (req, res) {
 		if (!req.antisocialUser) {
 			return res.redirect('/users/login');
 		}
@@ -203,7 +203,7 @@ module.exports = function mount(app) {
 		});
 	});
 
-	router.get('/users/subscription', getUserForRequestMiddleware(app), function (req, res) {
+	router.get('/users/subscription', getUserForRequestMiddleware(app.marlin), function (req, res) {
 		if (!req.antisocialUser) {
 			return res.redirect('/users/login');
 		}
