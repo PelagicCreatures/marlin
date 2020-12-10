@@ -1,4 +1,4 @@
-const debug = require('debug')('antisocial-user')
+const debug = require('debug')('marlin-user')
 const fs = require('fs')
 const path = require('path')
 

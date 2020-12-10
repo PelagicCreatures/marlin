@@ -1,5 +1,5 @@
 const VError = require('verror').VError;
-const debug = require('debug')('antisocial-user');
+const debug = require('debug')('marlin-user');
 const async = require('async');
 const csrf = require('csurf');
 const express = require('express');

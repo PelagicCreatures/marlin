@@ -2,7 +2,7 @@
 // edit as needed. Good idea to keep secrets out of this file.
 // load secrets from process.env or S3 or something
 //
-const debug = require('debug')('antisocial-db')
+const debug = require('debug')('marlin-db')
 const path = require('path')
 
 module.exports = function (app) {

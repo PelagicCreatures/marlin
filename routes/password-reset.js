@@ -1,4 +1,4 @@
-const debug = require('debug')('antisocial-user')
+const debug = require('debug')('marlin-user')
 const csrf = require('csurf')
 const express = require('express')
 const getAdmin = require('../lib/admin').getAdmin

@@ -7,7 +7,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const uuid = require('uuid')
 const helmet = require('helmet')
-const debug = require('debug')('antisocial-user')
+const debug = require('debug')('marlin-user')
 
 if (process.env.ENVFILE) {
 	console.log('loading env:' + process.env.ENVFILE)

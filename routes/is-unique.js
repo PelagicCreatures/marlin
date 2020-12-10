@@ -1,4 +1,4 @@
-const debug = require('debug')('antisocial-user');
+const debug = require('debug')('marlin-user');
 const WError = require('verror').WError;
 const express = require('express');
 

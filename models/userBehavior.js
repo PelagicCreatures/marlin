@@ -1,4 +1,4 @@
-const debug = require('debug')('antisocial-db');
+const debug = require('debug')('marlin-db');
 const Sequelize = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
