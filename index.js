@@ -44,6 +44,7 @@ module.exports = (app, options) => {
 	require('./routes/password-set.js')(app.marlin)
 	require('./routes/token-delete.js')(app.marlin)
 	require('./routes/delete.js')(app.marlin)
+	require('./routes/notifications-subscribe.js')(app.marlin)
 	if (process.env.STRIPE_SECRET) {
 		require('./routes/subscription-cancel.js')(app.marlin)
 		require('./routes/stripe-webhook.js')(app.marlin)
