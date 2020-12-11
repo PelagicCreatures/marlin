@@ -1,13 +1,4 @@
-// this is used as a test harness only
-
-const createError = require('http-errors')
-const express = require('express')
-const fs = require('fs')
-const path = require('path')
-const cookieParser = require('cookie-parser')
-const uuid = require('uuid')
-const helmet = require('helmet')
-const debug = require('debug')('marlin-user')
+// this is used as a test harness
 
 if (process.env.ENVFILE) {
 	console.log('loading env:' + process.env.ENVFILE)
@@ -15,6 +6,14 @@ if (process.env.ENVFILE) {
 		path: process.env.ENVFILE
 	})
 }
+
+const createError = require('http-errors')
+const express = require('express')
+const path = require('path')
+const cookieParser = require('cookie-parser')
+const uuid = require('uuid')
+const helmet = require('helmet')
+const debug = require('debug')('marlin-user')
 
 const app = express()
 
@@ -91,7 +90,7 @@ app.start = function (done) {
 
 			res.locals.message = err.cause && err.cause() ? err.cause().message : err.message
 
-			if (req.headers['x-digitopia-hijax']) {
+			if (req.get('Sargasso-Hijax')) {
 				res.set('Sargasso-Flash-Level', 'danger')
 				res.set('Sargasso-Flash-Message', res.locals.message)
 			}

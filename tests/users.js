@@ -20,7 +20,7 @@ describe('users', function () {
 
 	let id2, id1
 
-	const app = require('../app')
+	const app = require('../app-tests')
 
 	before(function (done) {
 		const http = require('http')
@@ -403,7 +403,7 @@ describe('users', function () {
 	})
 })
 
-function getCookie(headers, id) {
+function getCookie (headers, id) {
 	for (let i = 0; i < headers.length; i++) {
 		const kv = headers[i].split(';')[0].split('=')
 		if (kv[0] === id) {

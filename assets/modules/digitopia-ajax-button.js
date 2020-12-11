@@ -43,7 +43,7 @@ class ajaxButton extends Sargasso {
 				method: this.method,
 				headers: {
 					'Content-Type': 'application/json',
-					'x-digitopia-hijax': 'true'
+					'Sargasso-Hijax': 'true'
 				}
 			})
 

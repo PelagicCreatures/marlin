@@ -86,7 +86,7 @@ class adminController extends Sargasso {
 			body: JSON.stringify(data),
 			headers: {
 				'Content-Type': 'application/json',
-				'x-digitopia-hijax': 'true'
+				'Sargasso-Hijax': 'true'
 			}
 		}).then((response) => {
 			return response.json()
