@@ -40,7 +40,7 @@ module.exports = function (app) {
 		// morgan logger
 		LOGGER_LEVEL: 'dev',
 
-		// options for sequalize ORM database models
+		// options for sequelize ORM database models
 		dbOptions: {
 			dialect: 'sqlite',
 			storage: 'working/database.sqlite',
