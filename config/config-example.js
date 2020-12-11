@@ -17,20 +17,18 @@ module.exports = function (app) {
 		publicOptions: {
 			COOKIE_DOMAIN: process.env.COOKIE_DOMAIN,
 			PUBLIC_HOST: process.env.PUBLIC_HOST,
-			RECAPTCHA_PUBLIC: process.env.RECAPTCHA_PUBLIC,
-			STRIPE_PUBLIC: process.env.STRIPE_PUBLIC,
-			STRIPE_YEARLY: process.env.STRIPE_YEARLY,
-			STRIPE_MONTHLY: process.env.STRIPE_MONTHLY,
-			USER_BEHAVIOR: trackUsers
+			RECAPTCHA_PUBLIC: process.env.RECAPTCHA_PUBLIC
 		},
 
 		COOKIE_KEY: 'SeCretDecdrrnG',
 
-		BASIC_AUTH: process.env.BASIC_AUTH_USER_NAME && process.env.BASIC_AUTH_PASSWORD ? {
+		// optional basic auth
+		BASIC_AUTH: {
 			USER_NAME: process.env.BASIC_AUTH_USER_NAME,
 			PASSWORD: process.env.BASIC_AUTH_PASSWORD
-		} : null,
+		},
 
+		// outbound mail options (nodemailer options)
 		MAILER: {
 			OUTBOUND_MAIL: 'SMTP',
 			OUTBOUND_MAIL_SMTP_HOST: 'email-smtp.us-east-1.amazonaws.com',
