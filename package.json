@@ -1,6 +1,6 @@
 {
 	"name": "@pelagiccreatures/marlin",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "ExpressJS CMS",
 	"main": "index.js",
 	"directories": {
