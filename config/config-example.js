@@ -78,14 +78,6 @@ module.exports = function (app) {
 			},
 			upgradeInsecureRequests: false,
 			reportOnly: false
-		},
-
-		analyticsOptions: { // experimental
-			scope: 'shiny-happy-cookie',
-			method: 'put',
-			path: '/collect',
-			mountPoint: '/behavior',
-			endpoint: '/behavior/collect'
 		}
 	}
 

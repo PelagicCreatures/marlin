@@ -24,7 +24,7 @@ module.exports = (app, options) => {
 
 	app.marlin = new events.EventEmitter()
 	app.marlin.db = new dbHandler(app, options)
-	app.marlin.options = options.userOptions
+	app.marlin.options = options.userOptions || {}
 	app.marlin.router = express.Router()
 
 	for (const prop in defaults) {
@@ -63,9 +63,4 @@ module.exports = (app, options) => {
 	debug('mounting users API on ' + app.marlin.options.MOUNTPOINT)
 
 	app.use(app.marlin.options.MOUNTPOINT, app.marlin.router)
-
-	if (options.analyticsOptions) {
-		const analyics = require('./lib/analytics')
-		analyics.mount(app, options.analyticsOptions)
-	}
 }

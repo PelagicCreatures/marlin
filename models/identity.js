@@ -1,7 +1,6 @@
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
-
 	const Identity = sequelize.define('Identity', {
 		id: {
 			type: Sequelize.INTEGER,
@@ -35,13 +34,13 @@ module.exports = (sequelize, DataTypes) => {
 				actions: ['*']
 			}]
 		}
-	});
+	})
 
 	Identity.associate = function (models) {
 		models.User.hasMany(models.Identity, {
 			foreignKey: 'userId'
-		});
-	};
+		})
+	}
 
-	return Identity;
+	return Identity
 }

@@ -1,3 +1,3 @@
-import './modules/digitopia-markdown-editor.js'
+import './modules/markdown-editor.js'
 
 export {}
