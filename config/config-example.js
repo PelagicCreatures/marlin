@@ -67,7 +67,7 @@ module.exports = function (app) {
 				}],
 				fontSrc: ['\'self\'', 'fonts.gstatic.com'],
 				styleSrc: ['\'self\'', '\'unsafe-inline\''],
-				frameSrc: ['\'self\'', 'js.stripe.com', 'www.google.com'],
+				frameSrc: ['\'self\'', 'www.google.com'],
 				mediaSrc: ['\'self\''],
 				imgSrc: ['\'self\'', 'data:', '*', 'blob:'],
 				sandbox: ['allow-forms', 'allow-scripts', 'allow-same-origin', 'allow-modals', 'allow-popups'],

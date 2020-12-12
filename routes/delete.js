@@ -1,83 +1,70 @@
-const debug = require('debug')('marlin-user');
-const async = require('async');
-const path = require('path');
+const debug = require('debug')('marlin-user')
+const async = require('async')
+const VError = require('verror').VError
 
 const {
 	getUserForRequestMiddleware
-} = require('../lib/get-user-for-request-middleware');
-
-let viewsPath = path.join(__dirname, '../', 'views');
+} = require('../lib/get-user-for-request-middleware')
 
 module.exports = (marlin) => {
+	debug('mounting users API /delete')
 
-	debug('mounting users API /delete');
-
-	let db = marlin.db;
+	const db = marlin.db
 
 	marlin.router.delete('/delete', getUserForRequestMiddleware(marlin), function (req, res) {
+		debug('/delete')
 
-		debug('/delete');
-
-		var stripe = require('stripe')(process.env.STRIPE_SECRET);
-
-		var currentUser = req.antisocialUser;
+		const currentUser = req.antisocialUser
 		if (!currentUser) {
 			return res.status(401).json({
 				status: 'error',
 				errors: ['must be logged in']
-			});
+			})
 		}
 
-		let actions = [];
+		const actions = []
 
 		async.series([
-			// cancel subscription if applicable
 			(cb) => {
-				if (!req.antisocialUser.stripeCustomer) {
-					return setImmediate(cb);
-				}
-				stripe.customers.del(
-					req.antisocialUser.stripeCustomer,
-					function (err, confirmation) {
-						if (err) {
-							return cb(new VError(err, 'Error cancelling subscription'))
-						}
-						actions.push('Subscription Cancelled.');
-						cb();
-					});
+				marlin.emit('deleteUser', req.antisocialUser, function (err, action) {
+					if (action) {
+						actions.push(action)
+					}
+					cb(err)
+				})
 			},
+
 			// delete the user (will also delete all tokens)
 			(cb) => {
 				db.deleteInstance('User', req.antisocialUser.id, function (err) {
 					if (err) {
-						return cb(new VError(err, 'Error while deleting user'));
+						return cb(new VError(err, 'Error while deleting user'))
 					}
-					actions.push('User & Login Session Deleted.');
-					cb();
-				});
+					actions.push('User & Login Session Deleted.')
+					cb()
+				})
 			}
 		], function (err) {
-
 			if (err) {
 				return res.status(500).json({
 					status: 'error',
 					errors: [err.message]
-				});
+				})
 			}
 
-			let count = 0;
+			let count = 0
 
 			// delete all cookies
-			for (let cookie in req.cookies) {
-				++count;
+			for (const cookie in req.cookies) {
+				++count
 				res.clearCookie(cookie, {
 					path: '/'
 				})
 			}
 
 			// delete all secure cookies
-			for (let cookie in req.signedCookies) {
-				++count;
+			for (const cookie in req.signedCookies) {
+				++count
 				res.clearCookie(cookie, {
 					path: '/',
 					signed: true,
@@ -85,15 +72,14 @@ module.exports = (marlin) => {
 				})
 			}
 
-			actions.push(count + ' Browser Cookies Deleted.');
+			actions.push(count + ' Browser Cookies Deleted.')
 
 			res.send({
 				status: 'ok',
 				flashLevel: 'info',
 				flashMessage: actions.join(', '),
 				didLogout: true
-			});
-
+			})
 		})
-	});
-};
+	})
+}

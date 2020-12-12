@@ -8,8 +8,6 @@
 
 */
 
-import './modules/digitopia-stripe-checkout.js'
-
 import './modules/digitopia-ajax-button.js'
 
 import './modules/digitopia-pagination-controller.js'
@@ -21,10 +19,6 @@ import './modules/digitopia-uploadable-image.js'
 import './modules/digitopia-analytics-report.js'
 
 import './modules/mola-mola-helpers.js'
-
-import './modules/install-pwa'
-
-import './modules/notifications-subscribe'
 
 import * as CMSUtils from './modules/utils.js'
 

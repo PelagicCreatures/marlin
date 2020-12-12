@@ -16,48 +16,6 @@ module.exports = function (grunt) {
 
 	const copyCommand = [{
 		expand: true,
-		cwd: 'node_modules/workbox-sw/build/',
-		src: ['workbox-sw.js', 'workbox-sw.js.map'],
-		dest: 'dist/js/',
-		filter: 'isFile'
-	}, {
-		expand: true,
-		cwd: 'node_modules/workbox-strategies/build/',
-		src: ['workbox-strategies.prod.js', 'workbox-strategies.prod.js.map'],
-		dest: 'dist/js/',
-		filter: 'isFile'
-	}, {
-		expand: true,
-		cwd: 'node_modules/workbox-cacheable-response/build/',
-		src: ['workbox-cacheable-response.prod.js', 'workbox-cacheable-response.prod.js.map'],
-		dest: 'dist/js/',
-		filter: 'isFile'
-	}, {
-		expand: true,
-		cwd: 'node_modules/workbox-routing/build/',
-		src: ['workbox-routing.prod.js', 'workbox-routing.prod.js.map'],
-		dest: 'dist/js/',
-		filter: 'isFile'
-	}, {
-		expand: true,
-		cwd: 'node_modules/workbox-core/build/',
-		src: ['workbox-core.prod.js', 'workbox-core.prod.js.map'],
-		dest: 'dist/js/',
-		filter: 'isFile'
-	}, {
-		expand: true,
-		cwd: 'node_modules/workbox-expiration/build/',
-		src: ['workbox-expiration.prod.js', 'workbox-expiration.prod.js.map'],
-		dest: 'dist/js/',
-		filter: 'isFile'
-	}, {
-		expand: true,
-		cwd: 'assets/workers/',
-		src: ['service-worker.js', 'service-worker.js'],
-		dest: 'public/',
-		filter: 'isFile'
-	}, {
-		expand: true,
 		cwd: 'working/assets/fonts/',
 		src: ['*.*'],
 		dest: 'dist/css/fonts',

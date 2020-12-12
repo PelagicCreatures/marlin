@@ -24,7 +24,7 @@ export default {
 		nodeResolve({
 			preferBuiltins: false,
 			dedupe: (dep) => {
-				return dep.match(/^(lodash|js-cookie)/)
+				return dep.match(/^(@pelagiccreatures|lodash|js-cookie)/)
 			}
 		}),
 		terser({

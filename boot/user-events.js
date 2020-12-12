@@ -8,6 +8,11 @@ module.exports = (app) => {
 		cb()
 	})
 
+	app.marlin.on('deleteUser', (user, cb) => {
+		debug('deleteUser event user: %j', user)
+		cb()
+	})
+
 	// send confirmation email
 	app.marlin.on('sendEmailConfirmation', function (user, token) {
 		if (app.config.MAILER) {
