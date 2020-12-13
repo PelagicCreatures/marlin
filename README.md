@@ -21,4 +21,4 @@ See config/config-example for modules controls
 
 See app-tests.js for an example express app using this module
 
-See (https://github.com/PelagicCreatures/marlin-app)[boilerplate blog web app] for integration example.
+See [boilerplate blog web app](https://github.com/PelagicCreatures/marlin-app) for integration example.
