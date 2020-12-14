@@ -86,6 +86,9 @@ module.exports = (sequelize, DataTypes) => {
 		User.hasMany(models.Token, {
 			foreignKey: 'userId'
 		})
+		User.hasMany(models.NotificationSubscribers, {
+			foreignKey: 'userId'
+		})
 		User.belongsToMany(models.Role, {
 			through: 'UserRole',
 			foreignKey: 'userId'
