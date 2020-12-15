@@ -87,6 +87,22 @@ class BoilerplateHandler extends MolaMolaHelper {
 		}, 500)
 	}
 
+	preflight () {
+		const json = {}
+		for (const k in this.form.payload) {
+			const tableColumn = k.match(/^([^\[]+)\[([^\]]+)\]/)
+			if (!tableColumn) {
+				json[k] = this.form.payload[k]
+			} else {
+				if (!json[tableColumn[1]]) {
+					json[tableColumn[1]] = {}
+				}
+				json[tableColumn[1]][tableColumn[2]] = this.form.payload[k]
+			}
+		}
+		this.form.payload = json
+	}
+
 	success (data) {
 		if (data.didLogin) {
 			didLogIn()
