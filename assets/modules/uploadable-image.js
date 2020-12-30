@@ -9,7 +9,7 @@ class uploadableImage extends Sargasso {
 		this.columnName = this.element.getAttribute('data-column-name')
 		this.maxHeight = this.element.getAttribute('data-max-height') ? this.element.getAttribute('data-max-height') : 200
 		this.maxWidth = this.element.getAttribute('data-max-width') ? this.element.getAttribute('data-max-width') : 200
-		this.sendResized = this.element.getAttribute('data-send-resized')
+		this.sendResized = this.element.getAttribute('data-send-resized') === 'true'
 		this.input = document.querySelector(this.element.getAttribute('data-target'))
 
 		this.previewElement = document.querySelector('[data-name="' + this.columnName + '-preview"]')
@@ -31,15 +31,15 @@ class uploadableImage extends Sargasso {
 	};
 
 	processImage (file) {
-		var reader = new FileReader()
+		const reader = new FileReader()
 
 		// make a thumbnail once data is loaded
 		reader.onload = (readerEvent) => {
-			var image = new Image()
+			const image = new Image()
 			image.onload = (imageEvent) => {
-				var canvas = document.createElement('canvas')
-				var w = image.width
-				var h = image.height
+				const canvas = document.createElement('canvas')
+				let w = image.width
+				let h = image.height
 				if (w > h) {
 					if (w > this.maxWidth) {
 						h *= this.maxWidth / w
@@ -54,7 +54,7 @@ class uploadableImage extends Sargasso {
 				canvas.width = w
 				canvas.height = h
 				canvas.getContext('2d').drawImage(image, 0, 0, w, h)
-				var dataURL = canvas.toDataURL('image/jpeg', 1.0)
+				const dataURL = canvas.toDataURL('image/jpeg', 1.0)
 				this.previewElement.innerHTML = '<img src="' + dataURL + '">'
 				this.metadata.innerHTML = '<strong><em>New image</em></strong> w: <strong>' + image.naturalWidth + '</strong> h: <strong>' + image.naturalHeight + '</strong>'
 
