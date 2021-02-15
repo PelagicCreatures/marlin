@@ -28,17 +28,19 @@ const cssConfig = {
 			}, {
 				loader: 'css-loader'
 			}, {
+				loader: 'sass-loader',
+				options: {
+					implementation: require('sass'),
+					webpackImporter: false,
+					sassOptions: {
+						includePaths: ['./node_modules']
+					}
+				}
+			}, {
 				loader: 'postcss-loader',
 				options: {
 					postcssOptions: {
 						plugins: () => [autoprefixer()]
-					}
-				}
-			}, {
-				loader: 'sass-loader',
-				options: {
-					sassOptions: {
-						includePaths: ['./node_modules', './node_modules/@pelagiccreatures/tropicbird/node_modules']
 					}
 				}
 			}]
