@@ -18,7 +18,6 @@
 		"@pelagiccreatures/molamola": "^1.1.0",
 		"@pelagiccreatures/sargasso": "^1.1.0",
 		"@pelagiccreatures/tropicbird": "^1.0.5",
-		"@pelagiccreatures/marlin": "^0.2.2",
 		"basic-auth": "^2.0.1",
 		"bcryptjs": "^2.4.3",
 		"body-parser": "^1.19.0",
