@@ -3,12 +3,12 @@ import Cookies from 'js-cookie'
 import {
 	utils, loadPageHandler
 }
-	from '@pelagiccreatures/sargasso'
+from '@pelagiccreatures/sargasso'
 
 import {
 	TropicBird
 }
-	from '@pelagiccreatures/tropicbird'
+from '@pelagiccreatures/tropicbird'
 
 import '@pelagiccreatures/flyingfish'
 
@@ -30,14 +30,16 @@ const bootCMS = () => {
 
 	if (Cookies.get('have-account')) {
 		utils.elementTools.addClass(document.body, 'have-account')
-	} else {
+	}
+	else {
 		utils.elementTools.addClass(document.body, 'dont-have-account')
 	}
 
 	// Set initial login state css show/hide behavior
 	if (Cookies.get('logged-in')) {
 		didLogIn()
-	} else {
+	}
+	else {
 		didLogOut()
 	}
 
@@ -50,7 +52,8 @@ const bootCMS = () => {
 		if (utils.elementTools.hasClass(e.target, 'highlight')) {
 			utils.elementTools.removeClass(e.target, 'highlight')
 			utils.elementTools.removeClass(document.querySelector('#user-alerts'), 'open')
-		} else {
+		}
+		else {
 			utils.elementTools.addClass(e.target, 'highlight')
 			utils.elementTools.addClass(document.querySelector('#user-alerts'), 'open')
 		}
@@ -58,13 +61,14 @@ const bootCMS = () => {
 }
 
 // call whenever login occurs
-function didLogIn () {
+function didLogIn() {
 	checkSubscription()
 	Cookies.set('have-account', 1, cookieOptions)
 	flashAjaxStatus('success', 'Logged in')
 	utils.elementTools.removeClass(document.body, 'is-logged-out')
 	utils.elementTools.addClass(document.body, 'is-logged-in')
 	utils.elementTools.addClass(document.body, 'have-account')
+	document.body.dispatchEvent(new CustomEvent('marlin-login'));
 }
 
 // call whenever logout occurs
@@ -76,13 +80,15 @@ const didLogOut = () => {
 	utils.elementTools.removeClass(document.body, 'is-logged-in')
 	utils.elementTools.addClass(document.body, 'is-logged-out')
 	Cookies.remove('access_token', cookieOptions)
+	document.body.dispatchEvent(new CustomEvent('marlin-logout'));
 }
 
 const checkSubscription = () => {
 	if (Cookies.get('subscriber')) {
 		utils.elementTools.removeClass(document.body, 'not-subscriber')
 		utils.elementTools.addClass(document.body, 'is-subscriber')
-	} else {
+	}
+	else {
 		utils.elementTools.removeClass(document.body, 'is-subscriber')
 		utils.elementTools.addClass(document.body, 'not-subscriber')
 	}
@@ -90,7 +96,8 @@ const checkSubscription = () => {
 	if (Cookies.get('admin')) {
 		utils.elementTools.removeClass(document.body, 'not-admin')
 		utils.elementTools.addClass(document.body, 'is-admin')
-	} else {
+	}
+	else {
 		utils.elementTools.removeClass(document.body, 'is-admin')
 		utils.elementTools.addClass(document.body, 'not-admin')
 	}
@@ -98,7 +105,8 @@ const checkSubscription = () => {
 	if (Cookies.get('superuser')) {
 		utils.elementTools.removeClass(document.body, 'not-superuser')
 		utils.elementTools.addClass(document.body, 'is-superuser')
-	} else {
+	}
+	else {
 		utils.elementTools.removeClass(document.body, 'is-superuser')
 		utils.elementTools.addClass(document.body, 'not-superuser')
 	}
