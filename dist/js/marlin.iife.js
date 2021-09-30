@@ -26680,14 +26680,16 @@ var App = (function (exports) {
 
 		if (js_cookie.get('have-account')) {
 			utils.elementTools.addClass(document.body, 'have-account');
-		} else {
+		}
+		else {
 			utils.elementTools.addClass(document.body, 'dont-have-account');
 		}
 
 		// Set initial login state css show/hide behavior
 		if (js_cookie.get('logged-in')) {
 			didLogIn();
-		} else {
+		}
+		else {
 			didLogOut();
 		}
 
@@ -26700,7 +26702,8 @@ var App = (function (exports) {
 			if (utils.elementTools.hasClass(e.target, 'highlight')) {
 				utils.elementTools.removeClass(e.target, 'highlight');
 				utils.elementTools.removeClass(document.querySelector('#user-alerts'), 'open');
-			} else {
+			}
+			else {
 				utils.elementTools.addClass(e.target, 'highlight');
 				utils.elementTools.addClass(document.querySelector('#user-alerts'), 'open');
 			}
@@ -26708,13 +26711,14 @@ var App = (function (exports) {
 	};
 
 	// call whenever login occurs
-	function didLogIn () {
+	function didLogIn() {
 		checkSubscription();
 		js_cookie.set('have-account', 1, cookieOptions);
 		flashAjaxStatus('success', 'Logged in');
 		utils.elementTools.removeClass(document.body, 'is-logged-out');
 		utils.elementTools.addClass(document.body, 'is-logged-in');
 		utils.elementTools.addClass(document.body, 'have-account');
+		document.body.dispatchEvent(new CustomEvent('marlin-login'));
 	}
 
 	// call whenever logout occurs
@@ -26726,13 +26730,15 @@ var App = (function (exports) {
 		utils.elementTools.removeClass(document.body, 'is-logged-in');
 		utils.elementTools.addClass(document.body, 'is-logged-out');
 		js_cookie.remove('access_token', cookieOptions);
+		document.body.dispatchEvent(new CustomEvent('marlin-logout'));
 	};
 
 	const checkSubscription = () => {
 		if (js_cookie.get('subscriber')) {
 			utils.elementTools.removeClass(document.body, 'not-subscriber');
 			utils.elementTools.addClass(document.body, 'is-subscriber');
-		} else {
+		}
+		else {
 			utils.elementTools.removeClass(document.body, 'is-subscriber');
 			utils.elementTools.addClass(document.body, 'not-subscriber');
 		}
@@ -26740,7 +26746,8 @@ var App = (function (exports) {
 		if (js_cookie.get('admin')) {
 			utils.elementTools.removeClass(document.body, 'not-admin');
 			utils.elementTools.addClass(document.body, 'is-admin');
-		} else {
+		}
+		else {
 			utils.elementTools.removeClass(document.body, 'is-admin');
 			utils.elementTools.addClass(document.body, 'not-admin');
 		}
@@ -26748,7 +26755,8 @@ var App = (function (exports) {
 		if (js_cookie.get('superuser')) {
 			utils.elementTools.removeClass(document.body, 'not-superuser');
 			utils.elementTools.addClass(document.body, 'is-superuser');
-		} else {
+		}
+		else {
 			utils.elementTools.removeClass(document.body, 'is-superuser');
 			utils.elementTools.addClass(document.body, 'not-superuser');
 		}
