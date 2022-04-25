@@ -2,7 +2,7 @@ const debug = require('debug')('marlin-user')
 
 const {
   getUserForRequestMiddleware
-} = require('../lib/get-user-for-request-middleware')
+} = require('../lib/get-user-for-request-middleware.cjs')
 
 module.exports = (marlin) => {
   debug('mounting users API /logout')

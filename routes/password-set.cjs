@@ -3,11 +3,11 @@ const debug = require('debug')('marlin-user');
 const async = require('async');
 const csrf = require('csurf');
 const express = require('express');
-const getAdmin = require('../lib/admin').getAdmin;
+const getAdmin = require('../lib/admin.cjs').getAdmin;
 
 const {
 	validatePayload
-} = require('../lib/validator-extensions');
+} = require('../lib/validator-extensions.cjs');
 
 const csrfProtection = csrf({
 	cookie: {
@@ -19,7 +19,7 @@ const csrfProtection = csrf({
 
 const {
 	validateToken
-} = require('../lib/get-user-for-request-middleware');
+} = require('../lib/get-user-for-request-middleware.cjs');
 
 
 module.exports = (marlin) => {
@@ -28,7 +28,7 @@ module.exports = (marlin) => {
 
 	let db = marlin.db;
 
-	const saltAndHash = require('../lib/salt-and-hash')(marlin);
+	const saltAndHash = require('../lib/salt-and-hash.cjs')(marlin);
 
 	marlin.router.patch('/password-set', express.json(), csrfProtection, function (req, res) {
 

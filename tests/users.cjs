@@ -4,7 +4,7 @@ const expect = require('expect.js')
 const uuid = require('uuid')
 const async = require('async')
 
-const validateToken = require('../lib/get-user-for-request-middleware').validateToken
+const validateToken = require('../lib/get-user-for-request-middleware.cjs').validateToken
 
 // TODO negative coverage for login, reg, validate etc.
 
@@ -20,7 +20,7 @@ describe('users', function () {
 
 	let id2, id1
 
-	const app = require('../app-tests')
+	const app = require('../app-tests.cjs')
 
 	before(function (done) {
 		const http = require('http')

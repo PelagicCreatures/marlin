@@ -3,7 +3,7 @@ const debug = require('debug')('marlin-user');
 const async = require('async');
 const csrf = require('csurf');
 const express = require('express');
-const getAdmin = require('../lib/admin').getAdmin;
+const getAdmin = require('../lib/admin.cjs').getAdmin;
 
 const csrfProtection = csrf({
 	cookie: {
@@ -15,11 +15,11 @@ const csrfProtection = csrf({
 
 const {
 	validateToken, getUserForRequestMiddleware
-} = require('../lib/get-user-for-request-middleware');
+} = require('../lib/get-user-for-request-middleware.cjs');
 
 const {
 	validatePayload
-} = require('../lib/validator-extensions');
+} = require('../lib/validator-extensions.cjs');
 
 module.exports = (marlin) => {
 

@@ -8,17 +8,17 @@
 
 */
 
-import './modules/ajax-button.js'
+import './modules/ajax-button'
 
-import './modules/pagination-controller.js'
+import './modules/pagination-controller'
 
-import './modules/admin-controller.js'
+import './modules/admin-controller'
 
-import './modules/uploadable-image.js'
+import './modules/uploadable-image'
 
-import './modules/mola-mola-helpers.js'
+import './modules/mola-mola-helpers'
 
-import * as CMSUtils from './modules/utils.js'
+import * as CMSUtils from './modules/utils'
 
 import {
 	utils, Sargasso

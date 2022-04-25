@@ -1,14 +1,14 @@
 const debug = require('debug')('marlin-user')
 const csrf = require('csurf')
 const express = require('express')
-const getAdmin = require('../lib/admin').getAdmin
+const getAdmin = require('../lib/admin.cjs').getAdmin
 const VError = require('verror').VError
 const async = require('async')
 const request = require('request')
 
 const {
 	validatePayload
-} = require('../lib/validator-extensions')
+} = require('../lib/validator-extensions.cjs')
 
 const csrfProtection = csrf({
 	cookie: {
@@ -23,7 +23,7 @@ module.exports = (marlin) => {
 
 	const db = marlin.db
 
-	const createToken = require('../lib/create-token.js')(marlin)
+	const createToken = require('../lib/create-token.cjs')(marlin)
 
 	marlin.router.patch('/password-reset', express.json(), csrfProtection, function (req, res) {
 		debug('/password-reset')

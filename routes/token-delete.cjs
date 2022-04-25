@@ -4,7 +4,7 @@ const express = require('express');
 
 const {
 	getUserForRequestMiddleware
-} = require('../lib/get-user-for-request-middleware');
+} = require('../lib/get-user-for-request-middleware.cjs');
 
 module.exports = (marlin) => {
 

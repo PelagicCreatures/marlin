@@ -1,5 +1,5 @@
 const debug = require('debug')('user-events')
-const mailer = require('../lib/mail')
+const mailer = require('../lib/mail.cjs')
 const VError = require('verror').VError
 
 module.exports = (app) => {

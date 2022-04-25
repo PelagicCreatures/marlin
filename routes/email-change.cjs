@@ -3,9 +3,7 @@ const debug = require('debug')('marlin-user');
 const async = require('async');
 const csrf = require('csurf');
 const express = require('express');
-const {
-	validatePayload
-} = require('../lib/validator-extensions');
+const getAdmin = require('../lib/admin.cjs').getAdmin;
 
 const csrfProtection = csrf({
 	cookie: {
@@ -17,28 +15,28 @@ const csrfProtection = csrf({
 
 const {
 	getUserForRequestMiddleware
-} = require('../lib/get-user-for-request-middleware');
+} = require('../lib/get-user-for-request-middleware.cjs');
+
+const {
+	validatePayload
+} = require('../lib/validator-extensions.cjs');
 
 module.exports = (marlin) => {
 
-	debug('mounting users API /password-change');
+	debug('mounting users API /email-change');
 
 	let db = marlin.db;
 
-	const saltAndHash = require('../lib/salt-and-hash')(marlin);
-	const passwordMatch = require('../lib/password-match.js');
+	let createToken = require('../lib/create-token.cjs')(marlin);
 
-	marlin.router.patch('/password-change', express.json(), getUserForRequestMiddleware(marlin), csrfProtection, function (req, res) {
+	marlin.router.patch('/email-change', express.json(), getUserForRequestMiddleware(marlin), csrfProtection, function (req, res) {
 
-		debug('/password-change');
+		debug('/email-change', req.body);
+
+		let validators = getAdmin('User').getValidations();
 
 		let errors = validatePayload(req.body, {
-			oldpassword: {
-				isPassword: true
-			},
-			password: {
-				isPassword: true
-			}
+			email: validators.email
 		}, {
 			strict: true,
 			additionalProperties: ['_csrf']
@@ -61,36 +59,35 @@ module.exports = (marlin) => {
 			});
 		}
 
+		// patch user.pendingEmail, generate token, send validation email
 		async.waterfall([
-			function (cb) {
-				passwordMatch(req.body.oldpassword, currentUser, function (err, isMatch) {
-					if (err) {
-						return cb(err);
-					}
-
-					if (!isMatch) {
-						return cb(new VError('password mismatch'));
-					}
-
-					cb(null);
-				});
-			},
 			function (donePatch) {
 				db.updateInstance('User', currentUser.id, {
-					'password': saltAndHash(req.body.password)
+					'pendingEmail': req.body.email,
+					'validated': false
 				}, function (err, user) {
 					if (err) {
 						return db(new VError('unable to save pendingEmail'));
 					}
-					donePatch(null);
+					donePatch(null, user);
+				});
+			},
+			function (user, doneToken) {
+				createToken(user, {
+					ttl: marlin.options.EMAIL_CONFIRM_TTL,
+					type: 'validate'
+				}, function (err, token) {
+					marlin.emit('sendEmailConfirmation', user, token);
+					doneToken(err);
 				});
 			}
 		], function (err) {
+
 			if (err) {
 				return res.status(400).json({
 					status: 'error',
 					flashLevel: 'danger',
-					flashMessage: 'Change Password failed',
+					flashMessage: 'Change Email failed',
 					errors: [err.message]
 				});
 			}
@@ -98,7 +95,8 @@ module.exports = (marlin) => {
 			res.json({
 				'status': 'ok',
 				'flashLevel': 'success',
-				'flashMessage': 'Password Changed.'
+				'flashMessage': 'Saved. Please check your email for confirmation.',
+				'hijaxLocation': '/users/home'
 			});
 		});
 	});

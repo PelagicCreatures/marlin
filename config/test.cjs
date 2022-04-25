@@ -15,7 +15,7 @@ module.exports = function (app) {
 
 		dbOptions: {
 			dialect: 'sqlite',
-			storage: null,
+			storage: ':memory:',
 			define: {
 				charset: 'utf8',
 				freezeTableName: true

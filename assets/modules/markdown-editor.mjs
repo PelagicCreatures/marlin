@@ -2,7 +2,7 @@ import {
 	MarkdownView,
 	ProseMirrorView
 }
-	from './prose-mirror.js'
+	from './prose-mirror'
 
 class markdownEditor extends window.Sargasso {
 	constructor (elem, options = {}) {

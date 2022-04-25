@@ -18,7 +18,10 @@ const debug = require('debug')('marlin-user')
 const app = express()
 
 // setup configuration from config file for environment
-app.config = require('./config/' + app.get('env'))(app)
+app.config = require('./config/' + app.get('env') + '.cjs')(app)
+
+console.log(app.config)
+
 
 // app.locals properties are exposed to pug templates
 app.locals.sitename = app.config.siteName
@@ -48,7 +51,7 @@ if (app.config.LOGGER_LEVEL) {
 
 // use basic-auth for development environment
 if (app.config.BASIC_AUTH && !process.env.TESTING) {
-	const basicAuth = require('./lib/basicAuth')(app.config.BASIC_AUTH)
+	const basicAuth = require('./lib/basicAuth.cjs')(app.config.BASIC_AUTH)
 	app.use(basicAuth)
 }
 
@@ -56,7 +59,7 @@ if (app.config.BASIC_AUTH && !process.env.TESTING) {
 app.use(cookieParser(app.config.COOKIE_KEY))
 
 // set up and mount the user API
-require('./index')(app, app.config)
+require('./index.cjs')(app, app.config)
 
 // deliver static files from public directory
 app.use(express.static(path.join(__dirname, 'public')))

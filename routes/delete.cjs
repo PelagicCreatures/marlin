@@ -4,7 +4,7 @@ const VError = require('verror').VError
 
 const {
 	getUserForRequestMiddleware
-} = require('../lib/get-user-for-request-middleware')
+} = require('../lib/get-user-for-request-middleware.cjs')
 
 module.exports = (marlin) => {
 	debug('mounting users API /delete')

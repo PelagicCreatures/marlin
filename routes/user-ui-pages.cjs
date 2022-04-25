@@ -5,7 +5,7 @@ const VError = require('verror').VError
 const csrf = require('csurf')
 const {
 	handlePut, getAdmin
-} = require('../lib/admin')
+} = require('../lib/admin.cjs')
 const path = require('path')
 
 const csrfProtection = csrf({
@@ -18,7 +18,7 @@ const csrfProtection = csrf({
 const {
 	validateToken,
 	getUserForRequestMiddleware
-} = require('../lib/get-user-for-request-middleware')
+} = require('../lib/get-user-for-request-middleware.cjs')
 
 module.exports = function mount (app) {
 	const viewsPath = path.join(__dirname, '../', 'views')

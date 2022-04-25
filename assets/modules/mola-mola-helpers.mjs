@@ -1,7 +1,7 @@
 import {
 	tropicBird, didLogIn, didLogOut
 }
-	from './utils.js'
+	from './utils'
 
 import {
 	utils
