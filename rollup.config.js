@@ -8,7 +8,7 @@ import {
 	from 'rollup-plugin-terser'
 
 export default {
-	input: './assets/app.js',
+	input: './assets/app.mjs',
 
 	output: [{
 		format: 'iife',

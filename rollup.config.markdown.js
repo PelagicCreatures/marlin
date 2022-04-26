@@ -5,10 +5,10 @@ import json from '@rollup/plugin-json'
 import {
 	terser
 }
-from 'rollup-plugin-terser'
+	from 'rollup-plugin-terser'
 
 export default {
-	input: './assets/markdown.js',
+	input: './assets/markdown.mjs',
 	output: {
 		format: 'iife',
 		file: 'dist/js/markdown.iife.js',

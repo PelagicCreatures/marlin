@@ -1,0 +1,54 @@
+doctype html
+html
+	head
+		link(href="https://unpkg.com/@pelagiccreatures/tropicbird@2.0.0/dist/bundle.css" rel='stylesheet')
+		link(href='/css/marlin.css' rel='stylesheet')
+
+	body
+		block content
+
+		#splash
+
+		script(async src="https://unpkg.com/es-module-shims@0.13.1/dist/es-module-shims.js")
+		script(type="importmap").
+			{
+				"imports": {
+					"@pelagiccreatures/sargasso": "https://unpkg.com/@pelagiccreatures/sargasso@2.0.1/dist/sargasso.mjs",
+					"@pelagiccreatures/tropicbird": "https://unpkg.com/@pelagiccreatures/tropicbird@2.0.0/dist/tropicbird.mjs",
+					"@pelagiccreatures/flyingfish": "https://unpkg.com/@pelagiccreatures/flyingfish@2.0.0/dist/flyingfish.mjs",
+					"@pelagiccreatures/molamola": "https://unpkg.com/@pelagiccreatures/molamola@2.0.0/dist/molamola.mjs",
+					"@pelagiccreatures/marlin": "/js/marlin.mjs"
+				}
+			}
+
+		script(type="module").
+			import { utils } from "@pelagiccreatures/sargasso"
+			import { TropicBird } from "@pelagiccreatures/tropicbird"
+			import { FlyingFish } from "@pelagiccreatures/flyingfish"
+			import { MolaMola } from "@pelagiccreatures/molamola"
+			import { CMSUtils } from "@pelagiccreatures/marlin"
+
+			window.cookieOptions = {
+				path: '/',
+				expires: 365
+			}
+
+			window.onload= () => {
+				CMSUtils.bootCMS()
+				utils.bootSargasso({
+					scrollElement: window,
+					breakpoints: {},
+					hijax: {
+						onError: (level, message) => {
+							CMSUtils.flashAjaxStatus(level, message)
+						},
+						onLoading: function () {
+							CMSUtils.tropicBird.progressBar(this.readyState !== 4)
+						},
+						onExitPage: () => {},
+						onEnterPage: () => {
+							CMSUtils.checkSubscription()
+						}
+					}
+				})
+			}
