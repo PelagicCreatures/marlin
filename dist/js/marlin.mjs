@@ -6,20 +6,7 @@ import {MolaMolaHelper as $kT4rO$MolaMolaHelper, molaMolaUtils as $kT4rO$molaMol
 function $parcel$interopDefault(a) {
   return a && a.__esModule ? a.default : a;
 }
-function $parcel$export(e, n, v, s) {
-  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
-}
 
-var $d414b0a1d034aa82$exports = {};
-
-$parcel$export($d414b0a1d034aa82$exports, "loadPage", () => $d414b0a1d034aa82$export$a2e58475e09a3523);
-$parcel$export($d414b0a1d034aa82$exports, "reloadPage", () => $d414b0a1d034aa82$export$da22d4a5076a7905);
-$parcel$export($d414b0a1d034aa82$exports, "tropicBird", () => $d414b0a1d034aa82$export$50085e1ac6c92b89);
-$parcel$export($d414b0a1d034aa82$exports, "bootCMS", () => $d414b0a1d034aa82$export$6f01145979fe4fab);
-$parcel$export($d414b0a1d034aa82$exports, "didLogIn", () => $d414b0a1d034aa82$export$35ba4dcba13237e5);
-$parcel$export($d414b0a1d034aa82$exports, "didLogOut", () => $d414b0a1d034aa82$export$cc214df470ba9b7b);
-$parcel$export($d414b0a1d034aa82$exports, "checkSubscription", () => $d414b0a1d034aa82$export$83800bde81490016);
-$parcel$export($d414b0a1d034aa82$exports, "flashAjaxStatus", () => $d414b0a1d034aa82$export$649ce106e13495a7);
 var $25a7bc89d95fcb19$exports = {};
 (function(global, factory) {
     $25a7bc89d95fcb19$exports = factory();
@@ -115,16 +102,15 @@ var $25a7bc89d95fcb19$exports = {};
 
 
 
-let $d414b0a1d034aa82$export$a2e58475e09a3523, $d414b0a1d034aa82$export$da22d4a5076a7905, $d414b0a1d034aa82$export$50085e1ac6c92b89;
+const $d414b0a1d034aa82$export$50085e1ac6c92b89 = new $kT4rO$TropicBird(document.body, {});
+$d414b0a1d034aa82$export$50085e1ac6c92b89.start();
+const $d414b0a1d034aa82$export$a2e58475e09a3523 = (url)=>{
+    $kT4rO$loadPageHandler(url);
+};
+const $d414b0a1d034aa82$export$da22d4a5076a7905 = ()=>{
+    $kT4rO$loadPageHandler(document.location.href, true);
+};
 const $d414b0a1d034aa82$export$6f01145979fe4fab = ()=>{
-    $d414b0a1d034aa82$export$50085e1ac6c92b89 = new $kT4rO$TropicBird(document.body, {});
-    $d414b0a1d034aa82$export$50085e1ac6c92b89.start();
-    $d414b0a1d034aa82$export$a2e58475e09a3523 = (url)=>{
-        $kT4rO$loadPageHandler(url);
-    };
-    $d414b0a1d034aa82$export$da22d4a5076a7905 = ()=>{
-        $kT4rO$loadPageHandler(document.location.href, true);
-    };
     if ((/*@__PURE__*/$parcel$interopDefault($25a7bc89d95fcb19$exports)).get('have-account')) $kT4rO$utils.elementTools.addClass(document.body, 'have-account');
     else $kT4rO$utils.elementTools.addClass(document.body, 'dont-have-account');
     // Set initial login state css show/hide behavior
@@ -327,7 +313,7 @@ class $8bbbfc6930a36712$export$5508d91e653c5884 extends $kT4rO$Sargasso {
         });
         this.on('click', '.select-row', (e, elem)=>{
             e.preventDefault();
-            var id = parseInt(elem.getAttribute('data-row'));
+            const id = parseInt(elem.getAttribute('data-row'));
             $d414b0a1d034aa82$export$a2e58475e09a3523(this.mountpoint + '/' + this.model + '/' + id);
         });
     }
@@ -353,8 +339,8 @@ class $8bbbfc6930a36712$export$5508d91e653c5884 extends $kT4rO$Sargasso {
         }).then((response)=>{
             return response.json();
         }).then((data)=>{
-            var flashLevel = data.flashLevel;
-            var flashMessage = data.flashMessage;
+            const flashLevel = data.flashLevel;
+            const flashMessage = data.flashMessage;
             if (data.status === 'ok') {
                 $d414b0a1d034aa82$export$649ce106e13495a7('success', flashMessage);
                 let redir = this.redirect;
@@ -362,7 +348,7 @@ class $8bbbfc6930a36712$export$5508d91e653c5884 extends $kT4rO$Sargasso {
                 $d414b0a1d034aa82$export$a2e58475e09a3523(redir);
             } else {
                 let message;
-                if (data.errors) for(var i = 0; i < data.errors.length; i++){
+                if (data.errors) for(let i = 0; i < data.errors.length; i++){
                     if (message) message += ', ';
                     message += data.errors[i];
                 }
@@ -370,7 +356,7 @@ class $8bbbfc6930a36712$export$5508d91e653c5884 extends $kT4rO$Sargasso {
                 this.element.querySelector('.ajax-errors').innerHTML = '<div class="ajax-message ajax-message-' + flashLevel + '"><i class="material-icons">info</i> ' + flashMessage + '</div>';
             }
         }).catch((e)=>{
-            var message = 'error';
+            const message = 'error';
             this.element.querySelector('.ajax-errors').innerHTML = '<div class="ajax-message ajax-message-error"><i class="material-icons">error</i> ' + message + '</div>';
         });
     }
@@ -543,11 +529,17 @@ $kT4rO$molaMolaUtils.registerHelperClass('BoilerplateHandler', $563505b3b3bdb856
 
 
 
+const $6664bcd790397766$export$ffa1874635c1274f = {
+    bootCMS: $d414b0a1d034aa82$export$6f01145979fe4fab,
+    didLogIn: $d414b0a1d034aa82$export$35ba4dcba13237e5,
+    didLogOut: $d414b0a1d034aa82$export$cc214df470ba9b7b,
+    checkSubscription: $d414b0a1d034aa82$export$83800bde81490016,
+    flashAjaxStatus: $d414b0a1d034aa82$export$649ce106e13495a7,
+    loadPage: $d414b0a1d034aa82$export$a2e58475e09a3523,
+    reloadPage: $d414b0a1d034aa82$export$da22d4a5076a7905,
+    tropicBird: $d414b0a1d034aa82$export$50085e1ac6c92b89
+};
 
-// expose these so huge markdown editor can be dynamically loaded
-window.Sargasso = $kT4rO$Sargasso;
-window.registerSargassoClass = $kT4rO$utils.registerSargassoClass;
-window.elementTools = $kT4rO$utils.elementTools;
 
-
+export {$6664bcd790397766$export$ffa1874635c1274f as CMSUtils};
 //# sourceMappingURL=marlin.mjs.map

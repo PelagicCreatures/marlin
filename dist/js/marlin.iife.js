@@ -5371,8 +5371,8 @@ var App = (function (exports) {
 	var esCookie = {};
 
 	"use strict";
-	var __assign$1 = (commonjsGlobal && commonjsGlobal.__assign) || function () {
-	    __assign$1 = Object.assign || function(t) {
+	var __assign$w = (commonjsGlobal && commonjsGlobal.__assign) || function () {
+	    __assign$w = Object.assign || function(t) {
 	        for (var s, i = 1, n = arguments.length; i < n; i++) {
 	            s = arguments[i];
 	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
@@ -5380,7 +5380,7 @@ var App = (function (exports) {
 	        }
 	        return t;
 	    };
-	    return __assign$1.apply(this, arguments);
+	    return __assign$w.apply(this, arguments);
 	};
 	esCookie.__esModule = true;
 	function stringifyAttribute(name, value) {
@@ -5445,11 +5445,11 @@ var App = (function (exports) {
 	}
 	var get_1 = esCookie.get = get;
 	function set(name, value, attributes) {
-	    document.cookie = encode(name, value, __assign$1({ path: '/' }, attributes));
+	    document.cookie = encode(name, value, __assign$w({ path: '/' }, attributes));
 	}
 	var set_1 = esCookie.set = set;
 	function remove(name, attributes) {
-	    set(name, '', __assign$1(__assign$1({}, attributes), { expires: -1 }));
+	    set(name, '', __assign$w(__assign$w({}, attributes), { expires: -1 }));
 	}
 	var remove_1 = esCookie.remove = remove;
 
@@ -5626,7 +5626,7 @@ var App = (function (exports) {
 		}
 
 		getCookie (key) {
-			return esCookie.get(key)
+			return get_1(key)
 		}
 
 		setCookie (key, value, expires) {
@@ -5635,7 +5635,7 @@ var App = (function (exports) {
 				domain: this.options.cookieDomain || null,
 				expires: expires
 			};
-			esCookie.set(key, value, options);
+			set_1(key, value, options);
 		}
 
 		deleteCookie (key) {
@@ -5894,7 +5894,7 @@ var App = (function (exports) {
 
 		*/
 
-	const utils$1 = {
+	const utils = {
 		registerSargassoClass: registerSargassoClass,
 		bootSargasso: bootSargasso,
 		elementTools: elementTools,
@@ -6059,33 +6059,33 @@ var App = (function (exports) {
 	***************************************************************************** */
 	/* global Reflect, Promise */
 
-	var extendStatics = function(d, b) {
-	    extendStatics = Object.setPrototypeOf ||
+	var extendStatics$v = function(d, b) {
+	    extendStatics$v = Object.setPrototypeOf ||
 	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
 	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-	    return extendStatics(d, b);
+	    return extendStatics$v(d, b);
 	};
 
-	function __extends(d, b) {
+	function __extends$v(d, b) {
 	    if (typeof b !== "function" && b !== null)
 	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-	    extendStatics(d, b);
+	    extendStatics$v(d, b);
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	}
 
-	var __assign = function() {
-	    __assign = Object.assign || function __assign(t) {
+	var __assign$v = function() {
+	    __assign$v = Object.assign || function __assign(t) {
 	        for (var s, i = 1, n = arguments.length; i < n; i++) {
 	            s = arguments[i];
 	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
 	        }
 	        return t;
 	    };
-	    return __assign.apply(this, arguments);
+	    return __assign$v.apply(this, arguments);
 	};
 
-	function __rest(s, e) {
+	function __rest$v(s, e) {
 	    var t = {};
 	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
 	        t[p] = s[p];
@@ -6097,22 +6097,22 @@ var App = (function (exports) {
 	    return t;
 	}
 
-	function __decorate(decorators, target, key, desc) {
+	function __decorate$v(decorators, target, key, desc) {
 	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
 	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
 	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
 	    return c > 3 && r && Object.defineProperty(target, key, r), r;
 	}
 
-	function __param(paramIndex, decorator) {
+	function __param$v(paramIndex, decorator) {
 	    return function (target, key) { decorator(target, key, paramIndex); }
 	}
 
-	function __metadata(metadataKey, metadataValue) {
+	function __metadata$v(metadataKey, metadataValue) {
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
 	}
 
-	function __awaiter(thisArg, _arguments, P, generator) {
+	function __awaiter$v(thisArg, _arguments, P, generator) {
 	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
 	    return new (P || (P = Promise))(function (resolve, reject) {
 	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -6122,7 +6122,7 @@ var App = (function (exports) {
 	    });
 	}
 
-	function __generator(thisArg, body) {
+	function __generator$v(thisArg, body) {
 	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
 	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
 	    function verb(n) { return function (v) { return step([n, v]); }; }
@@ -6150,7 +6150,7 @@ var App = (function (exports) {
 	    }
 	}
 
-	var __createBinding = Object.create ? (function(o, m, k, k2) {
+	var __createBinding$v = Object.create ? (function(o, m, k, k2) {
 	    if (k2 === undefined) k2 = k;
 	    var desc = Object.getOwnPropertyDescriptor(m, k);
 	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -6162,11 +6162,11 @@ var App = (function (exports) {
 	    o[k2] = m[k];
 	});
 
-	function __exportStar(m, o) {
-	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+	function __exportStar$v(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$v(o, m, p);
 	}
 
-	function __values(o) {
+	function __values$v(o) {
 	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
 	    if (m) return m.call(o);
 	    if (o && typeof o.length === "number") return {
@@ -6178,7 +6178,7 @@ var App = (function (exports) {
 	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 	}
 
-	function __read(o, n) {
+	function __read$v(o, n) {
 	    var m = typeof Symbol === "function" && o[Symbol.iterator];
 	    if (!m) return o;
 	    var i = m.call(o), r, ar = [], e;
@@ -6196,14 +6196,14 @@ var App = (function (exports) {
 	}
 
 	/** @deprecated */
-	function __spread() {
+	function __spread$v() {
 	    for (var ar = [], i = 0; i < arguments.length; i++)
-	        ar = ar.concat(__read(arguments[i]));
+	        ar = ar.concat(__read$v(arguments[i]));
 	    return ar;
 	}
 
 	/** @deprecated */
-	function __spreadArrays() {
+	function __spreadArrays$v() {
 	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
 	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
 	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
@@ -6211,7 +6211,7 @@ var App = (function (exports) {
 	    return r;
 	}
 
-	function __spreadArray(to, from, pack) {
+	function __spreadArray$v(to, from, pack) {
 	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
 	        if (ar || !(i in from)) {
 	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
@@ -6221,73 +6221,73 @@ var App = (function (exports) {
 	    return to.concat(ar || Array.prototype.slice.call(from));
 	}
 
-	function __await(v) {
-	    return this instanceof __await ? (this.v = v, this) : new __await(v);
+	function __await$v(v) {
+	    return this instanceof __await$v ? (this.v = v, this) : new __await$v(v);
 	}
 
-	function __asyncGenerator(thisArg, _arguments, generator) {
+	function __asyncGenerator$v(thisArg, _arguments, generator) {
 	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
 	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
 	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
 	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
 	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
-	    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function step(r) { r.value instanceof __await$v ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
 	    function fulfill(value) { resume("next", value); }
 	    function reject(value) { resume("throw", value); }
 	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
 	}
 
-	function __asyncDelegator(o) {
+	function __asyncDelegator$v(o) {
 	    var i, p;
 	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
-	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$v(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
 	}
 
-	function __asyncValues(o) {
+	function __asyncValues$v(o) {
 	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
 	    var m = o[Symbol.asyncIterator], i;
-	    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    return m ? m.call(o) : (o = typeof __values$v === "function" ? __values$v(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
 	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
 	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 	}
 
-	function __makeTemplateObject(cooked, raw) {
+	function __makeTemplateObject$v(cooked, raw) {
 	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
 	    return cooked;
 	};
 
-	var __setModuleDefault = Object.create ? (function(o, v) {
+	var __setModuleDefault$v = Object.create ? (function(o, v) {
 	    Object.defineProperty(o, "default", { enumerable: true, value: v });
 	}) : function(o, v) {
 	    o["default"] = v;
 	};
 
-	function __importStar(mod) {
+	function __importStar$v(mod) {
 	    if (mod && mod.__esModule) return mod;
 	    var result = {};
-	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-	    __setModuleDefault(result, mod);
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$v(result, mod, k);
+	    __setModuleDefault$v(result, mod);
 	    return result;
 	}
 
-	function __importDefault(mod) {
+	function __importDefault$v(mod) {
 	    return (mod && mod.__esModule) ? mod : { default: mod };
 	}
 
-	function __classPrivateFieldGet(receiver, state, kind, f) {
+	function __classPrivateFieldGet$v(receiver, state, kind, f) {
 	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
 	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
 	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 	}
 
-	function __classPrivateFieldSet(receiver, state, value, kind, f) {
+	function __classPrivateFieldSet$v(receiver, state, value, kind, f) {
 	    if (kind === "m") throw new TypeError("Private method is not writable");
 	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
 	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
 	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
 	}
 
-	function __classPrivateFieldIn(state, receiver) {
+	function __classPrivateFieldIn$v(state, receiver) {
 	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
 	    return typeof state === "function" ? receiver === state : state.has(receiver);
 	}
@@ -6371,7 +6371,7 @@ var App = (function (exports) {
 	    var nodes = [].slice.call(root.querySelectorAll("[" + AUTO_INIT_ATTR + "]"));
 	    nodes = nodes.filter(function (node) { return node.getAttribute(AUTO_INIT_STATE_ATTR) !== INITIALIZED_STATE; });
 	    try {
-	        for (var nodes_1 = __values(nodes), nodes_1_1 = nodes_1.next(); !nodes_1_1.done; nodes_1_1 = nodes_1.next()) {
+	        for (var nodes_1 = __values$v(nodes), nodes_1_1 = nodes_1.next(); !nodes_1_1.done; nodes_1_1 = nodes_1.next()) {
 	            var node = nodes_1_1.value;
 	            var ctorName = node.getAttribute(AUTO_INIT_ATTR);
 	            if (!ctorName) {
@@ -6448,6 +6448,504 @@ var App = (function (exports) {
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
 	 */
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$u = function(d, b) {
+	    extendStatics$u = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$u(d, b);
+	};
+
+	function __extends$u(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$u(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$u = function() {
+	    __assign$u = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$u.apply(this, arguments);
+	};
+
+	function __rest$u(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$u(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$u(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$u(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$u(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$u(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$u = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$u(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$u(o, m, p);
+	}
+
+	function __values$u(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$u(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$u() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$u(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$u() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$u(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$u(v) {
+	    return this instanceof __await$u ? (this.v = v, this) : new __await$u(v);
+	}
+
+	function __asyncGenerator$u(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$u ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$u(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$u(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$u(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$u === "function" ? __values$u(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$u(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$u = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$u(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$u(result, mod, k);
+	    __setModuleDefault$u(result, mod);
+	    return result;
+	}
+
+	function __importDefault$u(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$u(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$u(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$u(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$t = function(d, b) {
+	    extendStatics$t = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$t(d, b);
+	};
+
+	function __extends$t(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$t(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$t = function() {
+	    __assign$t = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$t.apply(this, arguments);
+	};
+
+	function __rest$t(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$t(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$t(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$t(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$t(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$t(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$t = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$t(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$t(o, m, p);
+	}
+
+	function __values$t(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$t(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$t() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$t(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$t() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$t(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$t(v) {
+	    return this instanceof __await$t ? (this.v = v, this) : new __await$t(v);
+	}
+
+	function __asyncGenerator$t(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$t ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$t(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$t(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$t(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$t === "function" ? __values$t(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$t(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$t = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$t(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$t(result, mod, k);
+	    __setModuleDefault$t(result, mod);
+	    return result;
+	}
+
+	function __importDefault$t(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$t(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$t(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$t(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
 
 	/**
 	 * @license
@@ -6551,7 +7049,7 @@ var App = (function (exports) {
 	            args[_i - 2] = arguments[_i];
 	        }
 	        this.root = root;
-	        this.initialize.apply(this, __spreadArray([], __read(args)));
+	        this.initialize.apply(this, __spreadArray$t([], __read$t(args)));
 	        // Note that we initialize foundation here and not within the constructor's
 	        // default param so that this.root is defined and can be used within the
 	        // foundation class.
@@ -6926,9 +7424,9 @@ var App = (function (exports) {
 	 * banner.
 	 */
 	var MDCBannerFoundation = /** @class */ (function (_super) {
-	    __extends(MDCBannerFoundation, _super);
+	    __extends$u(MDCBannerFoundation, _super);
 	    function MDCBannerFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCBannerFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$u(__assign$u({}, MDCBannerFoundation.defaultAdapter), adapter)) || this;
 	        _this.isOpened = false;
 	        // Request id for open animation, used to cancel the refresh callback
 	        // request on close() and destroy().
@@ -7053,7 +7551,7 @@ var App = (function (exports) {
 	 */
 	/** Vanilla JS implementation of banner component. */
 	var MDCBanner = /** @class */ (function (_super) {
-	    __extends(MDCBanner, _super);
+	    __extends$u(MDCBanner, _super);
 	    function MDCBanner() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -7299,6 +7797,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$s = function(d, b) {
+	    extendStatics$s = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$s(d, b);
+	};
+
+	function __extends$s(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$s(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$s = function() {
+	    __assign$s = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$s.apply(this, arguments);
+	};
+
+	function __rest$s(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$s(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$s(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$s(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$s(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$s(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$s = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$s(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$s(o, m, p);
+	}
+
+	function __values$s(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$s(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$s() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$s(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$s() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$s(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$s(v) {
+	    return this instanceof __await$s ? (this.v = v, this) : new __await$s(v);
+	}
+
+	function __asyncGenerator$s(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$s ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$s(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$s(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$s(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$s === "function" ? __values$s(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$s(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$s = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$s(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$s(result, mod, k);
+	    __setModuleDefault$s(result, mod);
+	    return result;
+	}
+
+	function __importDefault$s(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$s(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$s(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$s(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2016 Google Inc.
@@ -7440,6 +8187,255 @@ var App = (function (exports) {
 		applyPassive: applyPassive
 	};
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$r = function(d, b) {
+	    extendStatics$r = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$r(d, b);
+	};
+
+	function __extends$r(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$r(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$r = function() {
+	    __assign$r = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$r.apply(this, arguments);
+	};
+
+	function __rest$r(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$r(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$r(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$r(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$r(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$r(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$r = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$r(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$r(o, m, p);
+	}
+
+	function __values$r(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$r(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$r() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$r(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$r() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$r(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$r(v) {
+	    return this instanceof __await$r ? (this.v = v, this) : new __await$r(v);
+	}
+
+	function __asyncGenerator$r(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$r ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$r(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$r(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$r(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$r === "function" ? __values$r(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$r(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$r = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$r(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$r(result, mod, k);
+	    __setModuleDefault$r(result, mod);
+	    return result;
+	}
+
+	function __importDefault$r(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$r(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$r(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$r(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2016 Google Inc.
@@ -7578,9 +8574,9 @@ var App = (function (exports) {
 	// simultaneous nested activations
 	var activatedTargets = [];
 	var MDCRippleFoundation = /** @class */ (function (_super) {
-	    __extends(MDCRippleFoundation, _super);
+	    __extends$r(MDCRippleFoundation, _super);
 	    function MDCRippleFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCRippleFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$r(__assign$r({}, MDCRippleFoundation.defaultAdapter), adapter)) || this;
 	        _this.activationAnimationHasEnded = false;
 	        _this.activationTimer = 0;
 	        _this.fgDeactivationRemovalTimer = 0;
@@ -7760,7 +8756,7 @@ var App = (function (exports) {
 	        var e_1, _a;
 	        if (supportsPressRipple) {
 	            try {
-	                for (var ACTIVATION_EVENT_TYPES_1 = __values(ACTIVATION_EVENT_TYPES), ACTIVATION_EVENT_TYPES_1_1 = ACTIVATION_EVENT_TYPES_1.next(); !ACTIVATION_EVENT_TYPES_1_1.done; ACTIVATION_EVENT_TYPES_1_1 = ACTIVATION_EVENT_TYPES_1.next()) {
+	                for (var ACTIVATION_EVENT_TYPES_1 = __values$r(ACTIVATION_EVENT_TYPES), ACTIVATION_EVENT_TYPES_1_1 = ACTIVATION_EVENT_TYPES_1.next(); !ACTIVATION_EVENT_TYPES_1_1.done; ACTIVATION_EVENT_TYPES_1_1 = ACTIVATION_EVENT_TYPES_1.next()) {
 	                    var evtType = ACTIVATION_EVENT_TYPES_1_1.value;
 	                    this.adapter.registerInteractionHandler(evtType, this.activateHandler);
 	                }
@@ -7786,7 +8782,7 @@ var App = (function (exports) {
 	        }
 	        else {
 	            try {
-	                for (var POINTER_DEACTIVATION_EVENT_TYPES_1 = __values(POINTER_DEACTIVATION_EVENT_TYPES), POINTER_DEACTIVATION_EVENT_TYPES_1_1 = POINTER_DEACTIVATION_EVENT_TYPES_1.next(); !POINTER_DEACTIVATION_EVENT_TYPES_1_1.done; POINTER_DEACTIVATION_EVENT_TYPES_1_1 = POINTER_DEACTIVATION_EVENT_TYPES_1.next()) {
+	                for (var POINTER_DEACTIVATION_EVENT_TYPES_1 = __values$r(POINTER_DEACTIVATION_EVENT_TYPES), POINTER_DEACTIVATION_EVENT_TYPES_1_1 = POINTER_DEACTIVATION_EVENT_TYPES_1.next(); !POINTER_DEACTIVATION_EVENT_TYPES_1_1.done; POINTER_DEACTIVATION_EVENT_TYPES_1_1 = POINTER_DEACTIVATION_EVENT_TYPES_1.next()) {
 	                    var evtType = POINTER_DEACTIVATION_EVENT_TYPES_1_1.value;
 	                    this.adapter.registerDocumentInteractionHandler(evtType, this.deactivateHandler);
 	                }
@@ -7803,7 +8799,7 @@ var App = (function (exports) {
 	    MDCRippleFoundation.prototype.deregisterRootHandlers = function () {
 	        var e_3, _a;
 	        try {
-	            for (var ACTIVATION_EVENT_TYPES_2 = __values(ACTIVATION_EVENT_TYPES), ACTIVATION_EVENT_TYPES_2_1 = ACTIVATION_EVENT_TYPES_2.next(); !ACTIVATION_EVENT_TYPES_2_1.done; ACTIVATION_EVENT_TYPES_2_1 = ACTIVATION_EVENT_TYPES_2.next()) {
+	            for (var ACTIVATION_EVENT_TYPES_2 = __values$r(ACTIVATION_EVENT_TYPES), ACTIVATION_EVENT_TYPES_2_1 = ACTIVATION_EVENT_TYPES_2.next(); !ACTIVATION_EVENT_TYPES_2_1.done; ACTIVATION_EVENT_TYPES_2_1 = ACTIVATION_EVENT_TYPES_2.next()) {
 	                var evtType = ACTIVATION_EVENT_TYPES_2_1.value;
 	                this.adapter.deregisterInteractionHandler(evtType, this.activateHandler);
 	            }
@@ -7825,7 +8821,7 @@ var App = (function (exports) {
 	        var e_4, _a;
 	        this.adapter.deregisterInteractionHandler('keyup', this.deactivateHandler);
 	        try {
-	            for (var POINTER_DEACTIVATION_EVENT_TYPES_2 = __values(POINTER_DEACTIVATION_EVENT_TYPES), POINTER_DEACTIVATION_EVENT_TYPES_2_1 = POINTER_DEACTIVATION_EVENT_TYPES_2.next(); !POINTER_DEACTIVATION_EVENT_TYPES_2_1.done; POINTER_DEACTIVATION_EVENT_TYPES_2_1 = POINTER_DEACTIVATION_EVENT_TYPES_2.next()) {
+	            for (var POINTER_DEACTIVATION_EVENT_TYPES_2 = __values$r(POINTER_DEACTIVATION_EVENT_TYPES), POINTER_DEACTIVATION_EVENT_TYPES_2_1 = POINTER_DEACTIVATION_EVENT_TYPES_2.next(); !POINTER_DEACTIVATION_EVENT_TYPES_2_1.done; POINTER_DEACTIVATION_EVENT_TYPES_2_1 = POINTER_DEACTIVATION_EVENT_TYPES_2.next()) {
 	                var evtType = POINTER_DEACTIVATION_EVENT_TYPES_2_1.value;
 	                this.adapter.deregisterDocumentInteractionHandler(evtType, this.deactivateHandler);
 	            }
@@ -7997,7 +8993,7 @@ var App = (function (exports) {
 	        if (!activationState.isActivated) {
 	            return;
 	        }
-	        var state = __assign({}, activationState);
+	        var state = __assign$r({}, activationState);
 	        if (activationState.isProgrammatic) {
 	            requestAnimationFrame(function () {
 	                _this.animateDeactivation(state);
@@ -8085,7 +9081,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCRipple = /** @class */ (function (_super) {
-	    __extends(MDCRipple, _super);
+	    __extends$r(MDCRipple, _super);
 	    function MDCRipple() {
 	        var _this = _super !== null && _super.apply(this, arguments) || this;
 	        _this.disabled = false;
@@ -8257,9 +9253,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCCheckboxFoundation = /** @class */ (function (_super) {
-	    __extends(MDCCheckboxFoundation, _super);
+	    __extends$s(MDCCheckboxFoundation, _super);
 	    function MDCCheckboxFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCCheckboxFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$s(__assign$s({}, MDCCheckboxFoundation.defaultAdapter), adapter)) || this;
 	        _this.currentCheckState = strings$y.TRANSITION_STATE_INIT;
 	        _this.currentAnimationClass = '';
 	        _this.animEndLatchTimer = 0;
@@ -8441,7 +9437,7 @@ var App = (function (exports) {
 	 */
 	var CB_PROTO_PROPS = ['checked', 'indeterminate'];
 	var MDCCheckbox = /** @class */ (function (_super) {
-	    __extends(MDCCheckbox, _super);
+	    __extends$s(MDCCheckbox, _super);
 	    function MDCCheckbox() {
 	        var _this = _super !== null && _super.apply(this, arguments) || this;
 	        _this.rippleSurface = _this.createRipple();
@@ -8553,7 +9549,7 @@ var App = (function (exports) {
 	        var _this = this;
 	        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
 	        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-	        var adapter = __assign(__assign({}, MDCRipple.createAdapter(this)), { deregisterInteractionHandler: function (evtType, handler) {
+	        var adapter = __assign$s(__assign$s({}, MDCRipple.createAdapter(this)), { deregisterInteractionHandler: function (evtType, handler) {
 	                _this.getNativeControl().removeEventListener(evtType, handler, applyPassive());
 	            }, isSurfaceActive: function () { return matches$2(_this.getNativeControl(), ':active'); }, isUnbounded: function () { return true; }, registerInteractionHandler: function (evtType, handler) {
 	                _this.getNativeControl().addEventListener(evtType, handler, applyPassive());
@@ -8586,7 +9582,7 @@ var App = (function (exports) {
 	            Object.defineProperty(nativeCb, controlState, nativeCbDesc);
 	        };
 	        try {
-	            for (var CB_PROTO_PROPS_1 = __values(CB_PROTO_PROPS), CB_PROTO_PROPS_1_1 = CB_PROTO_PROPS_1.next(); !CB_PROTO_PROPS_1_1.done; CB_PROTO_PROPS_1_1 = CB_PROTO_PROPS_1.next()) {
+	            for (var CB_PROTO_PROPS_1 = __values$s(CB_PROTO_PROPS), CB_PROTO_PROPS_1_1 = CB_PROTO_PROPS_1.next(); !CB_PROTO_PROPS_1_1.done; CB_PROTO_PROPS_1_1 = CB_PROTO_PROPS_1.next()) {
 	                var controlState = CB_PROTO_PROPS_1_1.value;
 	                var state_1 = _loop_1(controlState);
 	                if (typeof state_1 === "object")
@@ -8606,7 +9602,7 @@ var App = (function (exports) {
 	        var nativeCb = this.getNativeControl();
 	        var cbProto = Object.getPrototypeOf(nativeCb);
 	        try {
-	            for (var CB_PROTO_PROPS_2 = __values(CB_PROTO_PROPS), CB_PROTO_PROPS_2_1 = CB_PROTO_PROPS_2.next(); !CB_PROTO_PROPS_2_1.done; CB_PROTO_PROPS_2_1 = CB_PROTO_PROPS_2.next()) {
+	            for (var CB_PROTO_PROPS_2 = __values$s(CB_PROTO_PROPS), CB_PROTO_PROPS_2_1 = CB_PROTO_PROPS_2.next(); !CB_PROTO_PROPS_2_1.done; CB_PROTO_PROPS_2_1 = CB_PROTO_PROPS_2.next()) {
 	                var controlState = CB_PROTO_PROPS_2_1.value;
 	                var desc = Object.getOwnPropertyDescriptor(cbProto, controlState);
 	                if (!validDescriptor(desc)) {
@@ -8691,6 +9687,255 @@ var App = (function (exports) {
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
 	 */
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$q = function(d, b) {
+	    extendStatics$q = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$q(d, b);
+	};
+
+	function __extends$q(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$q(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$q = function() {
+	    __assign$q = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$q.apply(this, arguments);
+	};
+
+	function __rest$q(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$q(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$q(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$q(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$q(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$q(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$q = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$q(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$q(o, m, p);
+	}
+
+	function __values$q(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$q(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$q() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$q(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$q() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$q(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$q(v) {
+	    return this instanceof __await$q ? (this.v = v, this) : new __await$q(v);
+	}
+
+	function __asyncGenerator$q(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$q ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$q(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$q(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$q(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$q === "function" ? __values$q(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$q(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$q = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$q(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$q(result, mod, k);
+	    __setModuleDefault$q(result, mod);
+	    return result;
+	}
+
+	function __importDefault$q(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$q(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$q(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$q(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
 
 	/**
 	 * @license
@@ -8886,9 +10131,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCChipTrailingActionFoundation = /** @class */ (function (_super) {
-	    __extends(MDCChipTrailingActionFoundation, _super);
+	    __extends$q(MDCChipTrailingActionFoundation, _super);
 	    function MDCChipTrailingActionFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCChipTrailingActionFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$q(__assign$q({}, MDCChipTrailingActionFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCChipTrailingActionFoundation, "strings", {
 	        get: function () {
@@ -8984,7 +10229,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCChipTrailingAction = /** @class */ (function (_super) {
-	    __extends(MDCChipTrailingAction, _super);
+	    __extends$q(MDCChipTrailingAction, _super);
 	    function MDCChipTrailingAction() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -9267,9 +10512,9 @@ var App = (function (exports) {
 	    FocusBehavior[FocusBehavior["SHOULD_NOT_FOCUS"] = 1] = "SHOULD_NOT_FOCUS";
 	})(FocusBehavior || (FocusBehavior = {}));
 	var MDCChipFoundation = /** @class */ (function (_super) {
-	    __extends(MDCChipFoundation, _super);
+	    __extends$q(MDCChipFoundation, _super);
 	    function MDCChipFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCChipFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$q(__assign$q({}, MDCChipFoundation.defaultAdapter), adapter)) || this;
 	        /** Whether a trailing icon click should immediately trigger exit/removal of the chip. */
 	        _this.shouldRemoveOnTrailingIconClick = true;
 	        /**
@@ -9651,7 +10896,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCChip = /** @class */ (function (_super) {
-	    __extends(MDCChip, _super);
+	    __extends$q(MDCChip, _super);
 	    function MDCChip() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -9728,7 +10973,7 @@ var App = (function (exports) {
 	        }
 	        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
 	        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-	        var rippleAdapter = __assign(__assign({}, MDCRipple.createAdapter(this)), { computeBoundingRect: function () { return _this.foundation.getDimensions(); } });
+	        var rippleAdapter = __assign$q(__assign$q({}, MDCRipple.createAdapter(this)), { computeBoundingRect: function () { return _this.foundation.getDimensions(); } });
 	        this.rippleSurface =
 	            rippleFactory(this.root, new MDCRippleFoundation(rippleAdapter));
 	    };
@@ -10108,9 +11353,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCChipSetFoundation = /** @class */ (function (_super) {
-	    __extends(MDCChipSetFoundation, _super);
+	    __extends$q(MDCChipSetFoundation, _super);
 	    function MDCChipSetFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCChipSetFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$q(__assign$q({}, MDCChipSetFoundation.defaultAdapter), adapter)) || this;
 	        /**
 	         * The ids of the selected chips in the set. Only used for choice chip set or filter chip set.
 	         */
@@ -10362,7 +11607,7 @@ var App = (function (exports) {
 	var CHIP_SELECTOR = MDCChipSetFoundation.strings.CHIP_SELECTOR;
 	var idCounter = 0;
 	var MDCChipSet = /** @class */ (function (_super) {
-	    __extends(MDCChipSet, _super);
+	    __extends$q(MDCChipSet, _super);
 	    function MDCChipSet() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -10398,7 +11643,7 @@ var App = (function (exports) {
 	        var e_1, _a;
 	        var _this = this;
 	        try {
-	            for (var _b = __values(this.chipsList), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$q(this.chipsList), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var chip = _c.value;
 	                if (chip.id && chip.selected) {
 	                    this.foundation.select(chip.id);
@@ -10432,7 +11677,7 @@ var App = (function (exports) {
 	    MDCChipSet.prototype.destroy = function () {
 	        var e_2, _a;
 	        try {
-	            for (var _b = __values(this.chipsList), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$q(this.chipsList), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var chip = _c.value;
 	                chip.destroy();
 	            }
@@ -10603,6 +11848,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$p = function(d, b) {
+	    extendStatics$p = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$p(d, b);
+	};
+
+	function __extends$p(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$p(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$p = function() {
+	    __assign$p = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$p.apply(this, arguments);
+	};
+
+	function __rest$p(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$p(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$p(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$p(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$p(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$p(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$p = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$p(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$p(o, m, p);
+	}
+
+	function __values$p(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$p(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$p() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$p(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$p() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$p(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$p(v) {
+	    return this instanceof __await$p ? (this.v = v, this) : new __await$p(v);
+	}
+
+	function __asyncGenerator$p(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$p ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$p(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$p(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$p(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$p === "function" ? __values$p(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$p(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$p = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$p(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$p(result, mod, k);
+	    __setModuleDefault$p(result, mod);
+	    return result;
+	}
+
+	function __importDefault$p(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$p(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$p(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$p(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2020 Google Inc.
@@ -10666,9 +12160,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCCircularProgressFoundation = /** @class */ (function (_super) {
-	    __extends(MDCCircularProgressFoundation, _super);
+	    __extends$p(MDCCircularProgressFoundation, _super);
 	    function MDCCircularProgressFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCCircularProgressFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$p(__assign$p({}, MDCCircularProgressFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCCircularProgressFoundation, "cssClasses", {
 	        get: function () {
@@ -10792,7 +12286,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCCircularProgress = /** @class */ (function (_super) {
-	    __extends(MDCCircularProgress, _super);
+	    __extends$p(MDCCircularProgress, _super);
 	    function MDCCircularProgress() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -10933,6 +12427,504 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$o = function(d, b) {
+	    extendStatics$o = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$o(d, b);
+	};
+
+	function __extends$o(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$o(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$o = function() {
+	    __assign$o = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$o.apply(this, arguments);
+	};
+
+	function __rest$o(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$o(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$o(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$o(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$o(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$o(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$o = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$o(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$o(o, m, p);
+	}
+
+	function __values$o(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$o(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$o() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$o(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$o() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$o(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$o(v) {
+	    return this instanceof __await$o ? (this.v = v, this) : new __await$o(v);
+	}
+
+	function __asyncGenerator$o(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$o ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$o(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$o(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$o(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$o === "function" ? __values$o(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$o(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$o = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$o(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$o(result, mod, k);
+	    __setModuleDefault$o(result, mod);
+	    return result;
+	}
+
+	function __importDefault$o(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$o(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$o(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$o(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$n = function(d, b) {
+	    extendStatics$n = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$n(d, b);
+	};
+
+	function __extends$n(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$n(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$n = function() {
+	    __assign$n = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$n.apply(this, arguments);
+	};
+
+	function __rest$n(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$n(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$n(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$n(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$n(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$n(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$n = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$n(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$n(o, m, p);
+	}
+
+	function __values$n(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$n(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$n() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$n(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$n() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$n(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$n(v) {
+	    return this instanceof __await$n ? (this.v = v, this) : new __await$n(v);
+	}
+
+	function __asyncGenerator$n(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$n ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$n(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$n(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$n(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$n === "function" ? __values$n(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$n(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$n = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$n(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$n(result, mod, k);
+	    __setModuleDefault$n(result, mod);
+	    return result;
+	}
+
+	function __importDefault$n(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$n(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$n(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$n(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2017 Google Inc.
@@ -11003,9 +12995,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCLinearProgressFoundation = /** @class */ (function (_super) {
-	    __extends(MDCLinearProgressFoundation, _super);
+	    __extends$n(MDCLinearProgressFoundation, _super);
 	    function MDCLinearProgressFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCLinearProgressFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$n(__assign$n({}, MDCLinearProgressFoundation.defaultAdapter), adapter)) || this;
 	        _this.observer = null;
 	        return _this;
 	    }
@@ -11054,7 +13046,7 @@ var App = (function (exports) {
 	                return;
 	            }
 	            try {
-	                for (var entries_1 = __values(entries), entries_1_1 = entries_1.next(); !entries_1_1.done; entries_1_1 = entries_1.next()) {
+	                for (var entries_1 = __values$n(entries), entries_1_1 = entries_1.next(); !entries_1_1.done; entries_1_1 = entries_1.next()) {
 	                    var entry = entries_1_1.value;
 	                    if (entry.contentRect) {
 	                        _this.calculateAndSetDimensions(entry.contentRect.width);
@@ -11207,7 +13199,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCLinearProgress = /** @class */ (function (_super) {
-	    __extends(MDCLinearProgress, _super);
+	    __extends$n(MDCLinearProgress, _super);
 	    function MDCLinearProgress() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -11453,9 +13445,9 @@ var App = (function (exports) {
 	 * logic requiring DOM manipulation are delegated to adapter methods.
 	 */
 	var MDCDataTableFoundation = /** @class */ (function (_super) {
-	    __extends(MDCDataTableFoundation, _super);
+	    __extends$o(MDCDataTableFoundation, _super);
 	    function MDCDataTableFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCDataTableFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$o(__assign$o({}, MDCDataTableFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCDataTableFoundation, "defaultAdapter", {
 	        get: function () {
@@ -11516,8 +13508,8 @@ var App = (function (exports) {
 	     * asynchronous.
 	     */
 	    MDCDataTableFoundation.prototype.layoutAsync = function () {
-	        return __awaiter(this, void 0, void 0, function () {
-	            return __generator(this, function (_a) {
+	        return __awaiter$o(this, void 0, void 0, function () {
+	            return __generator$o(this, function (_a) {
 	                switch (_a.label) {
 	                    case 0:
 	                        if (!this.adapter.isRowsSelectable()) return [3 /*break*/, 3];
@@ -11749,7 +13741,7 @@ var App = (function (exports) {
 	 * Implementation of `MDCDataTableFoundation`
 	 */
 	var MDCDataTable = /** @class */ (function (_super) {
-	    __extends(MDCDataTable, _super);
+	    __extends$o(MDCDataTable, _super);
 	    function MDCDataTable() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -11852,7 +13844,7 @@ var App = (function (exports) {
 	        }
 	        if (this.rowCheckboxList) {
 	            try {
-	                for (var _b = __values(this.rowCheckboxList), _c = _b.next(); !_c.done; _c = _b.next()) {
+	                for (var _b = __values$o(this.rowCheckboxList), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                    var checkbox = _c.value;
 	                    checkbox.destroy();
 	                }
@@ -12200,6 +14192,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$m = function(d, b) {
+	    extendStatics$m = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$m(d, b);
+	};
+
+	function __extends$m(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$m(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$m = function() {
+	    __assign$m = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$m.apply(this, arguments);
+	};
+
+	function __rest$m(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$m(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$m(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$m(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$m(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$m(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$m = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$m(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$m(o, m, p);
+	}
+
+	function __values$m(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$m(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$m() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$m(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$m() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$m(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$m(v) {
+	    return this instanceof __await$m ? (this.v = v, this) : new __await$m(v);
+	}
+
+	function __asyncGenerator$m(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$m ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$m(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$m(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$m(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$m === "function" ? __values$m(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$m(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$m = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$m(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$m(result, mod, k);
+	    __setModuleDefault$m(result, mod);
+	    return result;
+	}
+
+	function __importDefault$m(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$m(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$m(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$m(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2020 Google Inc.
@@ -12395,9 +14636,9 @@ var App = (function (exports) {
 	    AnimationKeys["POLL_LAYOUT_CHANGE"] = "poll_layout_change";
 	})(AnimationKeys$2 || (AnimationKeys$2 = {}));
 	var MDCDialogFoundation = /** @class */ (function (_super) {
-	    __extends(MDCDialogFoundation, _super);
+	    __extends$m(MDCDialogFoundation, _super);
 	    function MDCDialogFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCDialogFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$m(__assign$m({}, MDCDialogFoundation.defaultAdapter), adapter)) || this;
 	        _this.dialogOpen = false;
 	        _this.isFullscreen = false;
 	        _this.animationFrame = 0;
@@ -12767,7 +15008,7 @@ var App = (function (exports) {
 	 */
 	var strings$q = MDCDialogFoundation.strings;
 	var MDCDialog = /** @class */ (function (_super) {
-	    __extends(MDCDialog, _super);
+	    __extends$m(MDCDialog, _super);
 	    function MDCDialog() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -12828,7 +15069,7 @@ var App = (function (exports) {
 	        this.focusTrapFactory = focusTrapFactory;
 	        this.buttonRipples = [];
 	        try {
-	            for (var _b = __values(this.buttons), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$m(this.buttons), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var buttonEl = _c.value;
 	                this.buttonRipples.push(new MDCRipple(buttonEl));
 	            }
@@ -13099,6 +15340,504 @@ var App = (function (exports) {
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
 	 */
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$l = function(d, b) {
+	    extendStatics$l = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$l(d, b);
+	};
+
+	function __extends$l(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$l(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$l = function() {
+	    __assign$l = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$l.apply(this, arguments);
+	};
+
+	function __rest$l(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$l(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$l(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$l(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$l(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$l(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$l = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$l(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$l(o, m, p);
+	}
+
+	function __values$l(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$l(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$l() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$l(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$l() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$l(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$l(v) {
+	    return this instanceof __await$l ? (this.v = v, this) : new __await$l(v);
+	}
+
+	function __asyncGenerator$l(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$l ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$l(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$l(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$l(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$l === "function" ? __values$l(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$l(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$l = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$l(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$l(result, mod, k);
+	    __setModuleDefault$l(result, mod);
+	    return result;
+	}
+
+	function __importDefault$l(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$l(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$l(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$l(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$k = function(d, b) {
+	    extendStatics$k = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$k(d, b);
+	};
+
+	function __extends$k(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$k(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$k = function() {
+	    __assign$k = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$k.apply(this, arguments);
+	};
+
+	function __rest$k(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$k(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$k(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$k(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$k(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$k(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$k = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$k(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$k(o, m, p);
+	}
+
+	function __values$k(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$k(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$k() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$k(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$k() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$k(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$k(v) {
+	    return this instanceof __await$k ? (this.v = v, this) : new __await$k(v);
+	}
+
+	function __asyncGenerator$k(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$k ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$k(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$k(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$k(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$k === "function" ? __values$k(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$k(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$k = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$k(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$k(result, mod, k);
+	    __setModuleDefault$k(result, mod);
+	    return result;
+	}
+
+	function __importDefault$k(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$k(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$k(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$k(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
 
 	/**
 	 * @license
@@ -13523,9 +16262,9 @@ var App = (function (exports) {
 	    return selectedIndex instanceof Array;
 	}
 	var MDCListFoundation = /** @class */ (function (_super) {
-	    __extends(MDCListFoundation, _super);
+	    __extends$k(MDCListFoundation, _super);
 	    function MDCListFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCListFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$k(__assign$k({}, MDCListFoundation.defaultAdapter), adapter)) || this;
 	        _this.wrapFocus = false;
 	        _this.isVertical = true;
 	        _this.isSingleSelectionList = false;
@@ -14197,7 +16936,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCList = /** @class */ (function (_super) {
-	    __extends(MDCList, _super);
+	    __extends$k(MDCList, _super);
 	    function MDCList() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -14610,9 +17349,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCDismissibleDrawerFoundation = /** @class */ (function (_super) {
-	    __extends(MDCDismissibleDrawerFoundation, _super);
+	    __extends$l(MDCDismissibleDrawerFoundation, _super);
 	    function MDCDismissibleDrawerFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCDismissibleDrawerFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$l(__assign$l({}, MDCDismissibleDrawerFoundation.defaultAdapter), adapter)) || this;
 	        _this.animationFrame = 0;
 	        _this.animationTimer = 0;
 	        return _this;
@@ -14794,7 +17533,7 @@ var App = (function (exports) {
 	 */
 	/* istanbul ignore next: subclass is not a branch statement */
 	var MDCModalDrawerFoundation = /** @class */ (function (_super) {
-	    __extends(MDCModalDrawerFoundation, _super);
+	    __extends$l(MDCModalDrawerFoundation, _super);
 	    function MDCModalDrawerFoundation() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -14847,7 +17586,7 @@ var App = (function (exports) {
 	 * @events `MDCDrawer:opened {}` Emits when the navigation drawer has opened.
 	 */
 	var MDCDrawer = /** @class */ (function (_super) {
-	    __extends(MDCDrawer, _super);
+	    __extends$l(MDCDrawer, _super);
 	    function MDCDrawer() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -15047,6 +17786,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$j = function(d, b) {
+	    extendStatics$j = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$j(d, b);
+	};
+
+	function __extends$j(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$j(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$j = function() {
+	    __assign$j = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$j.apply(this, arguments);
+	};
+
+	function __rest$j(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$j(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$j(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$j(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$j(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$j(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$j = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$j(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$j(o, m, p);
+	}
+
+	function __values$j(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$j(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$j() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$j(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$j() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$j(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$j(v) {
+	    return this instanceof __await$j ? (this.v = v, this) : new __await$j(v);
+	}
+
+	function __asyncGenerator$j(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$j ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$j(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$j(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$j(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$j === "function" ? __values$j(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$j(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$j = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$j(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$j(result, mod, k);
+	    __setModuleDefault$j(result, mod);
+	    return result;
+	}
+
+	function __importDefault$j(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$j(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$j(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$j(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2016 Google Inc.
@@ -15099,9 +18087,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCFloatingLabelFoundation = /** @class */ (function (_super) {
-	    __extends(MDCFloatingLabelFoundation, _super);
+	    __extends$j(MDCFloatingLabelFoundation, _super);
 	    function MDCFloatingLabelFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCFloatingLabelFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$j(__assign$j({}, MDCFloatingLabelFoundation.defaultAdapter), adapter)) || this;
 	        _this.shakeAnimationEndHandler = function () {
 	            _this.handleShakeAnimationEnd();
 	        };
@@ -15214,7 +18202,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCFloatingLabel = /** @class */ (function (_super) {
-	    __extends(MDCFloatingLabel, _super);
+	    __extends$j(MDCFloatingLabel, _super);
 	    function MDCFloatingLabel() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -15320,6 +18308,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$i = function(d, b) {
+	    extendStatics$i = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$i(d, b);
+	};
+
+	function __extends$i(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$i(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$i = function() {
+	    __assign$i = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$i.apply(this, arguments);
+	};
+
+	function __rest$i(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$i(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$i(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$i(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$i(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$i(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$i = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$i(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$i(o, m, p);
+	}
+
+	function __values$i(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$i(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$i() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$i(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$i() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$i(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$i(v) {
+	    return this instanceof __await$i ? (this.v = v, this) : new __await$i(v);
+	}
+
+	function __asyncGenerator$i(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$i ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$i(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$i(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$i(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$i === "function" ? __values$i(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$i(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$i = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$i(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$i(result, mod, k);
+	    __setModuleDefault$i(result, mod);
+	    return result;
+	}
+
+	function __importDefault$i(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$i(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$i(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$i(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2017 Google Inc.
@@ -15372,9 +18609,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCFormFieldFoundation = /** @class */ (function (_super) {
-	    __extends(MDCFormFieldFoundation, _super);
+	    __extends$i(MDCFormFieldFoundation, _super);
 	    function MDCFormFieldFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCFormFieldFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$i(__assign$i({}, MDCFormFieldFoundation.defaultAdapter), adapter)) || this;
 	        _this.click = function () {
 	            _this.handleClick();
 	        };
@@ -15445,7 +18682,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCFormField = /** @class */ (function (_super) {
-	    __extends(MDCFormField, _super);
+	    __extends$i(MDCFormField, _super);
 	    function MDCFormField() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -15543,6 +18780,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$h = function(d, b) {
+	    extendStatics$h = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$h(d, b);
+	};
+
+	function __extends$h(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$h(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$h = function() {
+	    __assign$h = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$h.apply(this, arguments);
+	};
+
+	function __rest$h(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$h(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$h(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$h(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$h(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$h(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$h = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$h(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$h(o, m, p);
+	}
+
+	function __values$h(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$h(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$h() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$h(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$h() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$h(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$h(v) {
+	    return this instanceof __await$h ? (this.v = v, this) : new __await$h(v);
+	}
+
+	function __asyncGenerator$h(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$h ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$h(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$h(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$h(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$h === "function" ? __values$h(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$h(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$h = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$h(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$h(result, mod, k);
+	    __setModuleDefault$h(result, mod);
+	    return result;
+	}
+
+	function __importDefault$h(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$h(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$h(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$h(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2018 Google Inc.
@@ -15600,9 +19086,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCIconButtonToggleFoundation = /** @class */ (function (_super) {
-	    __extends(MDCIconButtonToggleFoundation, _super);
+	    __extends$h(MDCIconButtonToggleFoundation, _super);
 	    function MDCIconButtonToggleFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCIconButtonToggleFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$h(__assign$h({}, MDCIconButtonToggleFoundation.defaultAdapter), adapter)) || this;
 	        /**
 	         * Whether the icon button has an aria label that changes depending on
 	         * toggled state.
@@ -15706,7 +19192,7 @@ var App = (function (exports) {
 	 */
 	var strings$k = MDCIconButtonToggleFoundation.strings;
 	var MDCIconButtonToggle = /** @class */ (function (_super) {
-	    __extends(MDCIconButtonToggle, _super);
+	    __extends$h(MDCIconButtonToggle, _super);
 	    function MDCIconButtonToggle() {
 	        var _this = _super !== null && _super.apply(this, arguments) || this;
 	        _this.rippleComponent = _this.createRipple();
@@ -15847,6 +19333,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$g = function(d, b) {
+	    extendStatics$g = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$g(d, b);
+	};
+
+	function __extends$g(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$g(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$g = function() {
+	    __assign$g = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$g.apply(this, arguments);
+	};
+
+	function __rest$g(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$g(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$g(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$g(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$g(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$g(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$g = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$g(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$g(o, m, p);
+	}
+
+	function __values$g(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$g(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$g() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$g(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$g() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$g(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$g(v) {
+	    return this instanceof __await$g ? (this.v = v, this) : new __await$g(v);
+	}
+
+	function __asyncGenerator$g(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$g ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$g(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$g(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$g(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$g === "function" ? __values$g(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$g(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$g = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$g(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$g(result, mod, k);
+	    __setModuleDefault$g(result, mod);
+	    return result;
+	}
+
+	function __importDefault$g(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$g(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$g(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$g(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2018 Google Inc.
@@ -15897,9 +19632,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCLineRippleFoundation = /** @class */ (function (_super) {
-	    __extends(MDCLineRippleFoundation, _super);
+	    __extends$g(MDCLineRippleFoundation, _super);
 	    function MDCLineRippleFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCLineRippleFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$g(__assign$g({}, MDCLineRippleFoundation.defaultAdapter), adapter)) || this;
 	        _this.transitionEndHandler = function (evt) {
 	            _this.handleTransitionEnd(evt);
 	        };
@@ -15984,7 +19719,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCLineRipple = /** @class */ (function (_super) {
-	    __extends(MDCLineRipple, _super);
+	    __extends$g(MDCLineRipple, _super);
 	    function MDCLineRipple() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -16241,6 +19976,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$f = function(d, b) {
+	    extendStatics$f = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$f(d, b);
+	};
+
+	function __extends$f(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$f(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$f = function() {
+	    __assign$f = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$f.apply(this, arguments);
+	};
+
+	function __rest$f(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$f(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$f(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$f(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$f(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$f(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$f = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$f(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$f(o, m, p);
+	}
+
+	function __values$f(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$f(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$f() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$f(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$f() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$f(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$f(v) {
+	    return this instanceof __await$f ? (this.v = v, this) : new __await$f(v);
+	}
+
+	function __asyncGenerator$f(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$f ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$f(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$f(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$f(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$f === "function" ? __values$f(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$f(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$f = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$f(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$f(result, mod, k);
+	    __setModuleDefault$f(result, mod);
+	    return result;
+	}
+
+	function __importDefault$f(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$f(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$f(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$f(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2018 Google Inc.
@@ -16362,9 +20346,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCMenuSurfaceFoundation = /** @class */ (function (_super) {
-	    __extends(MDCMenuSurfaceFoundation, _super);
+	    __extends$f(MDCMenuSurfaceFoundation, _super);
 	    function MDCMenuSurfaceFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCMenuSurfaceFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$f(__assign$f({}, MDCMenuSurfaceFoundation.defaultAdapter), adapter)) || this;
 	        _this.isSurfaceOpen = false;
 	        _this.isQuickOpen = false;
 	        _this.isHoistedElement = false;
@@ -16845,7 +20829,7 @@ var App = (function (exports) {
 	        var _b = this.measurements, windowScroll = _b.windowScroll, viewportDistance = _b.viewportDistance, surfaceSize = _b.surfaceSize, viewportSize = _b.viewportSize;
 	        var props = Object.keys(position);
 	        try {
-	            for (var props_1 = __values(props), props_1_1 = props_1.next(); !props_1_1.done; props_1_1 = props_1.next()) {
+	            for (var props_1 = __values$f(props), props_1_1 = props_1.next(); !props_1_1.done; props_1_1 = props_1.next()) {
 	                var prop = props_1_1.value;
 	                var value = position[prop] || 0;
 	                if (this.isHorizontallyCenteredOnViewport &&
@@ -16945,7 +20929,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCMenuSurface = /** @class */ (function (_super) {
-	    __extends(MDCMenuSurface, _super);
+	    __extends$f(MDCMenuSurface, _super);
 	    function MDCMenuSurface() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -17187,6 +21171,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$e = function(d, b) {
+	    extendStatics$e = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$e(d, b);
+	};
+
+	function __extends$e(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$e(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$e = function() {
+	    __assign$e = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$e.apply(this, arguments);
+	};
+
+	function __rest$e(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$e(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$e(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$e(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$e(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$e(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$e = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$e(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$e(o, m, p);
+	}
+
+	function __values$e(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$e(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$e() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$e(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$e() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$e(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$e(v) {
+	    return this instanceof __await$e ? (this.v = v, this) : new __await$e(v);
+	}
+
+	function __asyncGenerator$e(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$e ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$e(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$e(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$e(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$e === "function" ? __values$e(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$e(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$e = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$e(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$e(result, mod, k);
+	    __setModuleDefault$e(result, mod);
+	    return result;
+	}
+
+	function __importDefault$e(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$e(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$e(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$e(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2018 Google Inc.
@@ -17256,9 +21489,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCMenuFoundation = /** @class */ (function (_super) {
-	    __extends(MDCMenuFoundation, _super);
+	    __extends$e(MDCMenuFoundation, _super);
 	    function MDCMenuFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCMenuFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$e(__assign$e({}, MDCMenuFoundation.defaultAdapter), adapter)) || this;
 	        _this.closeAnimationEndTimerId = 0;
 	        _this.defaultFocusState = DefaultFocusState.LIST_ROOT;
 	        _this.selectedIndex = -1;
@@ -17439,7 +21672,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCMenu = /** @class */ (function (_super) {
-	    __extends(MDCMenu, _super);
+	    __extends$e(MDCMenu, _super);
 	    function MDCMenu() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -17832,6 +22065,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$d = function(d, b) {
+	    extendStatics$d = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$d(d, b);
+	};
+
+	function __extends$d(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$d(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$d = function() {
+	    __assign$d = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$d.apply(this, arguments);
+	};
+
+	function __rest$d(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$d(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$d(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$d(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$d(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$d(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$d = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$d(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$d(o, m, p);
+	}
+
+	function __values$d(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$d(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$d() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$d(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$d() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$d(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$d(v) {
+	    return this instanceof __await$d ? (this.v = v, this) : new __await$d(v);
+	}
+
+	function __asyncGenerator$d(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$d ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$d(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$d(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$d(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$d === "function" ? __values$d(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$d(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$d = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$d(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$d(result, mod, k);
+	    __setModuleDefault$d(result, mod);
+	    return result;
+	}
+
+	function __importDefault$d(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$d(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$d(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$d(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2018 Google Inc.
@@ -17890,9 +22372,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCNotchedOutlineFoundation = /** @class */ (function (_super) {
-	    __extends(MDCNotchedOutlineFoundation, _super);
+	    __extends$d(MDCNotchedOutlineFoundation, _super);
 	    function MDCNotchedOutlineFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCNotchedOutlineFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$d(__assign$d({}, MDCNotchedOutlineFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCNotchedOutlineFoundation, "strings", {
 	        get: function () {
@@ -17977,7 +22459,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCNotchedOutline = /** @class */ (function (_super) {
-	    __extends(MDCNotchedOutline, _super);
+	    __extends$d(MDCNotchedOutline, _super);
 	    function MDCNotchedOutline() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -18088,6 +22570,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$c = function(d, b) {
+	    extendStatics$c = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$c(d, b);
+	};
+
+	function __extends$c(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$c(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$c = function() {
+	    __assign$c = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$c.apply(this, arguments);
+	};
+
+	function __rest$c(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$c(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$c(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$c(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$c(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$c(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$c = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$c(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$c(o, m, p);
+	}
+
+	function __values$c(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$c(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$c() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$c(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$c() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$c(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$c(v) {
+	    return this instanceof __await$c ? (this.v = v, this) : new __await$c(v);
+	}
+
+	function __asyncGenerator$c(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$c ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$c(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$c(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$c(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$c === "function" ? __values$c(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$c(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$c = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$c(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$c(result, mod, k);
+	    __setModuleDefault$c(result, mod);
+	    return result;
+	}
+
+	function __importDefault$c(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$c(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$c(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$c(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2016 Google Inc.
@@ -18141,9 +22872,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCRadioFoundation = /** @class */ (function (_super) {
-	    __extends(MDCRadioFoundation, _super);
+	    __extends$c(MDCRadioFoundation, _super);
 	    function MDCRadioFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCRadioFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$c(__assign$c({}, MDCRadioFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCRadioFoundation, "cssClasses", {
 	        get: function () {
@@ -18206,7 +22937,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCRadio = /** @class */ (function (_super) {
-	    __extends(MDCRadio, _super);
+	    __extends$c(MDCRadio, _super);
 	    function MDCRadio() {
 	        var _this = _super !== null && _super.apply(this, arguments) || this;
 	        _this.rippleSurface = _this.createRipple();
@@ -18273,7 +23004,7 @@ var App = (function (exports) {
 	        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
 	        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
 	        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-	        var adapter = __assign(__assign({}, MDCRipple.createAdapter(this)), { registerInteractionHandler: function (evtType, handler) {
+	        var adapter = __assign$c(__assign$c({}, MDCRipple.createAdapter(this)), { registerInteractionHandler: function (evtType, handler) {
 	                _this.nativeControl.addEventListener(evtType, handler, applyPassive());
 	            }, deregisterInteractionHandler: function (evtType, handler) {
 	                _this.nativeControl.removeEventListener(evtType, handler, applyPassive());
@@ -18432,6 +23163,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$b = function(d, b) {
+	    extendStatics$b = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$b(d, b);
+	};
+
+	function __extends$b(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$b(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$b = function() {
+	    __assign$b = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$b.apply(this, arguments);
+	};
+
+	function __rest$b(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$b(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$b(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$b(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$b(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$b(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$b = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$b(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$b(o, m, p);
+	}
+
+	function __values$b(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$b(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$b() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$b(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$b() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$b(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$b(v) {
+	    return this instanceof __await$b ? (this.v = v, this) : new __await$b(v);
+	}
+
+	function __asyncGenerator$b(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$b ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$b(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$b(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$b(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$b === "function" ? __values$b(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$b(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$b = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$b(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$b(result, mod, k);
+	    __setModuleDefault$b(result, mod);
+	    return result;
+	}
+
+	function __importDefault$b(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$b(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$b(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$b(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2020 Google Inc.
@@ -18497,9 +23477,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSegmentedButtonFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSegmentedButtonFoundation, _super);
+	    __extends$b(MDCSegmentedButtonFoundation, _super);
 	    function MDCSegmentedButtonFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCSegmentedButtonFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$b(__assign$b({}, MDCSegmentedButtonFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCSegmentedButtonFoundation, "defaultAdapter", {
 	        get: function () {
@@ -18579,7 +23559,7 @@ var App = (function (exports) {
 	    MDCSegmentedButtonFoundation.prototype.unselectPrevSelected = function (index) {
 	        var e_1, _a;
 	        try {
-	            for (var _b = __values(this.getSelectedSegments()), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$b(this.getSelectedSegments()), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var selectedSegment = _c.value;
 	                if (selectedSegment.index !== index) {
 	                    this.unselectSegment(selectedSegment.index);
@@ -18679,9 +23659,9 @@ var App = (function (exports) {
 	    width: 0,
 	};
 	var MDCSegmentedButtonSegmentFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSegmentedButtonSegmentFoundation, _super);
+	    __extends$b(MDCSegmentedButtonSegmentFoundation, _super);
 	    function MDCSegmentedButtonSegmentFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCSegmentedButtonSegmentFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$b(__assign$b({}, MDCSegmentedButtonSegmentFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCSegmentedButtonSegmentFoundation, "defaultAdapter", {
 	        get: function () {
@@ -18801,7 +23781,7 @@ var App = (function (exports) {
 	 * Implementation of MDCSegmentedButtonSegmentFoundation
 	 */
 	var MDCSegmentedButtonSegment = /** @class */ (function (_super) {
-	    __extends(MDCSegmentedButtonSegment, _super);
+	    __extends$b(MDCSegmentedButtonSegment, _super);
 	    function MDCSegmentedButtonSegment() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -18820,7 +23800,7 @@ var App = (function (exports) {
 	        if (rippleFactory === void 0) { rippleFactory = function (el, foundation) {
 	            return new MDCRipple(el, foundation);
 	        }; }
-	        var rippleAdapter = __assign(__assign({}, MDCRipple.createAdapter(this)), { computeBoundingRect: function () { return _this.foundation.getDimensions(); } });
+	        var rippleAdapter = __assign$b(__assign$b({}, MDCRipple.createAdapter(this)), { computeBoundingRect: function () { return _this.foundation.getDimensions(); } });
 	        this.rippleComponent =
 	            rippleFactory(this.root, new MDCRippleFoundation(rippleAdapter));
 	    };
@@ -18941,7 +23921,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSegmentedButton = /** @class */ (function (_super) {
-	    __extends(MDCSegmentedButton, _super);
+	    __extends$b(MDCSegmentedButton, _super);
 	    function MDCSegmentedButton() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -18995,7 +23975,7 @@ var App = (function (exports) {
 	    MDCSegmentedButton.prototype.destroy = function () {
 	        var e_1, _a;
 	        try {
-	            for (var _b = __values(this.segmentsList), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$b(this.segmentsList), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var segment = _c.value;
 	                segment.destroy();
 	            }
@@ -19233,6 +24213,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$a = function(d, b) {
+	    extendStatics$a = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$a(d, b);
+	};
+
+	function __extends$a(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$a(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$a = function() {
+	    __assign$a = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$a.apply(this, arguments);
+	};
+
+	function __rest$a(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$a(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$a(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$a(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$a(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$a(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$a = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$a(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$a(o, m, p);
+	}
+
+	function __values$a(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$a(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$a() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$a(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$a() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$a(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$a(v) {
+	    return this instanceof __await$a ? (this.v = v, this) : new __await$a(v);
+	}
+
+	function __asyncGenerator$a(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$a ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$a(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$a(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$a(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$a === "function" ? __values$a(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$a(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$a = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$a(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$a(result, mod, k);
+	    __setModuleDefault$a(result, mod);
+	    return result;
+	}
+
+	function __importDefault$a(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$a(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$a(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$a(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2016 Google Inc.
@@ -19310,7 +24539,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSelectFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSelectFoundation, _super);
+	    __extends$a(MDCSelectFoundation, _super);
 	    /* istanbul ignore next: optional argument is not a branch statement */
 	    /**
 	     * @param adapter
@@ -19318,7 +24547,7 @@ var App = (function (exports) {
 	     */
 	    function MDCSelectFoundation(adapter, foundationMap) {
 	        if (foundationMap === void 0) { foundationMap = {}; }
-	        var _this = _super.call(this, __assign(__assign({}, MDCSelectFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$a(__assign$a({}, MDCSelectFoundation.defaultAdapter), adapter)) || this;
 	        // Disabled state
 	        _this.disabled = false;
 	        // isMenuOpen is used to track the state of the menu by listening to the
@@ -19789,9 +25018,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSelectHelperTextFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSelectHelperTextFoundation, _super);
+	    __extends$a(MDCSelectHelperTextFoundation, _super);
 	    function MDCSelectHelperTextFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCSelectHelperTextFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$a(__assign$a({}, MDCSelectHelperTextFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCSelectHelperTextFoundation, "cssClasses", {
 	        get: function () {
@@ -19943,7 +25172,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSelectHelperText = /** @class */ (function (_super) {
-	    __extends(MDCSelectHelperText, _super);
+	    __extends$a(MDCSelectHelperText, _super);
 	    function MDCSelectHelperText() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -20031,9 +25260,9 @@ var App = (function (exports) {
 	 */
 	var INTERACTION_EVENTS$2 = ['click', 'keydown'];
 	var MDCSelectIconFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSelectIconFoundation, _super);
+	    __extends$a(MDCSelectIconFoundation, _super);
 	    function MDCSelectIconFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCSelectIconFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$a(__assign$a({}, MDCSelectIconFoundation.defaultAdapter), adapter)) || this;
 	        _this.savedTabIndex = null;
 	        _this.interactionHandler = function (evt) {
 	            _this.handleInteraction(evt);
@@ -20071,7 +25300,7 @@ var App = (function (exports) {
 	        var e_1, _a;
 	        this.savedTabIndex = this.adapter.getAttr('tabindex');
 	        try {
-	            for (var INTERACTION_EVENTS_1 = __values(INTERACTION_EVENTS$2), INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next(); !INTERACTION_EVENTS_1_1.done; INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next()) {
+	            for (var INTERACTION_EVENTS_1 = __values$a(INTERACTION_EVENTS$2), INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next(); !INTERACTION_EVENTS_1_1.done; INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next()) {
 	                var evtType = INTERACTION_EVENTS_1_1.value;
 	                this.adapter.registerInteractionHandler(evtType, this.interactionHandler);
 	            }
@@ -20087,7 +25316,7 @@ var App = (function (exports) {
 	    MDCSelectIconFoundation.prototype.destroy = function () {
 	        var e_2, _a;
 	        try {
-	            for (var INTERACTION_EVENTS_2 = __values(INTERACTION_EVENTS$2), INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next(); !INTERACTION_EVENTS_2_1.done; INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next()) {
+	            for (var INTERACTION_EVENTS_2 = __values$a(INTERACTION_EVENTS$2), INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next(); !INTERACTION_EVENTS_2_1.done; INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next()) {
 	                var evtType = INTERACTION_EVENTS_2_1.value;
 	                this.adapter.deregisterInteractionHandler(evtType, this.interactionHandler);
 	            }
@@ -20151,7 +25380,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSelectIcon = /** @class */ (function (_super) {
-	    __extends(MDCSelectIcon, _super);
+	    __extends$a(MDCSelectIcon, _super);
 	    function MDCSelectIcon() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -20215,7 +25444,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSelect = /** @class */ (function (_super) {
-	    __extends(MDCSelect, _super);
+	    __extends$a(MDCSelect, _super);
 	    function MDCSelect() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -20471,7 +25700,7 @@ var App = (function (exports) {
 	    MDCSelect.prototype.getDefaultFoundation = function () {
 	        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
 	        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-	        var adapter = __assign(__assign(__assign(__assign({}, this.getSelectAdapterMethods()), this.getCommonAdapterMethods()), this.getOutlineAdapterMethods()), this.getLabelAdapterMethods());
+	        var adapter = __assign$a(__assign$a(__assign$a(__assign$a({}, this.getSelectAdapterMethods()), this.getCommonAdapterMethods()), this.getOutlineAdapterMethods()), this.getLabelAdapterMethods());
 	        return new MDCSelectFoundation(adapter, this.getFoundationMap());
 	    };
 	    /**
@@ -20490,7 +25719,7 @@ var App = (function (exports) {
 	        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
 	        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
 	        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-	        var adapter = __assign(__assign({}, MDCRipple.createAdapter({ root: this.selectAnchor })), { registerInteractionHandler: function (evtType, handler) {
+	        var adapter = __assign$a(__assign$a({}, MDCRipple.createAdapter({ root: this.selectAnchor })), { registerInteractionHandler: function (evtType, handler) {
 	                _this.selectAnchor.addEventListener(evtType, handler);
 	            }, deregisterInteractionHandler: function (evtType, handler) {
 	                _this.selectAnchor.removeEventListener(evtType, handler);
@@ -20826,6 +26055,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$9 = function(d, b) {
+	    extendStatics$9 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$9(d, b);
+	};
+
+	function __extends$9(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$9(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$9 = function() {
+	    __assign$9 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$9.apply(this, arguments);
+	};
+
+	function __rest$9(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$9(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$9(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$9(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$9(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$9(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$9 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$9(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$9(o, m, p);
+	}
+
+	function __values$9(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$9(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$9() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$9(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$9() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$9(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$9(v) {
+	    return this instanceof __await$9 ? (this.v = v, this) : new __await$9(v);
+	}
+
+	function __asyncGenerator$9(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$9 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$9(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$9(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$9(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$9 === "function" ? __values$9(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$9(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$9 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$9(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$9(result, mod, k);
+	    __setModuleDefault$9(result, mod);
+	    return result;
+	}
+
+	function __importDefault$9(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$9(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$9(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$9(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2020 Google Inc.
@@ -20971,9 +26449,9 @@ var App = (function (exports) {
 	 * - Updating DOM after slider property updates (e.g. min, max).
 	 */
 	var MDCSliderFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSliderFoundation, _super);
+	    __extends$9(MDCSliderFoundation, _super);
 	    function MDCSliderFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCSliderFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$9(__assign$9({}, MDCSliderFoundation.defaultAdapter), adapter)) || this;
 	        // Whether the initial styles (to position the thumb, before component
 	        // initialization) have been removed.
 	        _this.initialStylesRemoved = false;
@@ -21876,7 +27354,7 @@ var App = (function (exports) {
 	 */
 	/** Vanilla JS implementation of slider component. */
 	var MDCSlider = /** @class */ (function (_super) {
-	    __extends(MDCSlider, _super);
+	    __extends$9(MDCSlider, _super);
 	    function MDCSlider() {
 	        var _this = _super !== null && _super.apply(this, arguments) || this;
 	        _this.skipInitialUIUpdate = false;
@@ -22127,7 +27605,7 @@ var App = (function (exports) {
 	            // Use the corresponding input as the focus source for the ripple (i.e.
 	            // when the input is focused, the ripple is in the focused state).
 	            var input = this_1.inputs[i];
-	            var adapter = __assign(__assign({}, MDCRipple.createAdapter(this_1)), { addClass: function (className) {
+	            var adapter = __assign$9(__assign$9({}, MDCRipple.createAdapter(this_1)), { addClass: function (className) {
 	                    rippleSurface.classList.add(className);
 	                }, computeBoundingRect: function () { return rippleSurface.getBoundingClientRect(); }, deregisterInteractionHandler: function (evtType, handler) {
 	                    input.removeEventListener(evtType, handler);
@@ -22349,6 +27827,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$8 = function(d, b) {
+	    extendStatics$8 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$8(d, b);
+	};
+
+	function __extends$8(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$8(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$8 = function() {
+	    __assign$8 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$8.apply(this, arguments);
+	};
+
+	function __rest$8(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$8(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$8(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$8(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$8(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$8(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$8 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$8(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$8(o, m, p);
+	}
+
+	function __values$8(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$8(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$8() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$8(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$8() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$8(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$8(v) {
+	    return this instanceof __await$8 ? (this.v = v, this) : new __await$8(v);
+	}
+
+	function __asyncGenerator$8(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$8 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$8(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$8(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$8(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$8 === "function" ? __values$8(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$8(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$8 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$8(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$8(result, mod, k);
+	    __setModuleDefault$8(result, mod);
+	    return result;
+	}
+
+	function __importDefault$8(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$8(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$8(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$8(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2018 Google Inc.
@@ -22374,9 +28101,9 @@ var App = (function (exports) {
 	var OPENING = cssClasses$9.OPENING, OPEN = cssClasses$9.OPEN, CLOSING = cssClasses$9.CLOSING;
 	var REASON_ACTION = strings$c.REASON_ACTION, REASON_DISMISS = strings$c.REASON_DISMISS;
 	var MDCSnackbarFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSnackbarFoundation, _super);
+	    __extends$8(MDCSnackbarFoundation, _super);
 	    function MDCSnackbarFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCSnackbarFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$8(__assign$8({}, MDCSnackbarFoundation.defaultAdapter), adapter)) || this;
 	        _this.opened = false;
 	        _this.animationFrame = 0;
 	        _this.animationTimer = 0;
@@ -22564,7 +28291,7 @@ var App = (function (exports) {
 	 */
 	var SURFACE_SELECTOR = strings$c.SURFACE_SELECTOR, LABEL_SELECTOR = strings$c.LABEL_SELECTOR, ACTION_SELECTOR = strings$c.ACTION_SELECTOR, DISMISS_SELECTOR = strings$c.DISMISS_SELECTOR, OPENING_EVENT = strings$c.OPENING_EVENT, OPENED_EVENT = strings$c.OPENED_EVENT, CLOSING_EVENT = strings$c.CLOSING_EVENT, CLOSED_EVENT = strings$c.CLOSED_EVENT;
 	var MDCSnackbar = /** @class */ (function (_super) {
-	    __extends(MDCSnackbar, _super);
+	    __extends$8(MDCSnackbar, _super);
 	    function MDCSnackbar() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -22780,6 +28507,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$7 = function(d, b) {
+	    extendStatics$7 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$7(d, b);
+	};
+
+	function __extends$7(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$7(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$7 = function() {
+	    __assign$7 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$7.apply(this, arguments);
+	};
+
+	function __rest$7(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$7(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$7(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$7(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$7(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$7(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$7 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$7(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$7(o, m, p);
+	}
+
+	function __values$7(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$7(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$7() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$7(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$7() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$7(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$7(v) {
+	    return this instanceof __await$7 ? (this.v = v, this) : new __await$7(v);
+	}
+
+	function __asyncGenerator$7(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$7 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$7(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$7(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$7(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$7 === "function" ? __values$7(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$7(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$7 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$7(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$7(result, mod, k);
+	    __setModuleDefault$7(result, mod);
+	    return result;
+	}
+
+	function __importDefault$7(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$7(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$7(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$7(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2018 Google Inc.
@@ -22842,9 +28818,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSwitchFoundation$1 = /** @class */ (function (_super) {
-	    __extends(MDCSwitchFoundation, _super);
+	    __extends$7(MDCSwitchFoundation, _super);
 	    function MDCSwitchFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCSwitchFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$7(__assign$7({}, MDCSwitchFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCSwitchFoundation, "strings", {
 	        /** The string constants used by the switch. */
@@ -22936,7 +28912,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCSwitch$1 = /** @class */ (function (_super) {
-	    __extends(MDCSwitch, _super);
+	    __extends$7(MDCSwitch, _super);
 	    function MDCSwitch() {
 	        var _this = _super !== null && _super.apply(this, arguments) || this;
 	        _this.rippleSurface = _this.createRipple();
@@ -22958,7 +28934,7 @@ var App = (function (exports) {
 	            for (var _i = 0; _i < arguments.length; _i++) {
 	                args[_i] = arguments[_i];
 	            }
-	            (_a = _this.foundation).handleChange.apply(_a, __spreadArray([], __read(args)));
+	            (_a = _this.foundation).handleChange.apply(_a, __spreadArray$7([], __read$7(args)));
 	        };
 	        this.nativeControl.addEventListener('change', this.changeHandler);
 	        // Sometimes the checked state of the input element is saved in the history.
@@ -23016,7 +28992,7 @@ var App = (function (exports) {
 	        var rippleSurface = this.root.querySelector(RIPPLE_SURFACE_SELECTOR);
 	        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
 	        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
-	        var adapter = __assign(__assign({}, MDCRipple.createAdapter(this)), { addClass: function (className) { return rippleSurface.classList.add(className); }, computeBoundingRect: function () { return rippleSurface.getBoundingClientRect(); }, deregisterInteractionHandler: function (evtType, handler) {
+	        var adapter = __assign$7(__assign$7({}, MDCRipple.createAdapter(this)), { addClass: function (className) { return rippleSurface.classList.add(className); }, computeBoundingRect: function () { return rippleSurface.getBoundingClientRect(); }, deregisterInteractionHandler: function (evtType, handler) {
 	                _this.nativeControl.removeEventListener(evtType, handler, applyPassive());
 	            }, isSurfaceActive: function () { return matches$2(_this.nativeControl, ':active'); }, isUnbounded: function () { return true; }, registerInteractionHandler: function (evtType, handler) {
 	                _this.nativeControl.addEventListener(evtType, handler, applyPassive());
@@ -23172,7 +29148,7 @@ var App = (function (exports) {
 	    // for IE11.
 	    var unobserveMap = new WeakMap();
 	    return /** @class */ (function (_super) {
-	        __extends(MDCObserver, _super);
+	        __extends$t(MDCObserver, _super);
 	        function MDCObserver() {
 	            return _super !== null && _super.apply(this, arguments) || this;
 	        }
@@ -23181,7 +29157,7 @@ var App = (function (exports) {
 	            var _this = this;
 	            var cleanup = [];
 	            try {
-	                for (var _b = __values(Object.keys(observers)), _c = _b.next(); !_c.done; _c = _b.next()) {
+	                for (var _b = __values$t(Object.keys(observers)), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                    var property = _c.value;
 	                    var observer = observers[property].bind(this);
 	                    cleanup.push(observeProperty(target, property, observer));
@@ -23197,7 +29173,7 @@ var App = (function (exports) {
 	            var unobserve = function () {
 	                var e_2, _a;
 	                try {
-	                    for (var cleanup_1 = __values(cleanup), cleanup_1_1 = cleanup_1.next(); !cleanup_1_1.done; cleanup_1_1 = cleanup_1.next()) {
+	                    for (var cleanup_1 = __values$t(cleanup), cleanup_1_1 = cleanup_1.next(); !cleanup_1_1.done; cleanup_1_1 = cleanup_1.next()) {
 	                        var cleanupFn = cleanup_1_1.value;
 	                        cleanupFn();
 	                    }
@@ -23232,7 +29208,7 @@ var App = (function (exports) {
 	            // array
 	            var unobserves = unobserveMap.get(this) || [];
 	            try {
-	                for (var _b = __values(__spreadArray([], __read(unobserves))), _c = _b.next(); !_c.done; _c = _b.next()) {
+	                for (var _b = __values$t(__spreadArray$t([], __read$t(unobserves))), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                    var unobserve = _c.value;
 	                    unobserve();
 	                }
@@ -23320,7 +29296,7 @@ var App = (function (exports) {
 	        writable: true
 	    };
 	    // ...and create a copy that will be used for the observer.
-	    var observedDescriptor = __assign({}, descriptor);
+	    var observedDescriptor = __assign$t({}, descriptor);
 	    var descGet = descriptor.get, descSet = descriptor.set;
 	    if ('value' in descriptor) {
 	        // The descriptor is a simple value (not a getter/setter).
@@ -23353,7 +29329,7 @@ var App = (function (exports) {
 	            descSet.call(this, newValue);
 	            if (targetObservers.isEnabled && (!descGet || newValue !== previous)) {
 	                try {
-	                    for (var _b = __values(targetObservers.getObservers(property)), _c = _b.next(); !_c.done; _c = _b.next()) {
+	                    for (var _b = __values$t(targetObservers.getObservers(property)), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                        var observer = _c.value;
 	                        observer(newValue, previous);
 	                    }
@@ -23436,7 +29412,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCObserverFoundation = /** @class */ (function (_super) {
-	    __extends(MDCObserverFoundation, _super);
+	    __extends$t(MDCObserverFoundation, _super);
 	    function MDCObserverFoundation(adapter) {
 	        var _this = _super.call(this, adapter) || this;
 	        /** A set of cleanup functions to unobserve changes. */
@@ -23464,7 +29440,7 @@ var App = (function (exports) {
 	        var _this = this;
 	        var cleanup = [];
 	        try {
-	            for (var _b = __values(Object.keys(observers)), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$t(Object.keys(observers)), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var property = _c.value;
 	                var observer = observers[property].bind(this);
 	                cleanup.push(this.observeProperty(target, property, observer));
@@ -23480,7 +29456,7 @@ var App = (function (exports) {
 	        var unobserve = function () {
 	            var e_2, _a;
 	            try {
-	                for (var cleanup_1 = __values(cleanup), cleanup_1_1 = cleanup_1.next(); !cleanup_1_1.done; cleanup_1_1 = cleanup_1.next()) {
+	                for (var cleanup_1 = __values$t(cleanup), cleanup_1_1 = cleanup_1.next(); !cleanup_1_1.done; cleanup_1_1 = cleanup_1.next()) {
 	                    var cleanupFn = cleanup_1_1.value;
 	                    cleanupFn();
 	                }
@@ -23534,7 +29510,7 @@ var App = (function (exports) {
 	        var e_3, _a;
 	        try {
 	            // Iterate over a copy since unobserve() will remove themselves from the set
-	            for (var _b = __values(__spreadArray([], __read(this.unobserves))), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$t(__spreadArray$t([], __read$t(this.unobserves))), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var unobserve = _c.value;
 	                unobserve();
 	            }
@@ -23580,7 +29556,7 @@ var App = (function (exports) {
 	 * state with the logic needed for switch to function.
 	 */
 	var MDCSwitchFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSwitchFoundation, _super);
+	    __extends$7(MDCSwitchFoundation, _super);
 	    function MDCSwitchFoundation(adapter) {
 	        var _this = _super.call(this, adapter) || this;
 	        _this.handleClick = _this.handleClick.bind(_this);
@@ -23623,7 +29599,7 @@ var App = (function (exports) {
 	 * render adapter to keep the component's DOM updated with the state.
 	 */
 	var MDCSwitchRenderFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSwitchRenderFoundation, _super);
+	    __extends$7(MDCSwitchRenderFoundation, _super);
 	    function MDCSwitchRenderFoundation() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -23705,7 +29681,7 @@ var App = (function (exports) {
 	 * `MDCSwitch` provides a component implementation of a Material Design switch.
 	 */
 	var MDCSwitch = /** @class */ (function (_super) {
-	    __extends(MDCSwitch, _super);
+	    __extends$7(MDCSwitch, _super);
 	    function MDCSwitch(root, foundation) {
 	        var _this = _super.call(this, root, foundation) || this;
 	        _this.root = root;
@@ -23764,7 +29740,7 @@ var App = (function (exports) {
 	    };
 	    MDCSwitch.prototype.createRippleAdapter = function () {
 	        var _this = this;
-	        return __assign(__assign({}, MDCRipple.createAdapter(this)), { computeBoundingRect: function () { return _this.rippleElement.getBoundingClientRect(); }, isUnbounded: function () { return true; } });
+	        return __assign$7(__assign$7({}, MDCRipple.createAdapter(this)), { computeBoundingRect: function () { return _this.rippleElement.getBoundingClientRect(); }, isUnbounded: function () { return true; } });
 	    };
 	    return MDCSwitch;
 	}(MDCComponent));
@@ -23824,6 +29800,504 @@ var App = (function (exports) {
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
 	 */
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$6 = function(d, b) {
+	    extendStatics$6 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$6(d, b);
+	};
+
+	function __extends$6(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$6(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$6 = function() {
+	    __assign$6 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$6.apply(this, arguments);
+	};
+
+	function __rest$6(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$6(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$6(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$6(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$6(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$6(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$6 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$6(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$6(o, m, p);
+	}
+
+	function __values$6(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$6(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$6() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$6(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$6() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$6(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$6(v) {
+	    return this instanceof __await$6 ? (this.v = v, this) : new __await$6(v);
+	}
+
+	function __asyncGenerator$6(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$6 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$6(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$6(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$6(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$6 === "function" ? __values$6(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$6(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$6 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$6(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$6(result, mod, k);
+	    __setModuleDefault$6(result, mod);
+	    return result;
+	}
+
+	function __importDefault$6(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$6(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$6(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$6(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$5 = function(d, b) {
+	    extendStatics$5 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$5(d, b);
+	};
+
+	function __extends$5(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$5(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$5 = function() {
+	    __assign$5 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$5.apply(this, arguments);
+	};
+
+	function __rest$5(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$5(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$5(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$5(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$5(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$5(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$5 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$5(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$5(o, m, p);
+	}
+
+	function __values$5(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$5(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$5() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$5(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$5() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$5(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$5(v) {
+	    return this instanceof __await$5 ? (this.v = v, this) : new __await$5(v);
+	}
+
+	function __asyncGenerator$5(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$5 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$5(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$5(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$5(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$5 === "function" ? __values$5(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$5(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$5 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$5(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$5(result, mod, k);
+	    __setModuleDefault$5(result, mod);
+	    return result;
+	}
+
+	function __importDefault$5(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$5(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$5(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$5(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
 
 	/**
 	 * @license
@@ -23909,7 +30383,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTabScrollerRTLDefault = /** @class */ (function (_super) {
-	    __extends(MDCTabScrollerRTLDefault, _super);
+	    __extends$5(MDCTabScrollerRTLDefault, _super);
 	    function MDCTabScrollerRTLDefault() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -23977,7 +30451,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTabScrollerRTLNegative = /** @class */ (function (_super) {
-	    __extends(MDCTabScrollerRTLNegative, _super);
+	    __extends$5(MDCTabScrollerRTLNegative, _super);
 	    function MDCTabScrollerRTLNegative() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -24042,7 +30516,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTabScrollerRTLReverse = /** @class */ (function (_super) {
-	    __extends(MDCTabScrollerRTLReverse, _super);
+	    __extends$5(MDCTabScrollerRTLReverse, _super);
 	    function MDCTabScrollerRTLReverse() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -24108,9 +30582,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTabScrollerFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTabScrollerFoundation, _super);
+	    __extends$5(MDCTabScrollerFoundation, _super);
 	    function MDCTabScrollerFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCTabScrollerFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$5(__assign$5({}, MDCTabScrollerFoundation.defaultAdapter), adapter)) || this;
 	        /**
 	         * Controls whether we should handle the transitionend and interaction events during the animation.
 	         */
@@ -24267,7 +30741,7 @@ var App = (function (exports) {
 	        var matrixParams = match[1];
 	        // tslint:disable-next-line:ban-ts-ignore "Unused vars" should be a linter warning, not a compiler error.
 	        // @ts-ignore These unused variables should retain their semantic names for clarity.
-	        var _a = __read(matrixParams.split(','), 6), a = _a[0], b = _a[1], c = _a[2], d = _a[3], tx = _a[4], ty = _a[5];
+	        var _a = __read$5(matrixParams.split(','), 6), a = _a[0], b = _a[1], c = _a[2], d = _a[3], tx = _a[4], ty = _a[5];
 	        return parseFloat(tx); // tslint:disable-line:ban
 	    };
 	    /**
@@ -24499,7 +30973,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTabScroller = /** @class */ (function (_super) {
-	    __extends(MDCTabScroller, _super);
+	    __extends$5(MDCTabScroller, _super);
 	    function MDCTabScroller() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -24606,6 +31080,504 @@ var App = (function (exports) {
 	    return MDCTabScroller;
 	}(MDCComponent));
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$4 = function(d, b) {
+	    extendStatics$4 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$4(d, b);
+	};
+
+	function __extends$4(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$4(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$4 = function() {
+	    __assign$4 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$4.apply(this, arguments);
+	};
+
+	function __rest$4(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$4(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$4(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$4(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$4(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$4(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$4 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$4(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$4(o, m, p);
+	}
+
+	function __values$4(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$4(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$4() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$4(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$4() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$4(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$4(v) {
+	    return this instanceof __await$4 ? (this.v = v, this) : new __await$4(v);
+	}
+
+	function __asyncGenerator$4(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$4 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$4(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$4(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$4(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$4 === "function" ? __values$4(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$4(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$4 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$4(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$4(result, mod, k);
+	    __setModuleDefault$4(result, mod);
+	    return result;
+	}
+
+	function __importDefault$4(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$4(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$4(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$4(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$3 = function(d, b) {
+	    extendStatics$3 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$3(d, b);
+	};
+
+	function __extends$3(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$3(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$3 = function() {
+	    __assign$3 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$3.apply(this, arguments);
+	};
+
+	function __rest$3(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$3(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$3(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$3(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$3(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$3(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$3 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$3(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$3(o, m, p);
+	}
+
+	function __values$3(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$3(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$3() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$3(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$3() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$3(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$3(v) {
+	    return this instanceof __await$3 ? (this.v = v, this) : new __await$3(v);
+	}
+
+	function __asyncGenerator$3(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$3 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$3(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$3(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$3(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$3 === "function" ? __values$3(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$3(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$3 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$3(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$3(result, mod, k);
+	    __setModuleDefault$3(result, mod);
+	    return result;
+	}
+
+	function __importDefault$3(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$3(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$3(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$3(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2018 Google Inc.
@@ -24660,9 +31632,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTabIndicatorFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTabIndicatorFoundation, _super);
+	    __extends$3(MDCTabIndicatorFoundation, _super);
 	    function MDCTabIndicatorFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCTabIndicatorFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$3(__assign$3({}, MDCTabIndicatorFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCTabIndicatorFoundation, "cssClasses", {
 	        get: function () {
@@ -24724,7 +31696,7 @@ var App = (function (exports) {
 	 */
 	/* istanbul ignore next: subclass is not a branch statement */
 	var MDCFadingTabIndicatorFoundation = /** @class */ (function (_super) {
-	    __extends(MDCFadingTabIndicatorFoundation, _super);
+	    __extends$3(MDCFadingTabIndicatorFoundation, _super);
 	    function MDCFadingTabIndicatorFoundation() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -24761,7 +31733,7 @@ var App = (function (exports) {
 	 */
 	/* istanbul ignore next: subclass is not a branch statement */
 	var MDCSlidingTabIndicatorFoundation = /** @class */ (function (_super) {
-	    __extends(MDCSlidingTabIndicatorFoundation, _super);
+	    __extends$3(MDCSlidingTabIndicatorFoundation, _super);
 	    function MDCSlidingTabIndicatorFoundation() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -24815,7 +31787,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTabIndicator = /** @class */ (function (_super) {
-	    __extends(MDCTabIndicator, _super);
+	    __extends$3(MDCTabIndicator, _super);
 	    function MDCTabIndicator() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -24914,9 +31886,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTabFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTabFoundation, _super);
+	    __extends$4(MDCTabFoundation, _super);
 	    function MDCTabFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCTabFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$4(__assign$4({}, MDCTabFoundation.defaultAdapter), adapter)) || this;
 	        _this.focusOnActivate = true;
 	        return _this;
 	    }
@@ -25036,7 +32008,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTab = /** @class */ (function (_super) {
-	    __extends(MDCTab, _super);
+	    __extends$4(MDCTab, _super);
 	    function MDCTab() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -25220,9 +32192,9 @@ var App = (function (exports) {
 	KEYCODE_MAP.set(numbers$3.ENTER_KEYCODE, strings$7.ENTER_KEY);
 	KEYCODE_MAP.set(numbers$3.SPACE_KEYCODE, strings$7.SPACE_KEY);
 	var MDCTabBarFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTabBarFoundation, _super);
+	    __extends$6(MDCTabBarFoundation, _super);
 	    function MDCTabBarFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCTabBarFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$6(__assign$6({}, MDCTabBarFoundation.defaultAdapter), adapter)) || this;
 	        _this.useAutomaticActivation = false;
 	        return _this;
 	    }
@@ -25577,7 +32549,7 @@ var App = (function (exports) {
 	var strings$6 = MDCTabBarFoundation.strings;
 	var tabIdCounter = 0;
 	var MDCTabBar = /** @class */ (function (_super) {
-	    __extends(MDCTabBar, _super);
+	    __extends$6(MDCTabBar, _super);
 	    function MDCTabBar() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -25588,7 +32560,7 @@ var App = (function (exports) {
 	        set: function (focusOnActivate) {
 	            var e_1, _a;
 	            try {
-	                for (var _b = __values(this.tabList), _c = _b.next(); !_c.done; _c = _b.next()) {
+	                for (var _b = __values$6(this.tabList), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                    var tab = _c.value;
 	                    tab.focusOnActivate = focusOnActivate;
 	                }
@@ -25640,7 +32612,7 @@ var App = (function (exports) {
 	        this.unlisten(MDCTabFoundation.strings.INTERACTED_EVENT, this.handleTabInteraction);
 	        this.unlisten('keydown', this.handleKeyDown);
 	        try {
-	            for (var _b = __values(this.tabList), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$6(this.tabList), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var tab = _c.value;
 	                tab.destroy();
 	            }
@@ -26047,6 +33019,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$2 = function(d, b) {
+	    extendStatics$2 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$2(d, b);
+	};
+
+	function __extends$2(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$2(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$2 = function() {
+	    __assign$2 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$2.apply(this, arguments);
+	};
+
+	function __rest$2(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$2(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$2(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$2(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$2(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$2(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$2 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$2(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$2(o, m, p);
+	}
+
+	function __values$2(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$2(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$2() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$2(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$2() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$2(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$2(v) {
+	    return this instanceof __await$2 ? (this.v = v, this) : new __await$2(v);
+	}
+
+	function __asyncGenerator$2(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$2 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$2(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$2(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$2(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$2 === "function" ? __values$2(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$2(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$2 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$2(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$2(result, mod, k);
+	    __setModuleDefault$2(result, mod);
+	    return result;
+	}
+
+	function __importDefault$2(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$2(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$2(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$2(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2019 Google Inc.
@@ -26099,9 +33320,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTextFieldCharacterCounterFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTextFieldCharacterCounterFoundation, _super);
+	    __extends$2(MDCTextFieldCharacterCounterFoundation, _super);
 	    function MDCTextFieldCharacterCounterFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCTextFieldCharacterCounterFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$2(__assign$2({}, MDCTextFieldCharacterCounterFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCTextFieldCharacterCounterFoundation, "cssClasses", {
 	        get: function () {
@@ -26159,7 +33380,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTextFieldCharacterCounter = /** @class */ (function (_super) {
-	    __extends(MDCTextFieldCharacterCounter, _super);
+	    __extends$2(MDCTextFieldCharacterCounter, _super);
 	    function MDCTextFieldCharacterCounter() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -26292,14 +33513,14 @@ var App = (function (exports) {
 	var POINTERDOWN_EVENTS = ['mousedown', 'touchstart'];
 	var INTERACTION_EVENTS$1 = ['click', 'keydown'];
 	var MDCTextFieldFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTextFieldFoundation, _super);
+	    __extends$2(MDCTextFieldFoundation, _super);
 	    /**
 	     * @param adapter
 	     * @param foundationMap Map from subcomponent names to their subfoundations.
 	     */
 	    function MDCTextFieldFoundation(adapter, foundationMap) {
 	        if (foundationMap === void 0) { foundationMap = {}; }
-	        var _this = _super.call(this, __assign(__assign({}, MDCTextFieldFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$2(__assign$2({}, MDCTextFieldFoundation.defaultAdapter), adapter)) || this;
 	        _this.isFocused = false;
 	        _this.receivedUserInput = false;
 	        _this.valid = true;
@@ -26430,7 +33651,7 @@ var App = (function (exports) {
 	        this.adapter.registerInputInteractionHandler('blur', this.inputBlurHandler);
 	        this.adapter.registerInputInteractionHandler('input', this.inputInputHandler);
 	        try {
-	            for (var POINTERDOWN_EVENTS_1 = __values(POINTERDOWN_EVENTS), POINTERDOWN_EVENTS_1_1 = POINTERDOWN_EVENTS_1.next(); !POINTERDOWN_EVENTS_1_1.done; POINTERDOWN_EVENTS_1_1 = POINTERDOWN_EVENTS_1.next()) {
+	            for (var POINTERDOWN_EVENTS_1 = __values$2(POINTERDOWN_EVENTS), POINTERDOWN_EVENTS_1_1 = POINTERDOWN_EVENTS_1.next(); !POINTERDOWN_EVENTS_1_1.done; POINTERDOWN_EVENTS_1_1 = POINTERDOWN_EVENTS_1.next()) {
 	                var evtType = POINTERDOWN_EVENTS_1_1.value;
 	                this.adapter.registerInputInteractionHandler(evtType, this.setPointerXOffset);
 	            }
@@ -26443,7 +33664,7 @@ var App = (function (exports) {
 	            finally { if (e_1) throw e_1.error; }
 	        }
 	        try {
-	            for (var INTERACTION_EVENTS_1 = __values(INTERACTION_EVENTS$1), INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next(); !INTERACTION_EVENTS_1_1.done; INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next()) {
+	            for (var INTERACTION_EVENTS_1 = __values$2(INTERACTION_EVENTS$1), INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next(); !INTERACTION_EVENTS_1_1.done; INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next()) {
 	                var evtType = INTERACTION_EVENTS_1_1.value;
 	                this.adapter.registerTextFieldInteractionHandler(evtType, this.textFieldInteractionHandler);
 	            }
@@ -26465,7 +33686,7 @@ var App = (function (exports) {
 	        this.adapter.deregisterInputInteractionHandler('blur', this.inputBlurHandler);
 	        this.adapter.deregisterInputInteractionHandler('input', this.inputInputHandler);
 	        try {
-	            for (var POINTERDOWN_EVENTS_2 = __values(POINTERDOWN_EVENTS), POINTERDOWN_EVENTS_2_1 = POINTERDOWN_EVENTS_2.next(); !POINTERDOWN_EVENTS_2_1.done; POINTERDOWN_EVENTS_2_1 = POINTERDOWN_EVENTS_2.next()) {
+	            for (var POINTERDOWN_EVENTS_2 = __values$2(POINTERDOWN_EVENTS), POINTERDOWN_EVENTS_2_1 = POINTERDOWN_EVENTS_2.next(); !POINTERDOWN_EVENTS_2_1.done; POINTERDOWN_EVENTS_2_1 = POINTERDOWN_EVENTS_2.next()) {
 	                var evtType = POINTERDOWN_EVENTS_2_1.value;
 	                this.adapter.deregisterInputInteractionHandler(evtType, this.setPointerXOffset);
 	            }
@@ -26478,7 +33699,7 @@ var App = (function (exports) {
 	            finally { if (e_3) throw e_3.error; }
 	        }
 	        try {
-	            for (var INTERACTION_EVENTS_2 = __values(INTERACTION_EVENTS$1), INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next(); !INTERACTION_EVENTS_2_1.done; INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next()) {
+	            for (var INTERACTION_EVENTS_2 = __values$2(INTERACTION_EVENTS$1), INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next(); !INTERACTION_EVENTS_2_1.done; INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next()) {
 	                var evtType = INTERACTION_EVENTS_2_1.value;
 	                this.adapter.deregisterTextFieldInteractionHandler(evtType, this.textFieldInteractionHandler);
 	            }
@@ -26901,9 +34122,9 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTextFieldHelperTextFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTextFieldHelperTextFoundation, _super);
+	    __extends$2(MDCTextFieldHelperTextFoundation, _super);
 	    function MDCTextFieldHelperTextFoundation(adapter) {
-	        return _super.call(this, __assign(__assign({}, MDCTextFieldHelperTextFoundation.defaultAdapter), adapter)) || this;
+	        return _super.call(this, __assign$2(__assign$2({}, MDCTextFieldHelperTextFoundation.defaultAdapter), adapter)) || this;
 	    }
 	    Object.defineProperty(MDCTextFieldHelperTextFoundation, "cssClasses", {
 	        get: function () {
@@ -27052,7 +34273,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTextFieldHelperText = /** @class */ (function (_super) {
-	    __extends(MDCTextFieldHelperText, _super);
+	    __extends$2(MDCTextFieldHelperText, _super);
 	    function MDCTextFieldHelperText() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -27143,9 +34364,9 @@ var App = (function (exports) {
 	 */
 	var INTERACTION_EVENTS = ['click', 'keydown'];
 	var MDCTextFieldIconFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTextFieldIconFoundation, _super);
+	    __extends$2(MDCTextFieldIconFoundation, _super);
 	    function MDCTextFieldIconFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCTextFieldIconFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$2(__assign$2({}, MDCTextFieldIconFoundation.defaultAdapter), adapter)) || this;
 	        _this.savedTabIndex = null;
 	        _this.interactionHandler = function (evt) {
 	            _this.handleInteraction(evt);
@@ -27190,7 +34411,7 @@ var App = (function (exports) {
 	        var e_1, _a;
 	        this.savedTabIndex = this.adapter.getAttr('tabindex');
 	        try {
-	            for (var INTERACTION_EVENTS_1 = __values(INTERACTION_EVENTS), INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next(); !INTERACTION_EVENTS_1_1.done; INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next()) {
+	            for (var INTERACTION_EVENTS_1 = __values$2(INTERACTION_EVENTS), INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next(); !INTERACTION_EVENTS_1_1.done; INTERACTION_EVENTS_1_1 = INTERACTION_EVENTS_1.next()) {
 	                var evtType = INTERACTION_EVENTS_1_1.value;
 	                this.adapter.registerInteractionHandler(evtType, this.interactionHandler);
 	            }
@@ -27206,7 +34427,7 @@ var App = (function (exports) {
 	    MDCTextFieldIconFoundation.prototype.destroy = function () {
 	        var e_2, _a;
 	        try {
-	            for (var INTERACTION_EVENTS_2 = __values(INTERACTION_EVENTS), INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next(); !INTERACTION_EVENTS_2_1.done; INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next()) {
+	            for (var INTERACTION_EVENTS_2 = __values$2(INTERACTION_EVENTS), INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next(); !INTERACTION_EVENTS_2_1.done; INTERACTION_EVENTS_2_1 = INTERACTION_EVENTS_2.next()) {
 	                var evtType = INTERACTION_EVENTS_2_1.value;
 	                this.adapter.deregisterInteractionHandler(evtType, this.interactionHandler);
 	            }
@@ -27272,7 +34493,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTextFieldIcon = /** @class */ (function (_super) {
-	    __extends(MDCTextFieldIcon, _super);
+	    __extends$2(MDCTextFieldIcon, _super);
 	    function MDCTextFieldIcon() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -27332,7 +34553,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTextField = /** @class */ (function (_super) {
-	    __extends(MDCTextField, _super);
+	    __extends$2(MDCTextField, _super);
 	    function MDCTextField() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -27670,7 +34891,7 @@ var App = (function (exports) {
 	        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
 	        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
 	        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-	        var adapter = __assign(__assign(__assign(__assign(__assign({}, this.getRootAdapterMethods()), this.getInputAdapterMethods()), this.getLabelAdapterMethods()), this.getLineRippleAdapterMethods()), this.getOutlineAdapterMethods());
+	        var adapter = __assign$2(__assign$2(__assign$2(__assign$2(__assign$2({}, this.getRootAdapterMethods()), this.getInputAdapterMethods()), this.getLabelAdapterMethods()), this.getLineRippleAdapterMethods()), this.getOutlineAdapterMethods());
 	        // tslint:enable:object-literal-sort-keys
 	        return new MDCTextFieldFoundation(adapter, this.getFoundationMap());
 	    };
@@ -27800,7 +35021,7 @@ var App = (function (exports) {
 	        // DO NOT INLINE this variable. For backward compatibility, foundations take a Partial<MDCFooAdapter>.
 	        // To ensure we don't accidentally omit any methods, we need a separate, strongly typed adapter variable.
 	        // tslint:disable:object-literal-sort-keys Methods should be in the same order as the adapter interface.
-	        var adapter = __assign(__assign({}, MDCRipple.createAdapter(this)), { isSurfaceActive: function () { return matches$2(_this.input, ':active'); }, registerInteractionHandler: function (evtType, handler) {
+	        var adapter = __assign$2(__assign$2({}, MDCRipple.createAdapter(this)), { isSurfaceActive: function () { return matches$2(_this.input, ':active'); }, registerInteractionHandler: function (evtType, handler) {
 	                _this.input.addEventListener(evtType, handler, applyPassive());
 	            }, deregisterInteractionHandler: function (evtType, handler) {
 	                _this.input.removeEventListener(evtType, handler, applyPassive());
@@ -28041,6 +35262,255 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics$1 = function(d, b) {
+	    extendStatics$1 = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics$1(d, b);
+	};
+
+	function __extends$1(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics$1(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign$1 = function() {
+	    __assign$1 = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign$1.apply(this, arguments);
+	};
+
+	function __rest$1(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate$1(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param$1(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata$1(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter$1(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator$1(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding$1 = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar$1(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding$1(o, m, p);
+	}
+
+	function __values$1(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read$1(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread$1() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read$1(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays$1() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray$1(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await$1(v) {
+	    return this instanceof __await$1 ? (this.v = v, this) : new __await$1(v);
+	}
+
+	function __asyncGenerator$1(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await$1 ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator$1(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await$1(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues$1(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values$1 === "function" ? __values$1(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject$1(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault$1 = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar$1(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding$1(result, mod, k);
+	    __setModuleDefault$1(result, mod);
+	    return result;
+	}
+
+	function __importDefault$1(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet$1(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet$1(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn$1(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
+
 	/**
 	 * @license
 	 * Copyright 2020 Google Inc.
@@ -28205,9 +35675,9 @@ var App = (function (exports) {
 	// Accessing `window` without a `typeof` check will throw on Node environments.
 	var HAS_WINDOW = typeof window !== 'undefined';
 	var MDCTooltipFoundation = /** @class */ (function (_super) {
-	    __extends(MDCTooltipFoundation, _super);
+	    __extends$1(MDCTooltipFoundation, _super);
 	    function MDCTooltipFoundation(adapter) {
-	        var _this = _super.call(this, __assign(__assign({}, MDCTooltipFoundation.defaultAdapter), adapter)) || this;
+	        var _this = _super.call(this, __assign$1(__assign$1({}, MDCTooltipFoundation.defaultAdapter), adapter)) || this;
 	        _this.tooltipShown = false;
 	        _this.anchorGap = numbers$1.BOUNDED_ANCHOR_GAP;
 	        _this.xTooltipPos = XPosition.DETECTED;
@@ -28531,7 +36001,7 @@ var App = (function (exports) {
 	        this.adapter.registerWindowEventHandler('resize', this.windowResizeHandler);
 	        try {
 	            // Register any additional scroll handlers
-	            for (var _b = __values(this.addAncestorScrollEventListeners), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$1(this.addAncestorScrollEventListeners), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var fn = _c.value;
 	                fn();
 	            }
@@ -28583,7 +36053,7 @@ var App = (function (exports) {
 	        this.adapter.deregisterWindowEventHandler('contextmenu', this.preventContextMenuOnLongTouch);
 	        try {
 	            // Deregister any additional scroll handlers
-	            for (var _b = __values(this.removeAncestorScrollEventListeners), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$1(this.removeAncestorScrollEventListeners), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var fn = _c.value;
 	                fn();
 	            }
@@ -28806,7 +36276,7 @@ var App = (function (exports) {
 	        var posWithinThreshold = new Set();
 	        var posWithinViewport = new Set();
 	        try {
-	            for (var positions_1 = __values(positions), positions_1_1 = positions_1.next(); !positions_1_1.done; positions_1_1 = positions_1.next()) {
+	            for (var positions_1 = __values$1(positions), positions_1_1 = positions_1.next(); !positions_1_1.done; positions_1_1 = positions_1.next()) {
 	                var position = positions_1_1.value;
 	                if (this.positionHonorsViewportThreshold(position)) {
 	                    posWithinThreshold.add(position);
@@ -29044,12 +36514,12 @@ var App = (function (exports) {
 	            ],
 	        ]);
 	        try {
-	            for (var _d = __values(validMappings.keys()), _e = _d.next(); !_e.done; _e = _d.next()) {
+	            for (var _d = __values$1(validMappings.keys()), _e = _d.next(); !_e.done; _e = _d.next()) {
 	                var y = _e.value;
 	                var yDistance = yOptions.get(y);
 	                if (this.yPositionHonorsViewportThreshold(yDistance)) {
 	                    try {
-	                        for (var _f = (e_5 = void 0, __values(validMappings.get(y))), _g = _f.next(); !_g.done; _g = _f.next()) {
+	                        for (var _f = (e_5 = void 0, __values$1(validMappings.get(y))), _g = _f.next(); !_g.done; _g = _f.next()) {
 	                            var x = _g.value;
 	                            var xDistance = xOptions.get(x);
 	                            if (this.positionHonorsViewportThreshold(xDistance)) {
@@ -29068,7 +36538,7 @@ var App = (function (exports) {
 	                }
 	                else if (this.yPositionDoesntCollideWithViewport(yDistance)) {
 	                    try {
-	                        for (var _h = (e_6 = void 0, __values(validMappings.get(y))), _j = _h.next(); !_j.done; _j = _h.next()) {
+	                        for (var _h = (e_6 = void 0, __values$1(validMappings.get(y))), _j = _h.next(); !_j.done; _j = _h.next()) {
 	                            var x = _j.value;
 	                            var xDistance = xOptions.get(x);
 	                            if (this.positionDoesntCollideWithViewport(xDistance)) {
@@ -29251,7 +36721,7 @@ var App = (function (exports) {
 	        this.adapter.setTooltipCaretStyle('transform', "rotate(" + values.rotation + "deg) skewY(" + values.skew + "deg) scaleX(" + scaleX + ")");
 	        this.adapter.setTooltipCaretStyle('transform-origin', values.xAlignment + " " + values.yAlignment);
 	        try {
-	            for (var _b = __values(values.caretCorners), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$1(values.caretCorners), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var corner = _c.value;
 	                this.adapter.setTooltipCaretStyle(corner, '0');
 	            }
@@ -29508,7 +36978,7 @@ var App = (function (exports) {
 	        this.adapter.deregisterWindowEventHandler('scroll', this.windowScrollHandler);
 	        this.adapter.deregisterWindowEventHandler('resize', this.windowResizeHandler);
 	        try {
-	            for (var _b = __values(this.removeAncestorScrollEventListeners), _c = _b.next(); !_c.done; _c = _b.next()) {
+	            for (var _b = __values$1(this.removeAncestorScrollEventListeners), _c = _b.next(); !_c.done; _c = _b.next()) {
 	                var fn = _c.value;
 	                fn();
 	            }
@@ -29548,7 +37018,7 @@ var App = (function (exports) {
 	 * THE SOFTWARE.
 	 */
 	var MDCTooltip = /** @class */ (function (_super) {
-	    __extends(MDCTooltip, _super);
+	    __extends$1(MDCTooltip, _super);
 	    function MDCTooltip() {
 	        return _super !== null && _super.apply(this, arguments) || this;
 	    }
@@ -29847,6 +37317,255 @@ var App = (function (exports) {
 	 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	 * THE SOFTWARE.
 	 */
+
+	/******************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics = function(d, b) {
+	    extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+	    return extendStatics(d, b);
+	};
+
+	function __extends(d, b) {
+	    if (typeof b !== "function" && b !== null)
+	        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+	    extendStatics(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign = function() {
+	    __assign = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign.apply(this, arguments);
+	};
+
+	function __rest(s, e) {
+	    var t = {};
+	    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+	        t[p] = s[p];
+	    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+	        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+	            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+	                t[p[i]] = s[p[i]];
+	        }
+	    return t;
+	}
+
+	function __decorate(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __param(paramIndex, decorator) {
+	    return function (target, key) { decorator(target, key, paramIndex); }
+	}
+
+	function __metadata(metadataKey, metadataValue) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+	}
+
+	function __awaiter(thisArg, _arguments, P, generator) {
+	    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+	    return new (P || (P = Promise))(function (resolve, reject) {
+	        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+	        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+	        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+	        step((generator = generator.apply(thisArg, _arguments || [])).next());
+	    });
+	}
+
+	function __generator(thisArg, body) {
+	    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+	    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+	    function verb(n) { return function (v) { return step([n, v]); }; }
+	    function step(op) {
+	        if (f) throw new TypeError("Generator is already executing.");
+	        while (_) try {
+	            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+	            if (y = 0, t) op = [op[0] & 2, t.value];
+	            switch (op[0]) {
+	                case 0: case 1: t = op; break;
+	                case 4: _.label++; return { value: op[1], done: false };
+	                case 5: _.label++; y = op[1]; op = [0]; continue;
+	                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+	                default:
+	                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+	                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+	                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+	                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+	                    if (t[2]) _.ops.pop();
+	                    _.trys.pop(); continue;
+	            }
+	            op = body.call(thisArg, _);
+	        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+	        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+	    }
+	}
+
+	var __createBinding = Object.create ? (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    var desc = Object.getOwnPropertyDescriptor(m, k);
+	    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+	        desc = { enumerable: true, get: function() { return m[k]; } };
+	    }
+	    Object.defineProperty(o, k2, desc);
+	}) : (function(o, m, k, k2) {
+	    if (k2 === undefined) k2 = k;
+	    o[k2] = m[k];
+	});
+
+	function __exportStar(m, o) {
+	    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p)) __createBinding(o, m, p);
+	}
+
+	function __values(o) {
+	    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+	    if (m) return m.call(o);
+	    if (o && typeof o.length === "number") return {
+	        next: function () {
+	            if (o && i >= o.length) o = void 0;
+	            return { value: o && o[i++], done: !o };
+	        }
+	    };
+	    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+	}
+
+	function __read(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spread() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read(arguments[i]));
+	    return ar;
+	}
+
+	/** @deprecated */
+	function __spreadArrays() {
+	    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+	    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+	        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+	            r[k] = a[j];
+	    return r;
+	}
+
+	function __spreadArray(to, from, pack) {
+	    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+	        if (ar || !(i in from)) {
+	            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+	            ar[i] = from[i];
+	        }
+	    }
+	    return to.concat(ar || Array.prototype.slice.call(from));
+	}
+
+	function __await(v) {
+	    return this instanceof __await ? (this.v = v, this) : new __await(v);
+	}
+
+	function __asyncGenerator(thisArg, _arguments, generator) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var g = generator.apply(thisArg, _arguments || []), i, q = [];
+	    return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
+	    function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+	    function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+	    function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
+	    function fulfill(value) { resume("next", value); }
+	    function reject(value) { resume("throw", value); }
+	    function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+	}
+
+	function __asyncDelegator(o) {
+	    var i, p;
+	    return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
+	    function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
+	}
+
+	function __asyncValues(o) {
+	    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+	    var m = o[Symbol.asyncIterator], i;
+	    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+	    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+	    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+	}
+
+	function __makeTemplateObject(cooked, raw) {
+	    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+	    return cooked;
+	};
+
+	var __setModuleDefault = Object.create ? (function(o, v) {
+	    Object.defineProperty(o, "default", { enumerable: true, value: v });
+	}) : function(o, v) {
+	    o["default"] = v;
+	};
+
+	function __importStar(mod) {
+	    if (mod && mod.__esModule) return mod;
+	    var result = {};
+	    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+	    __setModuleDefault(result, mod);
+	    return result;
+	}
+
+	function __importDefault(mod) {
+	    return (mod && mod.__esModule) ? mod : { default: mod };
+	}
+
+	function __classPrivateFieldGet(receiver, state, kind, f) {
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+	    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+	}
+
+	function __classPrivateFieldSet(receiver, state, value, kind, f) {
+	    if (kind === "m") throw new TypeError("Private method is not writable");
+	    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+	    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+	    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+	}
+
+	function __classPrivateFieldIn(state, receiver) {
+	    if (receiver === null || (typeof receiver !== "object" && typeof receiver !== "function")) throw new TypeError("Cannot use 'in' operator on non-object");
+	    return typeof state === "function" ? receiver === state : state.has(receiver);
+	}
 
 	/**
 	 * @license
@@ -30576,7 +38295,7 @@ var App = (function (exports) {
 		}
 	}
 
-	utils$1.registerSargassoClass('Reaper', Reaper);
+	utils.registerSargassoClass('Reaper', Reaper);
 
 	class TropicBird extends Sargasso {
 		constructor (element, options = {}) {
@@ -30625,11 +38344,11 @@ var App = (function (exports) {
 			return new Promise((resolve, reject) => {
 				this.mdcDialog = new MDCDialog(dialogContainer);
 				this.mdcDialog.listen('MDCDialog:closed', (e) => {
-					utils$1.elementTools.removeClass(document.body, 'modal-open');
+					utils.elementTools.removeClass(document.body, 'modal-open');
 					document.getElementById('ephemeral').getElementsByClassName('mdc-dialog')[0].remove();
 					resolve(e.detail.action);
 				});
-				utils$1.elementTools.addClass(document.body, 'modal-open');
+				utils.elementTools.addClass(document.body, 'modal-open');
 				this.mdcDialog.open();
 			})
 		}
@@ -30717,10 +38436,10 @@ var App = (function (exports) {
 			const elements = root.querySelectorAll(managedClasses.join(','));
 			for (let i = 0; i < elements.length; i++) {
 				const element = elements[i];
-				if (!utils$1.elementTools.hasClass(element, 'mdc-instantiated')) {
-					utils$1.elementTools.addClass(element, 'mdc-instantiated');
+				if (!utils.elementTools.hasClass(element, 'mdc-instantiated')) {
+					utils.elementTools.addClass(element, 'mdc-instantiated');
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-top-app-bar')) {
+					if (utils.elementTools.hasClass(element, 'mdc-top-app-bar')) {
 						this.topAppBar = new MDCTopAppBar(element);
 						const r = new Reaper(element, {
 							MDCThing: this.topAppBar
@@ -30728,7 +38447,7 @@ var App = (function (exports) {
 						r.start();
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-drawer')) {
+					if (utils.elementTools.hasClass(element, 'mdc-drawer')) {
 						this.drawer = new MDCDrawer(element);
 						const r = new Reaper(element, {
 							MDCThing: this.drawer
@@ -30750,7 +38469,7 @@ var App = (function (exports) {
 						}
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-snackbar')) {
+					if (utils.elementTools.hasClass(element, 'mdc-snackbar')) {
 						this.snackBar = new MDCSnackbar(element);
 						const r = new Reaper(element, {
 							MDCThing: this.snackBar
@@ -30758,7 +38477,7 @@ var App = (function (exports) {
 						r.start();
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-linear-progress')) {
+					if (utils.elementTools.hasClass(element, 'mdc-linear-progress')) {
 						this.linearProgress = new MDCLinearProgress(element);
 						const r = new Reaper(element, {
 							MDCThing: this.linearProgress
@@ -30766,7 +38485,7 @@ var App = (function (exports) {
 						r.start();
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-text-field')) {
+					if (utils.elementTools.hasClass(element, 'mdc-text-field')) {
 						const thing = new MDCTextField(element);
 						const r = new Reaper(element, {
 							MDCThing: thing
@@ -30774,7 +38493,7 @@ var App = (function (exports) {
 						r.start();
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-select')) {
+					if (utils.elementTools.hasClass(element, 'mdc-select')) {
 						const thing = new MDCSelect(element);
 						const r = new Reaper(element, {
 							MDCThing: thing
@@ -30782,7 +38501,7 @@ var App = (function (exports) {
 						r.start();
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-switch')) {
+					if (utils.elementTools.hasClass(element, 'mdc-switch')) {
 						const thing = new MDCSwitch(element);
 						const r = new Reaper(element, {
 							MDCThing: thing
@@ -30790,7 +38509,7 @@ var App = (function (exports) {
 						r.start();
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-chip-set')) {
+					if (utils.elementTools.hasClass(element, 'mdc-chip-set')) {
 						const thing = new MDCChipSet(element);
 						const r = new Reaper(element, {
 							MDCThing: thing
@@ -30798,7 +38517,7 @@ var App = (function (exports) {
 						r.start();
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-tab-bar')) {
+					if (utils.elementTools.hasClass(element, 'mdc-tab-bar')) {
 						const thing = new MDCTabBar(element);
 						const r = new Reaper(element, {
 							MDCThing: thing
@@ -30806,7 +38525,7 @@ var App = (function (exports) {
 						r.start();
 					}
 
-					if (utils$1.elementTools.hasClass(element, 'mdc-tab-scroller')) {
+					if (utils.elementTools.hasClass(element, 'mdc-tab-scroller')) {
 						const thing = new MDCTabScroller(element);
 						const r = new Reaper(element, {
 							MDCThing: thing
@@ -30815,7 +38534,7 @@ var App = (function (exports) {
 					}
 
 					for (let j = 0; j < wantRipple.length; j++) {
-						if (utils$1.elementTools.hasClass(element, wantRipple[j])) {
+						if (utils.elementTools.hasClass(element, wantRipple[j])) {
 							const thing = new MDCRipple(element);
 							const r = new Reaper(element, {
 								MDCThing: thing
@@ -30837,7 +38556,7 @@ var App = (function (exports) {
 		}
 	}
 
-	utils$1.registerSargassoClass('TropicBird', TropicBird);
+	utils.registerSargassoClass('TropicBird', TropicBird);
 
 	/* 	Made in Barbados 🇧🇧 Copyright © 2020-2021 Michael Rhodes */
 
@@ -30903,7 +38622,7 @@ var App = (function (exports) {
 		}
 	}
 
-	utils$1.registerSargassoClass('FlyingFish', FlyingFish);
+	utils.registerSargassoClass('FlyingFish', FlyingFish);
 
 	/**
 		@PelagicCreatures/FlyingFish
@@ -30972,7 +38691,7 @@ var App = (function (exports) {
 		}
 
 		pose () {
-			utils$1.elementTools.addClass(document.body, 'show-recaptcha', this);
+			utils.elementTools.addClass(document.body, 'show-recaptcha', this);
 		}
 
 		preFlight () {
@@ -30991,7 +38710,7 @@ var App = (function (exports) {
 		}
 
 		destroy () {
-			utils$1.elementTools.removeClass(document.body, 'show-recaptcha');
+			utils.elementTools.removeClass(document.body, 'show-recaptcha');
 		}
 	}
 
@@ -39612,7 +47331,7 @@ var App = (function (exports) {
 		handleChange (e) {
 			if (e && e.srcElement && e.srcElement !== window) {
 				const elem = e.srcElement;
-				utils$1.elementTools.addClass(elem.closest('form'), 'touched');
+				utils.elementTools.addClass(elem.closest('form'), 'touched');
 				const isDirty = elem.getAttribute('data-last-value') !== getRealVal(elem);
 				elem.setAttribute('data-touched', true);
 				elem.setAttribute('data-dirty', isDirty);
@@ -39744,12 +47463,12 @@ var App = (function (exports) {
 			const inputGroup = element.closest('.input-group');
 			if (inputGroup) {
 				if (errors.length) {
-					utils$1.elementTools.removeClass(inputGroup, 'input-ok');
-					utils$1.elementTools.addClass(inputGroup, 'error');
+					utils.elementTools.removeClass(inputGroup, 'input-ok');
+					utils.elementTools.addClass(inputGroup, 'error');
 					inputGroup.getElementsByClassName('validation-help')[0].innerHTML = errors.join(', ');
 				} else {
-					utils$1.elementTools.removeClass(inputGroup, 'error');
-					utils$1.elementTools.addClass(inputGroup, 'input-ok');
+					utils.elementTools.removeClass(inputGroup, 'error');
+					utils.elementTools.addClass(inputGroup, 'input-ok');
 					inputGroup.getElementsByClassName('validation-help')[0].innerHTML = '';
 				}
 			}
@@ -39959,7 +47678,7 @@ var App = (function (exports) {
 		}
 	}
 
-	utils$1.registerSargassoClass('MolaMola', MolaMola);
+	utils.registerSargassoClass('MolaMola', MolaMola);
 
 	/**
 		@PelagicCreatures/MolaMola
@@ -40007,25 +47726,24 @@ var App = (function (exports) {
 		ValidateHelper: ValidateHelper
 	};
 
-	let loadPage, reloadPage, tropicBird;
+	const tropicBird = new TropicBird(document.body, {});
+	tropicBird.start();
+
+	const loadPage = (url) => {
+		loadPageHandler(url);
+	};
+
+	const reloadPage = () => {
+		loadPageHandler(document.location.href, true);
+	};
 
 	const bootCMS = () => {
-		tropicBird = new TropicBird(document.body, {});
-		tropicBird.start();
-
-		loadPage = (url) => {
-			loadPageHandler(url);
-		};
-
-		reloadPage = () => {
-			loadPageHandler(document.location.href, true);
-		};
 
 		if (api.get('have-account')) {
-			utils$1.elementTools.addClass(document.body, 'have-account');
+			utils.elementTools.addClass(document.body, 'have-account');
 		}
 		else {
-			utils$1.elementTools.addClass(document.body, 'dont-have-account');
+			utils.elementTools.addClass(document.body, 'dont-have-account');
 		}
 
 		// Set initial login state css show/hide behavior
@@ -40037,18 +47755,18 @@ var App = (function (exports) {
 		}
 
 		window.setTimeout(function () {
-			utils$1.elementTools.addClass(document.querySelector('#splash'), 'animate__animated');
-			utils$1.elementTools.addClass(document.querySelector('#splash'), 'animate__fadeOut');
+			utils.elementTools.addClass(document.querySelector('#splash'), 'animate__animated');
+			utils.elementTools.addClass(document.querySelector('#splash'), 'animate__fadeOut');
 		}, 500);
 
-		utils$1.elementTools.on('notifications-button', document.body, 'click', '.show-notifications-button', (e) => {
-			if (utils$1.elementTools.hasClass(e.target, 'highlight')) {
-				utils$1.elementTools.removeClass(e.target, 'highlight');
-				utils$1.elementTools.removeClass(document.querySelector('#user-alerts'), 'open');
+		utils.elementTools.on('notifications-button', document.body, 'click', '.show-notifications-button', (e) => {
+			if (utils.elementTools.hasClass(e.target, 'highlight')) {
+				utils.elementTools.removeClass(e.target, 'highlight');
+				utils.elementTools.removeClass(document.querySelector('#user-alerts'), 'open');
 			}
 			else {
-				utils$1.elementTools.addClass(e.target, 'highlight');
-				utils$1.elementTools.addClass(document.querySelector('#user-alerts'), 'open');
+				utils.elementTools.addClass(e.target, 'highlight');
+				utils.elementTools.addClass(document.querySelector('#user-alerts'), 'open');
 			}
 		});
 	};
@@ -40058,9 +47776,9 @@ var App = (function (exports) {
 		checkSubscription();
 		api.set('have-account', 1, cookieOptions);
 		flashAjaxStatus('success', 'Logged in');
-		utils$1.elementTools.removeClass(document.body, 'is-logged-out');
-		utils$1.elementTools.addClass(document.body, 'is-logged-in');
-		utils$1.elementTools.addClass(document.body, 'have-account');
+		utils.elementTools.removeClass(document.body, 'is-logged-out');
+		utils.elementTools.addClass(document.body, 'is-logged-in');
+		utils.elementTools.addClass(document.body, 'have-account');
 		document.body.dispatchEvent(new CustomEvent('marlin-login'));
 	}
 
@@ -40070,56 +47788,44 @@ var App = (function (exports) {
 		if (api.get('have-account')) {
 			flashAjaxStatus('success', 'Logged out');
 		}
-		utils$1.elementTools.removeClass(document.body, 'is-logged-in');
-		utils$1.elementTools.addClass(document.body, 'is-logged-out');
+		utils.elementTools.removeClass(document.body, 'is-logged-in');
+		utils.elementTools.addClass(document.body, 'is-logged-out');
 		api.remove('access_token', cookieOptions);
 		document.body.dispatchEvent(new CustomEvent('marlin-logout'));
 	};
 
 	const checkSubscription = () => {
 		if (api.get('subscriber')) {
-			utils$1.elementTools.removeClass(document.body, 'not-subscriber');
-			utils$1.elementTools.addClass(document.body, 'is-subscriber');
+			utils.elementTools.removeClass(document.body, 'not-subscriber');
+			utils.elementTools.addClass(document.body, 'is-subscriber');
 		}
 		else {
-			utils$1.elementTools.removeClass(document.body, 'is-subscriber');
-			utils$1.elementTools.addClass(document.body, 'not-subscriber');
+			utils.elementTools.removeClass(document.body, 'is-subscriber');
+			utils.elementTools.addClass(document.body, 'not-subscriber');
 		}
 
 		if (api.get('admin')) {
-			utils$1.elementTools.removeClass(document.body, 'not-admin');
-			utils$1.elementTools.addClass(document.body, 'is-admin');
+			utils.elementTools.removeClass(document.body, 'not-admin');
+			utils.elementTools.addClass(document.body, 'is-admin');
 		}
 		else {
-			utils$1.elementTools.removeClass(document.body, 'is-admin');
-			utils$1.elementTools.addClass(document.body, 'not-admin');
+			utils.elementTools.removeClass(document.body, 'is-admin');
+			utils.elementTools.addClass(document.body, 'not-admin');
 		}
 
 		if (api.get('superuser')) {
-			utils$1.elementTools.removeClass(document.body, 'not-superuser');
-			utils$1.elementTools.addClass(document.body, 'is-superuser');
+			utils.elementTools.removeClass(document.body, 'not-superuser');
+			utils.elementTools.addClass(document.body, 'is-superuser');
 		}
 		else {
-			utils$1.elementTools.removeClass(document.body, 'is-superuser');
-			utils$1.elementTools.addClass(document.body, 'not-superuser');
+			utils.elementTools.removeClass(document.body, 'is-superuser');
+			utils.elementTools.addClass(document.body, 'not-superuser');
 		}
 	};
 
 	// call to show the Material Design "snackbar" for user notifications
 	const flashAjaxStatus = (level, message) => {
 		tropicBird.pushSnackBar(level, message);
-	};
-
-	var utils = {
-		__proto__: null,
-		bootCMS: bootCMS,
-		didLogIn: didLogIn,
-		didLogOut: didLogOut,
-		checkSubscription: checkSubscription,
-		flashAjaxStatus: flashAjaxStatus,
-		get loadPage () { return loadPage; },
-		get reloadPage () { return reloadPage; },
-		get tropicBird () { return tropicBird; }
 	};
 
 	class ajaxButton extends Sargasso {
@@ -40195,7 +47901,7 @@ var App = (function (exports) {
 		}
 	}
 
-	utils$1.registerSargassoClass('ajaxButton', ajaxButton);
+	utils.registerSargassoClass('ajaxButton', ajaxButton);
 
 	class paginationController extends Sargasso {
 		constructor (elem, options) {
@@ -40209,7 +47915,7 @@ var App = (function (exports) {
 			const eelipsis = this.element.querySelector('.pagination-elipsis-end');
 			if (pages.length > 9) {
 				for (let i = 0; i < pages.length; i++) {
-					if (utils$1.elementTools.hasClass(pages[i], 'active')) {
+					if (utils.elementTools.hasClass(pages[i], 'active')) {
 						index = i;
 					}
 				}
@@ -40242,7 +47948,7 @@ var App = (function (exports) {
 		};
 	}
 
-	utils$1.registerSargassoClass('paginationController', paginationController);
+	utils.registerSargassoClass('paginationController', paginationController);
 
 	class adminController extends Sargasso {
 		constructor (elem, options) {
@@ -40293,16 +47999,16 @@ var App = (function (exports) {
 			});
 
 			this.on('mouseover', '.select-row', (e, elem) => {
-				utils$1.elementTools.addClass(elem, 'hovering');
+				utils.elementTools.addClass(elem, 'hovering');
 			});
 
 			this.on('mouseout', '.select-row', (e, elem) => {
-				utils$1.elementTools.removeClass(elem, 'hovering');
+				utils.elementTools.removeClass(elem, 'hovering');
 			});
 
 			this.on('click', '.select-row', (e, elem) => {
 				e.preventDefault();
-				var id = parseInt(elem.getAttribute('data-row'));
+				const id = parseInt(elem.getAttribute('data-row'));
 				loadPage(this.mountpoint + '/' + this.model + '/' + id);
 			});
 		}
@@ -40330,8 +48036,8 @@ var App = (function (exports) {
 			}).then((response) => {
 				return response.json()
 			}).then((data) => {
-				var flashLevel = data.flashLevel;
-				var flashMessage = data.flashMessage;
+				const flashLevel = data.flashLevel;
+				const flashMessage = data.flashMessage;
 				if (data.status === 'ok') {
 					flashAjaxStatus('success', flashMessage);
 					let redir = this.redirect;
@@ -40342,7 +48048,7 @@ var App = (function (exports) {
 				} else {
 					let message;
 					if (data.errors) {
-						for (var i = 0; i < data.errors.length; i++) {
+						for (let i = 0; i < data.errors.length; i++) {
 							if (message) {
 								message += ', ';
 							}
@@ -40354,13 +48060,13 @@ var App = (function (exports) {
 					this.element.querySelector('.ajax-errors').innerHTML = '<div class="ajax-message ajax-message-' + flashLevel + '"><i class="material-icons">info</i> ' + flashMessage + '</div>';
 				}
 			}).catch((e) => {
-				var message = 'error';
+				const message = 'error';
 				this.element.querySelector('.ajax-errors').innerHTML = '<div class="ajax-message ajax-message-error"><i class="material-icons">error</i> ' + message + '</div>';
 			});
 		}
 	}
 
-	utils$1.registerSargassoClass('adminController', adminController);
+	utils.registerSargassoClass('adminController', adminController);
 
 	class uploadableImage extends Sargasso {
 		constructor (elem, options) {
@@ -40440,7 +48146,7 @@ var App = (function (exports) {
 		}
 	}
 
-	utils$1.registerSargassoClass('uploadableImage', uploadableImage);
+	utils.registerSargassoClass('uploadableImage', uploadableImage);
 
 	class AdminHandler extends MolaMolaHelper {
 		pose () {
@@ -40504,7 +48210,7 @@ var App = (function (exports) {
 					Array.from(borked).forEach((element) => {
 						const mdcElement = element.closest('.mdc-text-field');
 						if (mdcElement) {
-							const textField = utils$1.elementTools.getMetaData(mdcElement, 'MDCTextField');
+							const textField = utils.elementTools.getMetaData(mdcElement, 'MDCTextField');
 							if (textField) {
 								textField.getLabelAdapterMethods_().floatLabel(true);
 							}
@@ -40578,12 +48284,18 @@ var App = (function (exports) {
 
 	*/
 
-	// expose these so huge markdown editor can be dynamically loaded
-	window.Sargasso = Sargasso;
-	window.registerSargassoClass = utils$1.registerSargassoClass;
-	window.elementTools = utils$1.elementTools;
+	const CMSUtils = {
+		bootCMS: bootCMS,
+		didLogIn: didLogIn,
+		didLogOut: didLogOut,
+		checkSubscription: checkSubscription,
+		flashAjaxStatus: flashAjaxStatus,
+		loadPage: loadPage,
+		reloadPage: reloadPage,
+		tropicBird: tropicBird
+	};
 
-	exports.CMSUtils = utils;
+	exports.CMSUtils = CMSUtils;
 
 	Object.defineProperty(exports, '__esModule', { value: true });
 

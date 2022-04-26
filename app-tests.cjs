@@ -62,7 +62,7 @@ app.use(cookieParser(app.config.COOKIE_KEY))
 require('./index.cjs')(app, app.config)
 
 // deliver static files from public directory
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'dist')))
 
 // Call asynchronous things that need to be stable
 // before we can handle requests
@@ -72,6 +72,8 @@ app.start = function (done) {
 	debug('starting app')
 	app.marlin.db.sync(() => {
 		debug('db sync done')
+
+		app.use(require('./routes/test-page.cjs')(app))
 
 		// catch 404 and forward to error handler
 		app.use(function (req, res, next) {
@@ -103,7 +105,7 @@ app.start = function (done) {
 			res.locals.verbose = req.app.get('env') === 'local' || req.app.get('env') === 'development'
 			// render the error page
 			res.status(err.status || 500)
-			res.render('error')
+			res.json(res.locals)
 		})
 
 		done()

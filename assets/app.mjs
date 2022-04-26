@@ -8,27 +8,37 @@
 
 */
 
-import './modules/ajax-button'
+import {} from './modules/ajax-button'
 
-import './modules/pagination-controller'
+import {} from './modules/pagination-controller'
 
-import './modules/admin-controller'
+import {} from './modules/admin-controller'
 
-import './modules/uploadable-image'
+import {} from './modules/uploadable-image'
 
-import './modules/mola-mola-helpers'
-
-import * as CMSUtils from './modules/utils'
+import {} from './modules/mola-mola-helpers'
 
 import {
-	utils, Sargasso
-}
-	from '@pelagiccreatures/sargasso'
+	bootCMS,
+	didLogIn,
+	didLogOut,
+	checkSubscription,
+	flashAjaxStatus,
+	loadPage,
+	reloadPage,
+	tropicBird
+} from './modules/utils'
 
-// expose these so huge markdown editor can be dynamically loaded
-window.Sargasso = Sargasso
-window.registerSargassoClass = utils.registerSargassoClass
-window.elementTools = utils.elementTools
+const CMSUtils = {
+	bootCMS: bootCMS,
+	didLogIn: didLogIn,
+	didLogOut: didLogOut,
+	checkSubscription: checkSubscription,
+	flashAjaxStatus: flashAjaxStatus,
+	loadPage: loadPage,
+	reloadPage: reloadPage,
+	tropicBird: tropicBird
+}
 
 export {
 	CMSUtils

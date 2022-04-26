@@ -3,7 +3,8 @@ import {
 }
 	from '@pelagiccreatures/sargasso'
 
-import * as CMSUtils from './utils'
+
+import { loadPage, tropicBird, flashAjaxStatus } from './utils'
 
 class adminController extends Sargasso {
 	constructor (elem, options) {
@@ -23,20 +24,20 @@ class adminController extends Sargasso {
 			if (target) {
 				const belongsTo = elem.getAttribute('data-belongs-to')
 				const fk = elem.getAttribute('data-fk')
-				CMSUtils.loadPage(this.mountpoint + '/' + target + '/create?fk=' + fk + '&belongs-to=' + belongsTo)
+				loadPage(this.mountpoint + '/' + target + '/create?fk=' + fk + '&belongs-to=' + belongsTo)
 			} else {
-				CMSUtils.loadPage(this.mountpoint + '/' + this.model + '/create')
+				loadPage(this.mountpoint + '/' + this.model + '/create')
 			}
 		})
 
 		this.on('click', '.edit-button', (e, elem) => {
 			e.preventDefault()
-			CMSUtils.loadPage(this.mountpoint + '/' + this.model + '/' + this.id + '/edit')
+			loadPage(this.mountpoint + '/' + this.model + '/' + this.id + '/edit')
 		})
 
 		this.on('click', '.delete-button', (e, elem) => {
 			e.preventDefault()
-			CMSUtils.tropicBird.dialog('#confirm-dialog', 'Delete this row?', this.confirmPrompt, true).then((action) => {
+			tropicBird.dialog('#confirm-dialog', 'Delete this row?', this.confirmPrompt, true).then((action) => {
 				if (action === 'accept') {
 					const endpoint = this.mountpoint + '/' + this.model + '/' + this.id
 					this.API('DELETE', endpoint)
@@ -49,7 +50,7 @@ class adminController extends Sargasso {
 			const q = elem.closest('.input-group').find('input[name="q"]').val()
 			const prop = elem.closest('.input-group').find('select[name="property"]').val()
 			if (q && prop) {
-				CMSUtils.loadPage(location.pathname + '?q=' + encodeURIComponent(q) + '&property=' + encodeURIComponent(prop))
+				loadPage(location.pathname + '?q=' + encodeURIComponent(q) + '&property=' + encodeURIComponent(prop))
 			}
 		})
 
@@ -63,8 +64,8 @@ class adminController extends Sargasso {
 
 		this.on('click', '.select-row', (e, elem) => {
 			e.preventDefault()
-			var id = parseInt(elem.getAttribute('data-row'))
-			CMSUtils.loadPage(this.mountpoint + '/' + this.model + '/' + id)
+			const id = parseInt(elem.getAttribute('data-row'))
+			loadPage(this.mountpoint + '/' + this.model + '/' + id)
 		})
 	}
 
@@ -91,19 +92,19 @@ class adminController extends Sargasso {
 		}).then((response) => {
 			return response.json()
 		}).then((data) => {
-			var flashLevel = data.flashLevel
-			var flashMessage = data.flashMessage
+			const flashLevel = data.flashLevel
+			const flashMessage = data.flashMessage
 			if (data.status === 'ok') {
-				CMSUtils.flashAjaxStatus('success', flashMessage)
+				flashAjaxStatus('success', flashMessage)
 				let redir = this.redirect
 				if (data.id && !redir.match(/\/\d+$/)) {
 					redir += '/' + data.id
 				}
-				CMSUtils.loadPage(redir)
+				loadPage(redir)
 			} else {
 				let message
 				if (data.errors) {
-					for (var i = 0; i < data.errors.length; i++) {
+					for (let i = 0; i < data.errors.length; i++) {
 						if (message) {
 							message += ', '
 						}
@@ -115,7 +116,7 @@ class adminController extends Sargasso {
 				this.element.querySelector('.ajax-errors').innerHTML = '<div class="ajax-message ajax-message-' + flashLevel + '"><i class="material-icons">info</i> ' + flashMessage + '</div>'
 			}
 		}).catch((e) => {
-			var message = 'error'
+			const message = 'error'
 			this.element.querySelector('.ajax-errors').innerHTML = '<div class="ajax-message ajax-message-error"><i class="material-icons">error</i> ' + message + '</div>'
 		})
 	}

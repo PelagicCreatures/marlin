@@ -3,7 +3,8 @@ import {
 }
 	from '@pelagiccreatures/sargasso'
 
-import * as CMSUtils from './utils'
+
+import { didLogIn, didLogOut, flashAjaxStatus, reloadPage, loadPage, tropicBird } from './utils'
 
 class ajaxButton extends Sargasso {
 	constructor (elem, options) {
@@ -21,7 +22,7 @@ class ajaxButton extends Sargasso {
 		this.on('click', '', async (e) => {
 			e.preventDefault()
 			if (this.confirm) {
-				CMSUtils.tropicBird.dialog('#confirm-dialog', 'Please Confirm', this.confirmPrompt, true).then(async (action) => {
+				tropicBird.dialog('#confirm-dialog', 'Please Confirm', this.confirmPrompt, true).then(async (action) => {
 					if (action === 'accept') {
 						await this.doIt()
 					}
@@ -54,26 +55,26 @@ class ajaxButton extends Sargasso {
 			const loggedOut = response.headers['Sargasso-Did-Logout'] ? response.headers['Sargasso-Did-Logout'] : data.didLogout
 
 			if (loggedIn) {
-				CMSUtils.didLogIn()
+				didLogIn()
 			}
 
 			if (loggedOut) {
-				CMSUtils.didLogOut()
+				didLogOut()
 			}
 
 			if (data.status === 'ok') {
-				CMSUtils.flashAjaxStatus('success', flashMessage)
+				flashAjaxStatus('success', flashMessage)
 				if (this.redirect === location.pathname) {
-					CMSUtils.reloadPage()
+					reloadPage()
 				} else {
-					CMSUtils.loadPage(this.redirect)
+					loadPage(this.redirect)
 				}
 			} else {
-				CMSUtils.flashAjaxStatus(flashLevel, flashMessage)
+				flashAjaxStatus(flashLevel, flashMessage)
 			}
 		} catch (e) {
 			const message = 'error'
-			CMSUtils.flashAjaxStatus('error', message)
+			flashAjaxStatus('error', message)
 		}
 	}
 }

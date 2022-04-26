@@ -3,30 +3,30 @@ import Cookies from 'js-cookie'
 import {
 	utils, loadPageHandler
 }
-from '@pelagiccreatures/sargasso'
+	from '@pelagiccreatures/sargasso'
 
 import {
 	TropicBird
 }
-from '@pelagiccreatures/tropicbird'
+	from '@pelagiccreatures/tropicbird'
 
 import '@pelagiccreatures/flyingfish'
 
 import '@pelagiccreatures/molamola'
 
-let loadPage, reloadPage, tropicBird
+
+const tropicBird = new TropicBird(document.body, {})
+tropicBird.start()
+
+const loadPage = (url) => {
+	loadPageHandler(url)
+}
+
+const reloadPage = () => {
+	loadPageHandler(document.location.href, true)
+}
 
 const bootCMS = () => {
-	tropicBird = new TropicBird(document.body, {})
-	tropicBird.start()
-
-	loadPage = (url) => {
-		loadPageHandler(url)
-	}
-
-	reloadPage = () => {
-		loadPageHandler(document.location.href, true)
-	}
 
 	if (Cookies.get('have-account')) {
 		utils.elementTools.addClass(document.body, 'have-account')

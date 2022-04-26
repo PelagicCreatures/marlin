@@ -13,7 +13,7 @@ import {
 }
 	from '@pelagiccreatures/molamola'
 
-import * as CMSUtils from './utils'
+import { loadPage } from './utils'
 
 class AdminHandler extends MolaMolaHelper {
 	pose () {
@@ -130,7 +130,7 @@ class BoilerplateHandler extends MolaMolaHelper {
 		}
 
 		if (data.status === 'ok' && data.redirect) {
-			CMSUtils.loadPage(data.redirect)
+			loadPage(data.redirect)
 		}
 	}
 
