@@ -1,10 +1,15 @@
 import {
+	Sargasso, utils
+}
+	from '@pelagiccreatures/sargasso'
+
+import {
 	MarkdownView,
 	ProseMirrorView
 }
 	from './prose-mirror'
 
-class markdownEditor extends window.Sargasso {
+class markdownEditor extends Sargasso {
 	constructor (elem, options = {}) {
 		options.watchDOM = true
 		super(elem, options)
@@ -17,12 +22,12 @@ class markdownEditor extends window.Sargasso {
 		super.start()
 		this.view = new ProseMirrorView(this.target, this.content.value)
 
-		window.elementTools.on(this.uid, this.target, 'input blur focus keyup paste click', '[contenteditable]', (e) => {
+		utils.elementTools.on(this.uid, this.target, 'input blur focus keyup paste click', '[contenteditable]', (e) => {
 			this.content.value = this.view.content
 			this.content.dispatchEvent(new Event('change'))
 		})
 
-		window.elementTools.on(this.uid, this.target, 'input blur focus keyup paste', 'textarea', (e) => {
+		utils.elementTools.on(this.uid, this.target, 'input blur focus keyup paste', 'textarea', (e) => {
 			this.content.value = this.view.content
 			this.content.dispatchEvent(new Event('change'))
 		})
@@ -48,8 +53,8 @@ class markdownEditor extends window.Sargasso {
 			el.removeEventListener('change', this.handler)
 		})
 		this.view.destroy()
-		window.elementTools.off(this.uid, this.target, 'input blur focus keyup paste click', '[contenteditable]')
-		window.elementTools.off(this.uid, this.target, 'input blur focus keyup paste', 'textarea')
+		utils.elementTools.off(this.uid, this.target, 'input blur focus keyup paste click', '[contenteditable]')
+		utils.elementTools.off(this.uid, this.target, 'input blur focus keyup paste', 'textarea')
 		super.sleep()
 	}
 
@@ -61,7 +66,7 @@ class markdownEditor extends window.Sargasso {
 	}
 }
 
-window.registerSargassoClass('markdownEditor', markdownEditor)
+utils.registerSargassoClass('markdownEditor', markdownEditor)
 
 export {
 	markdownEditor

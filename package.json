@@ -1,11 +1,22 @@
 {
 	"name": "@pelagiccreatures/marlin",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "ExpressJS CMS Tools",
 	"type": "module",
 	"browser": "dist/js/marlin.mjs",
+	"markdown": "dist/js/markdown.mjs",
 	"targets": {
 		"browser": {
+			"distDir": "./dist/js",
+			"includeNodeModules": {
+				"@pelagiccreatures/sargasso": false,
+				"@pelagiccreatures/flyingfish": false,
+				"@pelagiccreatures/molamola": false,
+				"@pelagiccreatures/tropicbird": false
+			}
+		},
+		"markdown": {
+			"distDir": "./dist/js",
 			"includeNodeModules": {
 				"@pelagiccreatures/sargasso": false,
 				"@pelagiccreatures/flyingfish": false,
@@ -21,7 +32,7 @@
 	"scripts": {
 		"test": "NODE_ENV=test TESTING=true npx mocha --exit tests/users.cjs",
 		"build": "node ./webpack-cli.mjs; npx grunt; npx rollup --no-treeshake --no-freeze -c rollup.config.js; npx rollup -c rollup.config.markdown.js;",
-		"build-module": "npx parcel build assets/app.mjs;"
+		"build-module": "npx parcel build assets/app.mjs --target browser;npx parcel build assets/markdown.mjs --target markdown;"
 	},
 	"author": "",
 	"license": "MIT",
