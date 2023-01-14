@@ -32,7 +32,7 @@
 	"scripts": {
 		"test": "NODE_ENV=test TESTING=true npx mocha --exit tests/users.cjs",
 		"build": "node ./webpack-cli.mjs; npx grunt; npx rollup --no-treeshake --no-freeze -c rollup.config.js; npx rollup -c rollup.config.markdown.js;",
-		"build-module": "npx parcel build assets/app.mjs --target browser;npx parcel build assets/markdown.mjs --target markdown;"
+		"build-module": "npx parcel build assets/app.mjs --target browser;cp assets/modules/markdown-editor.mjs dist/js/markdown-editor.mjs;"
 	},
 	"author": "",
 	"license": "MIT",
