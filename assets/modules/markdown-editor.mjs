@@ -21324,11 +21324,11 @@ class $14be8273a324f1ff$export$aee3bc6f4a4ea9ee extends (0, $feOm8$SargassoCompo
         super.start();
         this.on("input blur focus keyup paste click", "[contenteditable]", (e)=>{
             this.value = this.view.content;
-            this.content.dispatchEvent(new Event("change"));
+            this.element.dispatchEvent(new Event("change"));
         });
         this.on("input blur focus keyup paste", "textarea", (e)=>{
             this.value = this.view.content;
-            this.content.dispatchEvent(new Event("change"));
+            this.element.dispatchEvent(new Event("change"));
         });
         this.on("change", "input[type=radio]", (e, elem)=>{
             const button = e.srcElement;
@@ -21343,12 +21343,10 @@ class $14be8273a324f1ff$export$aee3bc6f4a4ea9ee extends (0, $feOm8$SargassoCompo
     }
     didRender() {
         this.target = this.element.querySelector(".current-editor");
-        this.content = this.element.querySelector(".content");
         this.view = new $14be8273a324f1ff$var$ProseMirrorView(this.target, this.value);
     }
     buildTemplate() {
         const template = (args, attributes, options)=>(0, $f3fc7ba5cdc8c344$export$c0bb0b647f701bb5)`
-            <textarea class="content" style="display:none" name="${attributes.name}" data-validate="${attributes.validate}" data-payload>${this.value}</textarea>
             <div class="current-editor"></div>
             <div class="view-mode pull-right">
               <label>Markdown <input type=radio name=inputformat value=markdown></label> | 
