@@ -1,6 +1,6 @@
 {
 	"name": "@pelagiccreatures/marlin",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "ExpressJS CMS Tools",
 	"type": "module",
 	"browser": "dist/js/marlin.mjs",
