@@ -24,7 +24,7 @@ a:focus {
 }
 
 .app-fab-fixed {
-	position: fixed;
+	position: fixed!important;
 	bottom: 1rem;
 	right: 1rem;
 }
