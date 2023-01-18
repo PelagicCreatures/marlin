@@ -38,7 +38,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@pelagiccreatures/flyingfish": "^2.0.0",
-		"@pelagiccreatures/molamola": "^2.0.0",
+		"@pelagiccreatures/molamola": "^2.0.1",
 		"@pelagiccreatures/sargasso": "^2.0.1",
 		"@pelagiccreatures/tropicbird": "^2.0.0",
 		"basic-auth": "^2.0.1",
